@@ -1,3 +1,4 @@
+// 오토마타 사용하는 문제였음
 #include <iostream>
 #include <vector>
 #include <string>
