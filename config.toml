@@ -1,3 +1,4 @@
 baseURL = "http://meantint.github.io"
 languageCode = "en-us"
 title = "Meantint's Blog"
+theme = "pickles"
