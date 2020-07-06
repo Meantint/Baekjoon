@@ -1,10 +1,10 @@
 languageCode: "ko-kr"
 defaultContentLanguage: "en-us"
 baseUrl: "https://meantint.github.io"
-title: "Anubis"
+title: "Meantint"
 theme: "anubis"
 paginate: 10
-disqusShortname: yourdiscussshortname
+disqusShortname: Meantint
 googleAnalytics: UA-123-45
 enableRobotsTXT: true
 
