@@ -1,5 +1,5 @@
-languageCode = "ko-kr"
-defaultContentLanguage = "en-us"
+languageCode: "ko-kr"
+defaultContentLanguage: "en-us"
 baseUrl: "https://meantint.github.io"
 title: "Anubis"
 theme: "anubis"
