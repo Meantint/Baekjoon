@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Anubis</title>
+    <title>Posts on Meantint</title>
     <link>https://meantint.github.io/post/</link>
-    <description>Anubis (Posts)</description>
+    <description>Meantint (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Mon, 06 Jul 2020 15:10:25 +0900</lastBuildDate>
