@@ -1,4 +1,5 @@
 baseURL = "http://meantint.github.io"
-languageCode = "en-us"
+languageCode = "ko-kr"
+defaultContentLanguage = "en-us"
 title = "Meantint's Blog"
 theme = "anubis"
