@@ -3,11 +3,11 @@
   <channel>
     <title>Tags on Meantint&#39;s Blog</title>
     <link>http://meantint.github.io/tags/</link>
-    <description>Recent content in Tags on Meantint&#39;s Blog</description>
+    <description>Meantint&#39;s Blog (Tags)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://meantint.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://meantint.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

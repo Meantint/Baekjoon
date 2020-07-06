@@ -3,12 +3,12 @@
   <channel>
     <title>Meantint&#39;s Blog</title>
     <link>http://meantint.github.io/</link>
-    <description>Recent content on Meantint&#39;s Blog</description>
+    <description>Meantint&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Jul 2020 15:10:25 +0900</lastBuildDate>
     
-	<atom:link href="http://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,12 @@
       <pubDate>Mon, 06 Jul 2020 15:10:25 +0900</pubDate>
       
       <guid>http://meantint.github.io/post/html_2/</guid>
-      <description>test test test test test</description>
+      <description>&lt;p&gt;test
+test
+test
+test
+test&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -26,7 +31,8 @@
       <pubDate>Mon, 06 Jul 2020 15:02:16 +0900</pubDate>
       
       <guid>http://meantint.github.io/post/html_1/</guid>
-      <description>안녕하세요 Meantint의 블로그입니다.</description>
+      <description>&lt;p&gt;안녕하세요 Meantint의 블로그입니다.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
