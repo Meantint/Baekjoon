@@ -1,7 +1,9 @@
 /* Basic */
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&family=Ubuntu&display=swap" rel="stylesheet');
 html {
-    font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Ubuntu','Source Sans Pro', 'Lato', 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+    /*font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
     /* 1 */
     -ms-text-size-adjust: 100%;
     /* 2 */
