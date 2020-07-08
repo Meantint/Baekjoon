@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Meantint</title>
-    <link>https://meantint.github.io/</link>
-    <description>Meantint</description>
+    <title>Git on Meantint</title>
+    <link>https://meantint.github.io/tags/git/</link>
+    <description>Meantint (Git)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Wed, 08 Jul 2020 05:28:32 +0900</lastBuildDate>
     
-    <atom:link href="https://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://meantint.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

@@ -6,32 +6,37 @@
     <description>Meantint (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 06 Jul 2020 15:10:25 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 05:28:32 +0900</lastBuildDate>
     
     <atom:link href="https://meantint.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Html_2</title>
-      <link>https://meantint.github.io/post/html_2/</link>
-      <pubDate>Mon, 06 Jul 2020 15:10:25 +0900</pubDate>
+      <title>Git - 명령어</title>
+      <link>https://meantint.github.io/post/git_1/</link>
+      <pubDate>Wed, 08 Jul 2020 05:28:32 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/html_2/</guid>
-      <description>&lt;p&gt;test
-test
-test
-test
-test&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Html_1</title>
-      <link>https://meantint.github.io/post/html_1/</link>
-      <pubDate>Mon, 06 Jul 2020 15:02:16 +0900</pubDate>
-      
-      <guid>https://meantint.github.io/post/html_1/</guid>
-      <description>&lt;p&gt;안녕하세요 Meantint의 블로그입니다.&lt;/p&gt;
+      <guid>https://meantint.github.io/post/git_1/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;git config &amp;ndash;global user.name &amp;ldquo;Name&amp;rdquo;
+&lt;ul&gt;
+&lt;li&gt;사용자 이름 정보를 입력하는 명령어&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--global&lt;/code&gt;은 현재 컴퓨터에 있는 모든 저장소에서 같은 사용자 정보를 사용하도록 설정해준다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;git config &amp;ndash;global user.email &amp;ldquo;Email&amp;rdquo;
+&lt;ul&gt;
+&lt;li&gt;사용자 이메일 정보를 입력하는 명령어&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--global&lt;/code&gt;은 현재 컴퓨터에 있는 모든 저장소에서 같은 사용자 정보를 사용하도록 설정해준다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;git init
+&lt;ul&gt;
+&lt;li&gt;현재의 디렉터리에 저장소(repository)를 만들어준다.
+&lt;img src=&#34;https://meantint.github.io/static/img/git_init.png&#34; alt=&#34;test.image&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
