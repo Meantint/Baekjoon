@@ -19,4 +19,4 @@ draft: false
   - `--global`은 현재 컴퓨터에 있는 모든 저장소에서 같은 사용자 정보를 사용하도록 설정해준다.
 - git init
   - 현재의 디렉터리에 저장소(repository)를 만들어준다.
-    ![test.image](../../static/images/git_init.png)
+![test_image](/images/git_init.png)
