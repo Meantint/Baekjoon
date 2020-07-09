@@ -33,7 +33,7 @@
 &lt;li&gt;git init
 &lt;ul&gt;
 &lt;li&gt;현재의 디렉터리에 저장소(repository)를 만들어준다.
-&lt;img src=&#34;https://meantint.github.io/static/img/git_init.png&#34; alt=&#34;test.image&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;../../static/images/git_init.png&#34; alt=&#34;test.image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
