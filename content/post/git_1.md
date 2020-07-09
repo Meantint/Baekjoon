@@ -8,7 +8,7 @@ tags: [
 	"Git",
 ]
 cover: ""
-draft: false
+draft: true
 ---
 
 - git config --global user.name "Name"

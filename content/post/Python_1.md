@@ -1,15 +1,16 @@
 ---
 title: "Python - 자료형"
 date: 2020-07-06T18:48:49+09:00
-draft: true
-tags: [
-    "Python",
-]
 categories: [
-    "Python",
+	"Git",
 ]
-# cover: "121212123333"
----   
+tags: [
+	"Git",
+]
+cover: ""
+draft: true
+# cover
+--- 
 
 파이썬은 변수를 선언할 때 type을 따로 선언하지 않아도 된다. <br><br>
 아래의 예제를 보자.
