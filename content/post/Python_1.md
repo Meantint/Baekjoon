@@ -7,9 +7,9 @@ categories: [
 tags: [
 	"Git",
 ]
-cover: ""
 draft: true
 # cover
+cover: ""
 --- 
 
 파이썬은 변수를 선언할 때 type을 따로 선언하지 않아도 된다. <br><br>
