@@ -13,7 +13,7 @@ menu:
   - identifier: archive
     name: Archive
     title: Archive
-    url: /posts/
+    url: /post/
     weight: 0
 
 params:
