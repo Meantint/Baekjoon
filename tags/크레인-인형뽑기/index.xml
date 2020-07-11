@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Meantint</title>
-    <link>https://meantint.github.io/post/</link>
-    <description>Meantint (Posts)</description>
+    <title>크레인 인형뽑기 on Meantint</title>
+    <link>https://meantint.github.io/tags/%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0/</link>
+    <description>Meantint (크레인 인형뽑기)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 09 Jul 2020 22:10:55 +0900</lastBuildDate>
     
-    <atom:link href="https://meantint.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://meantint.github.io/tags/%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
