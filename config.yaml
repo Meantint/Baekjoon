@@ -11,10 +11,20 @@ enableRobotsTXT: true
 menu:
   main:
   - identifier: archive
-    name: Archive
-    title: Archive
+    name: All Post
+    title: All Post
     url: /post/
     weight: 0
+  - identifier: Git
+    name: Git
+    title: Git
+    url: /categories/git
+    weight: 1
+  - identifier: Programmers
+    name: Programmers
+    title: Programmers
+    url: /categories/programmers
+    weight: 1
 
 params:
   author: ""

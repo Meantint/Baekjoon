@@ -1,5 +1,5 @@
 ---
-title: "Programmers_1"
+title: "Programmers - 인형뽑기 게임"
 date: 2020-07-09T22:10:55+09:00
 categories: [
 	"Programmers",
