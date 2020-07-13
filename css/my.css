@@ -141,24 +141,32 @@ kbd {
 }
 
 /* meantint's style */
-:not(pre) > code {
+:not(pre) > code {	
   font-family: consolas;
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(27, 31, 35, 0.164);
+  background-color: rgba(27,31,35,.05);
   border-radius: 3px;
 }
 /* Styles */
 
 blockquote {
   /* meantint's style */
-  border-left: 3px solid silver;
-  padding: 0.1em 1em;
-  /* base style
-    border-left: 2px solid #cccccc;
-    padding: 0.1em 1em; */
-  margin-left: 0.75em;
+  /* border-left: 3px solid silver; */
+  /* padding: 0.1em 1em; */
+  /* base style */
+  /* border-left: 2px solid #cccccc; */
+  /* padding: 0.1em 1em; */
+  /* margin-left: 0.75em; */
+
+  /* Github Style */
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: .25em solid #dfe2e5;
 }
 
 p {
