@@ -13,9 +13,9 @@ cover: ""
 draft: false
 ---
 
-[[BOJ_1022](https://www.acmicpc.net/problem/1022) - [주사위](https://www.acmicpc.net/problem/1022)]
+[[BOJ_1022](https://www.acmicpc.net/problem/1022) - [소용돌이 예쁘게 출력하기](https://www.acmicpc.net/problem/1022)]
 
-은근히 간단하게 풀었다.
+생각보다 간단하게 풀었다.
 
 # 풀이
 
