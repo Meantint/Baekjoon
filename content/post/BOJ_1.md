@@ -9,7 +9,7 @@ tags: [
 	"Baekjoon",
 	"BOJ_1041",
 ]
-draft: true
+draft: false
 cover: ""
 ---
 
