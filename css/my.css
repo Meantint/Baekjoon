@@ -117,7 +117,7 @@ table {
 
 thead {
   background: lightgrey;
-  background-color: ffe8df
+  background-color: #ffe8df;
 }
 
 table tr:nth-child(2n) {
