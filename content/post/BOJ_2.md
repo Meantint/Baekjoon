@@ -10,7 +10,7 @@ tags: [
 	"BOJ_1022",
 ]
 cover: ""
-draft: true
+draft: false
 ---
 
 [[BOJ_1022](https://www.acmicpc.net/problem/1022) - [주사위](https://www.acmicpc.net/problem/1022)]
@@ -23,8 +23,6 @@ draft: true
 
 - 위치에 해당하는 값을 answer 변수의 각 위치에 넣음
 
-- `cout:.setf(ios::right)`를 이용해 오른쪽 정렬로 만든 후에 `setw(maxLength)`를 이용해 maxLength의 크기만큼 공백을 생성하였다.
-
 - 소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.
 
   - 홀수 제곱수 : `(n, n)`에 위치, `(2n + 1)^2`
@@ -32,7 +30,12 @@ draft: true
 
 - 홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.
   - (0, 0)과의 거리를 `range` 변수에 저장한 후 `range`에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.
-    - `왼쪽 & 아래`부분에 위치
+    - `range`의 `왼쪽 & 아래`부분에 위치: `range`내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이
+    - `range`의 `오른쪽 & 위`부분에 위치: `range`내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이
+      ![ex_Image.png](/images/BOJ_2_Image.png)
+      <figcaption>위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)</figcaption>
+      
+- `cout:.setf(ios::right)`를 이용해 오른쪽 정렬로 만든 후에 `setw(maxLength)`를 이용해 maxLength의 크기만큼 공백을 생성하였다.
 
 # Code
 

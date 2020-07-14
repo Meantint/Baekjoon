@@ -189,24 +189,15 @@ ol ol {
 }
 
 /* meantint's style */
-ul ul::before {
-  content: "•";
-  color: #333333;
-}
 ul ul {
   margin: 0em 0.1em;
-  list-style: none;
-}
-
-ul ul ul:before {
-  content: "•";
-  color: #808080;
+  list-style: disc;
 }
 
 ul ul ul {
   margin: 0em 0.1em;
-  list-style: none;
-  color: #808080;
+  list-style: disc;
+  font-size: 0.95em;
 }
 
 /* Header */
