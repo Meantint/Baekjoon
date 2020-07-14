@@ -2,7 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&family=Ubuntu&display=swap" rel="stylesheet');
 html {
-  font-family: "Noto Sans KR", "consolas", "Source Sans Pro", "Lato", "Nanum Gothic", sans-serif;
+  font-family: "Noto Sans KR", "consolas", "Source Sans Pro", "Lato",
+    "Nanum Gothic", sans-serif;
   /*font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -141,12 +142,12 @@ kbd {
 }
 
 /* meantint's style */
-:not(pre) > code {	
+:not(pre) > code {
   font-family: consolas;
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(27,31,35,.05);
+  background-color: rgba(27, 31, 35, 0.05);
   border-radius: 3px;
 }
 /* Styles */
@@ -166,7 +167,7 @@ blockquote {
   margin-bottom: 16px;
   padding: 0 1em;
   color: #6a737d;
-  border-left: .25em solid #dfe2e5;
+  border-left: 0.25em solid #dfe2e5;
 }
 
 p {
@@ -181,11 +182,23 @@ hr {
 }
 
 ul ol,
-ol ol,
-ul ul {
+ol ol {
   margin: 0em 0.1em;
   /* meantint's style */
   font-size: 1em;
+}
+
+/* meantint's style */
+ul ul {
+  margin: 0em 0.1em;
+  list-style-type: disc;
+  background: #333333;
+}
+
+ul ul ul {
+  margin: 0em 0.1em;
+  list-style-type: disc;
+  background: #808080;
 }
 
 /* Header */
