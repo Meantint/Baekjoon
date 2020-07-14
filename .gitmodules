@@ -1,6 +1,6 @@
-[submodule "themes/anubis"]
-	path = themes/anubis
-	url = https://github.com/Mitrichius/hugo-theme-anubis.git
+# [submodule "themes/anubis"]
+# 	path = themes/anubis
+# 	url = https://github.com/Mitrichius/hugo-theme-anubis.git
 [submodule "public"]
 	path = public
 	url = https://github.com/Meantint/meantint.github.io.git

@@ -25,6 +25,11 @@ menu:
     title: Programmers
     url: /categories/programmers
     weight: 1
+  - identifier: BOJ
+    name: BOJ
+    title: BOJ
+    url: /categories/boj
+    weight: 1
 
 params:
   author: ""
