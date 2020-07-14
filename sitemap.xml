@@ -3,18 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://meantint.github.io/tags/baekjoon/</loc>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/boj/</loc>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/categories/boj/</loc>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/boj_1041/</loc>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/post/boj_1/</loc>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://meantint.github.io/categories/</loc>
-    <lastmod>2020-07-09T22:10:55+09:00</lastmod>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://meantint.github.io/</loc>
-    <lastmod>2020-07-09T22:10:55+09:00</lastmod>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://meantint.github.io/post/</loc>
-    <lastmod>2020-07-09T22:10:55+09:00</lastmod>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/</loc>
+    <lastmod>2020-07-12T02:12:25+09:00</lastmod>
   </url>
   
   <url>
@@ -29,11 +59,6 @@
   
   <url>
     <loc>https://meantint.github.io/post/programmers_1/</loc>
-    <lastmod>2020-07-09T22:10:55+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/tags/</loc>
     <lastmod>2020-07-09T22:10:55+09:00</lastmod>
   </url>
   
