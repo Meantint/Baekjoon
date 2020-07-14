@@ -192,13 +192,13 @@ ol ol {
 ul ul {
   margin: 0em 0.1em;
   list-style-type: disc;
-  background: #333333;
+  color: #333333;
 }
 
 ul ul ul {
   margin: 0em 0.1em;
   list-style-type: disc;
-  background: #808080;
+  color: #808080;
 }
 
 /* Header */
