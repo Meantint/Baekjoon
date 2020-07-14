@@ -117,6 +117,7 @@ table {
 
 thead {
   background: lightgrey;
+  background-color: #5c2c2c
 }
 
 th,
@@ -127,27 +128,7 @@ td {
 
 /* meantint's table style */
 table tr:nth-child(2n) {
-  background-color: #f6f8fa;
-}
-table {
-  display: block;
-  width: 100%;
-  overflow: auto;
-}
-
-table th {
-  font-weight: 600;
-}
-
-table td,
-table th {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
-}
-
-table tr {
-  background-color: #fff;
-  border-top: 1px solid #c6cbd1;
+  background-color: #c7dff7;
 }
 
 /* Code */
