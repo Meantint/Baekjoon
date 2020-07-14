@@ -6,10 +6,114 @@
     <description>Meantint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 12 Jul 2020 02:12:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 19:50:29 +0900</lastBuildDate>
     
     <atom:link href="https://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BOJ_1022 소용돌이 예쁘게 출력하기</title>
+      <link>https://meantint.github.io/post/boj_2/</link>
+      <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/post/boj_2/</guid>
+      <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1022&#34;&gt;BOJ_1022&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1022&#34;&gt;주사위&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;은근히 간단하게 풀었다.&lt;/p&gt;
+&lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;위치의 &lt;code&gt;row&lt;/code&gt;, &lt;code&gt;col&lt;/code&gt; 값을 저장하는 vec 변수를 선언.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;위치에 해당하는 값을 answer 변수의 각 위치에 넣음&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;홀수 제곱수 : &lt;code&gt;(n, n)&lt;/code&gt;에 위치, &lt;code&gt;(2n + 1)^2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;짝수 제곱수 : &lt;code&gt;(-n, -n + 1)&lt;/code&gt;에 위치, &lt;code&gt;(2n)^2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(0, 0)과의 거리를 &lt;code&gt;range&lt;/code&gt; 변수에 저장한 후 &lt;code&gt;range&lt;/code&gt;에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;range&lt;/code&gt;의 &lt;code&gt;왼쪽 &amp;amp; 아래&lt;/code&gt;부분에 위치: &lt;code&gt;range&lt;/code&gt;내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;range&lt;/code&gt;의 &lt;code&gt;오른쪽 &amp;amp; 위&lt;/code&gt;부분에 위치: &lt;code&gt;range&lt;/code&gt;내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이
+&lt;img src=&#34;https://meantint.github.io/images/BOJ_2_Image.png&#34; alt=&#34;ex_Image.png&#34;&gt;
+&lt;figcaption&gt;위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)&lt;/figcaption&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cout:.setf(ios::right)&lt;/code&gt;를 이용해 오른쪽 정렬로 만든 후에 &lt;code&gt;setw(maxLength)&lt;/code&gt;를 이용해 maxLength의 크기만큼 공백을 생성하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define PII pair&amp;lt;int, int&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; std;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
+{
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; r1, c1, r2, c2;
+        cin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; r1 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; c1 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; r2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; c2;
+
+        vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; answer(r2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; r1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;(c2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; c1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;));
+        vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;PII&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; vec;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; r2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; r1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
+                vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;PII&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; v;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; c2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; c1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;j) {
+                        v.push_back(make_pair(r1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; i, c1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; j));
+                }
+                vec.push_back(v);
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; maxLength &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// 가장 큰 숫자의 자릿수
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; row &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vec.size();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; col &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vec[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].size();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; row; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; col; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;j) {
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; max(abs(vec[i][j].first), abs(vec[i][j].second));
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; oddNum &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pow(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// (n, n)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; evenNum &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pow(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; range, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// (-n, -n + 1)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (vec[i][j].first &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; vec[i][j].second &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) {
+                                answer[i][j] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; evenNum;
+                                maxLength &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; max(maxLength, (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)to_string(answer[i][j]).size());
+                        }
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (vec[i][j].first &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; vec[i][j].second &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; range) {
+                                answer[i][j] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; oddNum;
+                                maxLength &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; max(maxLength, (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)to_string(answer[i][j]).size());
+                        }
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (vec[i][j].first &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; vec[i][j].second &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)) {
+                                answer[i][j] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; evenNum
+                                    &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; abs(&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[i][j].first) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; abs(&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; range &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[i][j].second);
+                                maxLength &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; max(maxLength, (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)to_string(answer[i][j]).size());
+                        }
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+                                answer[i][j] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; oddNum
+                                    &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; abs(range &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[i][j].first) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; abs(range &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[i][j].second);
+                                maxLength &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; max(maxLength, (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)to_string(answer[i][j]).size());
+                        }
+                }
+        }
+
+        cout.setf(ios&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;right);
+        &lt;span style=&#34;color:#75715e&#34;&gt;// 출력 테스트
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; vec.size(); &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; vec[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].size(); &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;j) {
+                        cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; setw(maxLength) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; answer[i][j] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;;
+                }
+                cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;;
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>BOJ_1041 주사위</title>
