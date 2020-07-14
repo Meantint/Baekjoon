@@ -117,21 +117,26 @@ table {
 
 thead {
   background: lightgrey;
-  background-color: #5c2c2c
+  background-color: ffe8df
 }
 
-th,
-td {
-  padding: 0.5em 1em;
-  border: 1px double lightgrey;
-}
-
-/* meantint's table style */
 table tr:nth-child(2n) {
-  background-color: #c7dff7;
+  background-color: #f6f8fa;
 }
 
 /* Code */
+th,
+td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+tr{
+  background-color: #f0f0f0;
+  border-top: 1px solid #c6cbd1;
+}
+
+/* meantint's table style */
 pre {
   padding: 1em;
   background-color: #f1f1f1;
