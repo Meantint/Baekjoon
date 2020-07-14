@@ -1,0 +1,97 @@
+---
+title: "BOJ_1022 소용돌이 예쁘게 출력하기"
+date: 2020-07-14T19:50:29+09:00
+categories: [
+	"BOJ",
+]
+tags: [
+	"BOJ",
+	"Baekjoon",
+	"BOJ_1022",
+]
+cover: ""
+draft: true
+---
+
+[[BOJ_1022](https://www.acmicpc.net/problem/1022) - [주사위](https://www.acmicpc.net/problem/1022)]
+
+은근히 간단하게 풀었다.
+
+# 풀이
+
+- 위치의 `row`, `col` 값을 저장하는 vec 변수를 선언.
+
+- 위치에 해당하는 값을 answer 변수의 각 위치에 넣음
+
+- `cout:.setf(ios::right)`를 이용해 오른쪽 정렬로 만든 후에 `setw(maxLength)`를 이용해 maxLength의 크기만큼 공백을 생성하였다.
+
+- 소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.
+
+  - 홀수 제곱수 : `(n, n)`에 위치, `(2n + 1)^2`
+  - 짝수 제곱수 : `(-n, -n + 1)`에 위치, `(2n)^2`
+
+- 홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.
+
+# Code
+
+```C++
+#include <bits/stdc++.h>
+
+#define PII pair<int, int>
+
+using namespace std;
+
+int main()
+{
+        int r1, c1, r2, c2;
+        cin >> r1 >> c1 >> r2 >> c2;
+
+        vector<vector<int>> answer(r2 - r1 + 1, vector<int>(c2 - c1 + 1, 0));
+        vector<vector<PII>> vec;
+        for (int i = 0; i < r2 - r1 + 1; ++i) {
+                vector<PII> v;
+                for (int j = 0; j < c2 - c1 + 1; ++j) {
+                        v.push_back(make_pair(r1 + i, c1 + j));
+                }
+                vec.push_back(v);
+        }
+
+        int maxLength = 0; // 가장 큰 숫자의 자릿수
+        int row = vec.size();
+        int col = vec[0].size();
+        for (int i = 0; i < row; ++i) {
+                for (int j = 0; j < col; ++j) {
+                        int range = max(abs(vec[i][j].first), abs(vec[i][j].second));
+                        int oddNum = pow(2 * range + 1, 2); // (n, n)
+                        int evenNum = pow(2 * range, 2); // (-n, -n + 1)
+                        if (vec[i][j].first == -1 * range && vec[i][j].second == -1 * range + 1) {
+                                answer[i][j] = evenNum;
+                                maxLength = max(maxLength, (int)to_string(answer[i][j]).size());
+                        }
+                        else if (vec[i][j].first == range && vec[i][j].second == range) {
+                                answer[i][j] = oddNum;
+                                maxLength = max(maxLength, (int)to_string(answer[i][j]).size());
+                        }
+                        else if (vec[i][j].first < range && vec[i][j].second > (-1 * range + 1)) {
+                                answer[i][j] = evenNum
+                                    - abs(-1 * range - vec[i][j].first) - abs(-1 * range + 1 - vec[i][j].second);
+                                maxLength = max(maxLength, (int)to_string(answer[i][j]).size());
+                        }
+                        else {
+                                answer[i][j] = oddNum
+                                    - abs(range - vec[i][j].first) - abs(range - vec[i][j].second);
+                                maxLength = max(maxLength, (int)to_string(answer[i][j]).size());
+                        }
+                }
+        }
+
+        cout.setf(ios::right);
+        // 출력 테스트
+        for (int i = 0; i < vec.size(); ++i) {
+                for (int j = 0; j < vec[0].size(); ++j) {
+                        cout << setw(maxLength) << answer[i][j] << ' ';
+                }
+                cout << '\n';
+        }
+}
+```
