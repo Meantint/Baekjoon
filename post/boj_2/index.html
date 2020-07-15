@@ -15,7 +15,7 @@
 
 <link rel="icon" type="image/x-icon" href="https://meantint.github.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://meantint.github.io/favicon.png">
-<link rel="stylesheet" href="https://meantint.github.io/css/light.css?rnd=1594733390" />
+<link rel="stylesheet" href="https://meantint.github.io/css/light.css?rnd=1594832149" />
 <style>
 
     [data-theme="dark"] {   
@@ -47,8 +47,12 @@
 
 </style>
 
-<link rel="stylesheet" href="https://meantint.github.io/css/style.css?rnd=1594733390" />
-<link rel="stylesheet" href="https://meantint.github.io/css/my.css?rnd=1594733390" />
+<link rel="stylesheet" href="https://meantint.github.io/css/style.css?rnd=1594832149" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/gradient-dark.min.css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://meantint.github.io/css/my.css?rnd=1594832149" />
 
 <meta property="og:title" content="BOJ_1022 소용돌이 예쁘게 출력하기" />
 <meta property="og:description" content="[BOJ_1022 - 소용돌이 예쁘게 출력하기]
@@ -105,14 +109,15 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-    
-    
-    <article class="post">
-        <header class="post-header">
-            <h1 class="post-title">BOJ_1022 소용돌이 예쁘게 출력하기</h1>
-        </header>
-        <div class="content">
-            <p>[<a href="https://www.acmicpc.net/problem/1022">BOJ_1022</a> - <a href="https://www.acmicpc.net/problem/1022">소용돌이 예쁘게 출력하기</a>]</p>
+
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            BOJ_1022 소용돌이 예쁘게 출력하기</h1>
+    </header>
+    <div class="content">
+        <p>[<a href="https://www.acmicpc.net/problem/1022">BOJ_1022</a> - <a href="https://www.acmicpc.net/problem/1022">소용돌이 예쁘게 출력하기</a>]</p>
 <p>생각보다 간단하게 풀었다.</p>
 <h1 id="풀이">풀이</h1>
 <ul>
@@ -132,20 +137,24 @@
 <li>
 <p>홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.</p>
 <ul>
-<li>(0, 0)과의 거리를 <code>range</code> 변수에 저장한 후 <code>range</code>에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.
+<li>
+<p>(0, 0)과의 거리를 <code>range</code> 변수에 저장한 후 <code>range</code>에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.</p>
 <ul>
-<li><code>range</code>의 <code>왼쪽 &amp; 아래</code>부분에 위치: <code>range</code>내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이</li>
-<li><code>range</code>의 <code>오른쪽 &amp; 위</code>부분에 위치: <code>range</code>내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이
-<img src="/images/BOJ_2_Image.png" alt="ex_Image.png">
-<figcaption>위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)</figcaption>
-</li>
-</ul>
-</li>
-</ul>
+<li>
+<p><code>range</code>의 <code>왼쪽 &amp; 아래</code>부분에 위치: <code>range</code>내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이</p>
 </li>
 <li>
-<p><code>cout:.setf(ios::right)</code>를 이용해 오른쪽 정렬로 만든 후에 <code>setw(maxLength)</code>를 이용해 maxLength의 크기만큼 공백을 생성하였다.</p>
+<p><code>range</code>의 <code>오른쪽 &amp; 위</code>부분에 위치: <code>range</code>내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이</p>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/BOJ_2_Image.png" alt="ex_Image.png"></p>
+<figcaption>위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)</figcaption>
+<ul>
+<li><code>cout:.setf(ios::right)</code>를 이용해 오른쪽 정렬로 만든 후에 <code>setw(maxLength)</code>를 이용해 maxLength의 크기만큼 공백을 생성하였다.</li>
 </ul>
 <h1 id="code">Code</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
@@ -208,8 +217,8 @@
         }
 }
 </code></pre></div>
-        </div>
-        
+    </div>
+    
 
     
 
@@ -240,45 +249,24 @@
     </div>
 </div>
 
-    </article>
+</article>
 
-    
+
+
+<div class="pagination post-pagination">
+    <div class="left pagination-item disabled">
         
-    <div class="pagination post-pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/post/boj_1/">BOJ_1041 주사위</a>
-            
-        </div>
     </div>
+    <div class="right pagination-item ">
+        
+        <a href="/post/boj_1/">BOJ_1041 주사위</a>
+        
+    </div>
+</div>
 
-    
 
-    
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "Meantint" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
+
+
 
 
         </main>

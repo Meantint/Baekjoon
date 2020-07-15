@@ -37,20 +37,24 @@
 &lt;li&gt;
 &lt;p&gt;홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;(0, 0)과의 거리를 &lt;code&gt;range&lt;/code&gt; 변수에 저장한 후 &lt;code&gt;range&lt;/code&gt;에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.
+&lt;li&gt;
+&lt;p&gt;(0, 0)과의 거리를 &lt;code&gt;range&lt;/code&gt; 변수에 저장한 후 &lt;code&gt;range&lt;/code&gt;에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;range&lt;/code&gt;의 &lt;code&gt;왼쪽 &amp;amp; 아래&lt;/code&gt;부분에 위치: &lt;code&gt;range&lt;/code&gt;내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;range&lt;/code&gt;의 &lt;code&gt;오른쪽 &amp;amp; 위&lt;/code&gt;부분에 위치: &lt;code&gt;range&lt;/code&gt;내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이
-&lt;img src=&#34;https://meantint.github.io/images/BOJ_2_Image.png&#34; alt=&#34;ex_Image.png&#34;&gt;
-&lt;figcaption&gt;위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)&lt;/figcaption&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;range&lt;/code&gt;의 &lt;code&gt;왼쪽 &amp;amp; 아래&lt;/code&gt;부분에 위치: &lt;code&gt;range&lt;/code&gt;내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;cout:.setf(ios::right)&lt;/code&gt;를 이용해 오른쪽 정렬로 만든 후에 &lt;code&gt;setw(maxLength)&lt;/code&gt;를 이용해 maxLength의 크기만큼 공백을 생성하였다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;range&lt;/code&gt;의 &lt;code&gt;오른쪽 &amp;amp; 위&lt;/code&gt;부분에 위치: &lt;code&gt;range&lt;/code&gt;내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://meantint.github.io/images/BOJ_2_Image.png&#34; alt=&#34;ex_Image.png&#34;&gt;&lt;/p&gt;
+&lt;figcaption&gt;위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)&lt;/figcaption&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cout:.setf(ios::right)&lt;/code&gt;를 이용해 오른쪽 정렬로 만든 후에 &lt;code&gt;setw(maxLength)&lt;/code&gt;를 이용해 maxLength의 크기만큼 공백을 생성하였다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
