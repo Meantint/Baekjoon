@@ -37,7 +37,15 @@ draft: true
 |   8   |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    1 |    9 |
 |   9   |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    0 |    1 |
 </center>
-<figcaption>vec[i][j] : i + 1번째 자릿수가 j일 때 만들 수 있는 모든 경우의 수</figcaption>
+<figcaption>vec[i][j] : i + 1번째 자릿수가 j일 때 만들 수 있는 모든 경우의 수(i + 1이 제일 큰 자릿수)</figcaption>
+
+- vec[i][j] = vec[i - 1][0] + vec[i - 1][1] + ... + vec[i - 1][j - 1]
+
+- `vec[0][0] = 1`이기 때문에 입력받은 값 `answer`에 `+1` 해주어야한다.
+
+- `answer <= 0`이 되는 곳이 그 자릿수의 값이다.
+  
+  - 이 경우 `answer` 값을 `answer <= 0`이 되기 직전으로 
 
 
 # Code

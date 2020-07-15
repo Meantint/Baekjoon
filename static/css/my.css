@@ -38,7 +38,7 @@ summary {
 }
 
 .container {
-  max-width: 42em;
+  max-width: 50em;
   margin: 0 auto;
 }
 
@@ -117,12 +117,33 @@ table {
 
 thead {
   background: lightgrey;
-  background-color: #ffe8df;
+  background-color: #eb6383;
 }
 
-table tr:nth-child(2n) {
-  background-color: #f6f8fa;
+table th{
+  background-color: #878ecd;
 }
+table td:nth-child(1){
+  /* background-color: #cca8e9; */
+  background-color: #878ecd;
+}
+table tr:nth-child(2n+1){
+  background-color:#dde7f2;
+}
+table tr:nth-child(2n+2){
+  background-color:#dff4f3;
+}
+/* table tr:nth-child(3n+1) { 
+  background-color: #defcf9;
+}
+
+table tr:nth-child(3n+2) {
+  background-color: #cadefc;
+}
+table tr:nth-child(3n+3) {
+  background-color: #c3bef0;
+} */
+
 
 /* Code */
 th,
@@ -131,16 +152,11 @@ td {
   border: 1px solid #dfe2e5;
 }
 
-tr{
-  background-color: #f0f0f0;
-  border-top: 1px solid #c6cbd1;
-}
-
-/* meantint's table style */
 pre {
-  padding: 1em;
+  padding: 0em;
   background-color: #f1f1f1;
   max-width: 100%;
+  border-radius: 10px;
   overflow: auto;
 }
 
@@ -422,7 +438,7 @@ article figcaption {
 .pagination {
   display: flex;
   justify-content: space-between;
-  margin-top: 3em;
+  margin-top: 5em;
 }
 
 .pagination {
@@ -430,8 +446,11 @@ article figcaption {
 }
 
 .pagination-item {
-  background: #fafafa;
+  background: #f9f9f9;
   padding: 0.75em 0.75em;
+  /* meantint's style */
+  border-radius: 30em;
+  font-size: 0.90em;
 }
 
 .disabled {
@@ -439,12 +458,13 @@ article figcaption {
 }
 
 .pagination-item a {
+  background: #f9f9f9;
   color: #333333;
 }
 
 .pagination-item a:hover,
 .pagination-item a:focus {
-  color: #a31d1d;
+  color: dodgerblue;
   border-bottom: 0;
 }
 
