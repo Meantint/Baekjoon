@@ -2,10 +2,8 @@
 title: "Python - 자료형"
 date: 2020-07-06T18:48:49+09:00
 categories: [
-	"Git",
 ]
 tags: [
-	"Git",
 ]
 cover: ""
 draft: true

@@ -10,7 +10,7 @@ tags: [
 	"BOJ_1038",
 ]
 cover: ""
-draft: true
+draft: false
 ---
 
 [[BOJ_1038](https://www.acmicpc.net/problem/1038) - [감소하는 수](https://www.acmicpc.net/problem/1038)]
@@ -45,7 +45,11 @@ draft: true
 
 - `answer <= 0`이 되는 곳이 그 자릿수의 값이다.
   
-  - 이 경우 `answer` 값을 `answer <= 0`이 되기 직전으로 
+  - 이 경우 `answer` 값을 `answer <= 0`이 되기 직전으로 되돌린다.
+
+  - 이 때 `answer`는 `vec[i - 1]`에 있는 수 중에서 `answer`번째 숫자가 다음 자릿수의 값이라는 것을 의미한다.
+
+  - `vec[0]`값을 찾았을 때 종료한다.
 
 
 # Code
