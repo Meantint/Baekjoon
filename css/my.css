@@ -446,10 +446,10 @@ article figcaption {
 }
 
 .pagination-item {
-  background: #f9f9f9;
+  background: #fbe8d3;
   padding: 0.75em 0.75em;
   /* meantint's style */
-  border-radius: 30em;
+  border-radius: 1em;
   font-size: 0.90em;
 }
 
@@ -458,7 +458,7 @@ article figcaption {
 }
 
 .pagination-item a {
-  background: #f9f9f9;
+  background: #fbe8d3;
   color: #333333;
 }
 
