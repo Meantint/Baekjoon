@@ -6,10 +6,137 @@
     <description>Meantint</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 14 Jul 2020 21:37:04 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2020 17:50:20 +0900</lastBuildDate>
     
     <atom:link href="https://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BOJ_1027 고층 건물</title>
+      <link>https://meantint.github.io/post/boj_4/</link>
+      <pubDate>Thu, 16 Jul 2020 17:50:20 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/post/boj_4/</guid>
+      <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1027&#34;&gt;BOJ_1027&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1027&#34;&gt;고층 건물&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.&lt;br&gt;&lt;br&gt;
+그리고 굳이 vec를 &lt;code&gt;vector&amp;lt;PII&amp;gt; type&lt;/code&gt;으로 할 필요가 없다.
+&lt;br&gt;vec[idx].first = idx이기 때문에.. &lt;code&gt;PII = pair&amp;lt;int, int&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;i&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;0&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;1&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;2&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;3&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;4&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;5&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;6&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;7&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;8&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;9&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;10&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;11&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;12&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;13&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;14&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Height&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;figcaption&gt;건물의 위치(i)와 높이(Height)&lt;/figcaption&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;vec[i].first&lt;/code&gt; : &lt;code&gt;i&lt;/code&gt; 건물의 위치&lt;br&gt;&lt;code&gt;vec[i].second&lt;/code&gt; : &lt;code&gt;i&lt;/code&gt; 건물의 높이&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;검색하는 &lt;code&gt;i&lt;/code&gt;를 기준으로 왼쪽, 오른쪽을 따로 탐색한 후의 &lt;code&gt;cnt&lt;/code&gt;가 &lt;code&gt;answer&lt;/code&gt;보다 크다면 &lt;code&gt;answer&lt;/code&gt;의 값을 변경한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;탐색하는 방법은 기울기를 사용하였는데 탐색하는 위치인 &lt;code&gt;i&lt;/code&gt;에서 가까운 곳부터 순차적으로 탐색하였다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;만약 이전에 탐색했던 곳 중 가장 컸던 기울기보다 현재 탐색한 곳의 기울기가 더 크다면 그 건물은 &lt;code&gt;i&lt;/code&gt;건물에서 보이는 건물이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;주의할 점은 &lt;code&gt;i&lt;/code&gt;에서 왼쪽으로 탐색할 때 역시 &lt;code&gt;i&lt;/code&gt;가 기준이므로 그래프 상으로 생긴 기울기는 음수일지 몰라도 양수로 봐야 한다는 것이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vec[j].first&lt;/code&gt; - &lt;code&gt;vec[i].first&lt;/code&gt;가 왼쪽으로 탐색할 때는 무조건 음수가 나오므로&lt;br&gt;&lt;code&gt;vec[i].first&lt;/code&gt; - &lt;code&gt;vec[j].first&lt;/code&gt;으로 바꿔주었다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define PII pair&amp;lt;int, int&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; std;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
+{
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; N;
+        cin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; N;
+
+        vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;PII&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; vec;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; N; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; height;
+                cin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; height;
+
+                vec.push_back(make_pair(i, height));
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; answer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; size &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; vec.size();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; size; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; cnt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; prev &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2000000000&lt;/span&gt;;
+                &lt;span style=&#34;color:#75715e&#34;&gt;// 왼쪽으로 가면서 만나는 건물들을 비교
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;j) {
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; val &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt;)(vec[j].second &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[i].second) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt;)(vec[i].first &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[j].first);
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (val &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; prev) {
+                                &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;cnt;
+                                prev &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; val;
+                        }
+                }
+                prev &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2000000000&lt;/span&gt;;
+                &lt;span style=&#34;color:#75715e&#34;&gt;// 오른쪽으로 가면서 만나는 건물들을 비교
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; size; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;j) {
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; val &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt;)(vec[j].second &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[i].second) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt;)(vec[j].first &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; vec[i].first);
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (val &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; prev) {
+                                &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;cnt;
+                                prev &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; val;
+                        }
+                }
+                answer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; max(answer, cnt);
+        }
+        cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; answer &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;;
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>BOJ_1038 감소하는 수</title>

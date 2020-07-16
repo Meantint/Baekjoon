@@ -121,17 +121,17 @@ thead {
 }
 
 table th{
-  background-color: #878ecd;
+  background-color: #c7b198;
 }
 table td:nth-child(1){
   /* background-color: #cca8e9; */
-  background-color: #878ecd;
+  background-color: #c7b198;
 }
 table tr:nth-child(2n+1){
-  background-color:#dde7f2;
+  background-color:#dfd3c3;
 }
 table tr:nth-child(2n+2){
-  background-color:#dff4f3;
+  background-color:#f0ece3;
 }
 /* table tr:nth-child(3n+1) { 
   background-color: #defcf9;
