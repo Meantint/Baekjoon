@@ -1,0 +1,94 @@
+---
+title: "BOJ_1027 고층 건물"
+date: 2020-07-16T17:50:20+09:00
+categories: [
+	"BOJ",
+]
+tags: [
+	"BOJ",
+	"Baekjoon",
+	"BOJ_1027",
+]
+cover: ""
+draft: false
+---
+
+[[BOJ_1027](https://www.acmicpc.net/problem/1027) - [고층 건물](https://www.acmicpc.net/problem/1027)]
+
+왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.<br><br>
+ 그리고 굳이 vec를 `vector<PII> type`으로 할 필요가 없다.
+<br>vec[idx].first = idx이기 때문에.. `PII = pair<int, int>`
+
+
+# 풀이
+
+<center>
+
+|   i    |    0 |    1 |    2 |    3 |    4 |    5 |    6 |    7 |    8 |    9 |   10 |   11 |   12 |   13 |   14 |
+| :----: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Height |    1 |    5 |    3 |    2 |    6 |    3 |    2 |    6 |    4 |    2 |    5 |    7 |    3 |    1 |    5 |
+</center>
+<figcaption>건물의 위치(i)와 높이(Height)</figcaption>
+
+- `vec[i].first` : `i` 건물의 위치<br>`vec[i].second` : `i` 건물의 높이
+
+- 검색하는 `i`를 기준으로 왼쪽, 오른쪽을 따로 탐색한 후의 `cnt`가 `answer`보다 크다면 `answer`의 값을 변경한다.
+
+- 탐색하는 방법은 기울기를 사용하였는데 탐색하는 위치인 `i`에서 가까운 곳부터 순차적으로 탐색하였다.
+
+- 만약 이전에 탐색했던 곳 중 가장 컸던 기울기보다 현재 탐색한 곳의 기울기가 더 크다면 그 건물은 `i`건물에서 보이는 건물이다.
+
+- 주의할 점은 `i`에서 왼쪽으로 탐색할 때 역시 `i`가 기준이므로 그래프 상으로 생긴 기울기는 음수일지 몰라도 양수로 봐야 한다는 것이다.
+  
+  - `vec[j].first` - `vec[i].first`가 왼쪽으로 탐색할 때는 무조건 음수가 나오므로<br>`vec[i].first` - `vec[j].first`으로 바꿔주었다.
+
+# Code
+```C++
+#include <bits/stdc++.h>
+
+#define PII pair<int, int>
+
+using namespace std;
+
+int main()
+{
+        int N;
+        cin >> N;
+
+        vector<PII> vec;
+        for (int i = 0; i < N; ++i) {
+                int height;
+                cin >> height;
+
+                vec.push_back(make_pair(i, height));
+        }
+
+        int answer = 0;
+        int size = vec.size();
+        for (int i = 0; i < size; ++i) {
+                int cnt = 0;
+                double prev = -2000000000;
+                // 왼쪽으로 가면서 만나는 건물들을 비교
+                for (int j = i - 1; j >= 0; --j) {
+                        double val = (double)(vec[j].second - vec[i].second) / (double)(vec[i].first - vec[j].first);
+                        if (val > prev) {
+                                ++cnt;
+                                prev = val;
+                        }
+                }
+                prev = -2000000000;
+                // 오른쪽으로 가면서 만나는 건물들을 비교
+                for (int j = i + 1; j < size; ++j) {
+                        double val = (double)(vec[j].second - vec[i].second) / (double)(vec[j].first - vec[i].first);
+                        if (val > prev) {
+                                ++cnt;
+                                prev = val;
+                        }
+                }
+                answer = max(answer, cnt);
+        }
+        cout << answer << '\n';
+
+        return 0;
+}
+```
