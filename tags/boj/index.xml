@@ -6,19 +6,97 @@
     <description>Meantint (BOJ)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 17 Jul 2020 16:05:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2020 00:56:42 +0900</lastBuildDate>
     
     <atom:link href="https://meantint.github.io/tags/boj/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>BOJ_1654 랜선 자르기</title>
+      <link>https://meantint.github.io/post/boj_1654/</link>
+      <pubDate>Thu, 23 Jul 2020 00:56:42 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/post/boj_1654/</guid>
+      <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1654&#34;&gt;BOJ_1654&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1654&#34;&gt;랜선 자르기&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt; 이분탐색을 이용하여 풀었다. &lt;code&gt;sum &amp;gt;= n&lt;/code&gt;인 경우 &lt;code&gt;start&lt;/code&gt;값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;mid&lt;/code&gt;값은 &lt;code&gt;(start + end) / 2&lt;/code&gt;인데, &lt;code&gt;start&lt;/code&gt;는 1, &lt;code&gt;end&lt;/code&gt;는 랜선의 길이 중 가장 큰 값이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;잘라서 나온 랜선의 개수가 &lt;code&gt;n&lt;/code&gt;보다 크거나 같다면&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;start = mid + 1&lt;/code&gt;을 해준다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;만약 &lt;code&gt;mid&lt;/code&gt;가 현재까지의 최대값 &lt;code&gt;max&lt;/code&gt;보다 크다면 &lt;code&gt;max&lt;/code&gt;를 &lt;code&gt;mid&lt;/code&gt;값으로 바꿔준다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;start&lt;/code&gt;의 값을 &lt;code&gt;mid + 1&lt;/code&gt;로 바꿔주는데 만약 바꾸고 나서 랜선의 개수가 &lt;code&gt;n&lt;/code&gt;보다 항상 작게 되면 정답을 도출할 수 없기 때문에 &lt;code&gt;max&lt;/code&gt;값을 둬서 &lt;code&gt;mid&lt;/code&gt;의 최대값을 저장해둔다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;잘라서 나온 랜선의 개수가 &lt;code&gt;n&lt;/code&gt;보다 작다면 &lt;code&gt;end = mid - 1&lt;/code&gt;을 해준다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; std;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
+{
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; k, n;
+        cin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; k &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; n;
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; maxVal &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+        vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; val(k, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; k; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
+                cin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; val[i];
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (maxVal &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; val[i])
+                        maxVal &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; val[i];
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; start &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; end &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; maxVal;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; mid;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; max &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (start &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; end) {
+                mid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (start &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; end) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; sum &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; k; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
+                        sum &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; (val[i] &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; mid);
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (sum &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; n) {
+                        start &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mid &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (mid &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; max) {
+                                max &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mid;
+                        }
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                        end &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mid &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+        }
+        cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; max &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;;
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;</description>
+    </item>
+    
+    <item>
       <title>BOJ_1043 거짓말</title>
-      <link>https://meantint.github.io/post/boj_5/</link>
+      <link>https://meantint.github.io/post/boj_1043/</link>
       <pubDate>Fri, 17 Jul 2020 16:05:00 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/boj_5/</guid>
+      <guid>https://meantint.github.io/post/boj_1043/</guid>
       <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1043&#34;&gt;BOJ_1043&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1043&#34;&gt;거짓말&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 &lt;code&gt;Union_Find&lt;/code&gt;를 이용하여 풀었더라. &lt;code&gt;Union_Find&lt;/code&gt;를 공부하자.&lt;/p&gt;
+&lt;p&gt; 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 &lt;code&gt;Union_Find&lt;/code&gt;를 이용하여 풀었더라. &lt;code&gt;Union_Find&lt;/code&gt;를 공부하자.&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
 &lt;center&gt;
 &lt;table&gt;
@@ -102,6 +180,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -174,19 +253,20 @@
 
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+</description>
     </item>
     
     <item>
       <title>BOJ_1027 고층 건물</title>
-      <link>https://meantint.github.io/post/boj_4/</link>
+      <link>https://meantint.github.io/post/boj_1027/</link>
       <pubDate>Thu, 16 Jul 2020 17:50:20 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/boj_4/</guid>
+      <guid>https://meantint.github.io/post/boj_1027/</guid>
       <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1027&#34;&gt;BOJ_1027&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1027&#34;&gt;고층 건물&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.&lt;br&gt;&lt;br&gt;
-그리고 굳이 vec를 &lt;code&gt;vector&amp;lt;PII&amp;gt; type&lt;/code&gt;으로 할 필요가 없다.
-&lt;br&gt;vec[idx].first = idx이기 때문에.. &lt;code&gt;PII = pair&amp;lt;int, int&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt; 왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.&lt;br&gt;
+그리고 굳이 vec를 &lt;code&gt;vector&amp;lt;PII&amp;gt; type&lt;/code&gt;으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. &lt;code&gt;PII = pair&amp;lt;int, int&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
 &lt;center&gt;
 &lt;table&gt;
@@ -253,6 +333,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -301,18 +382,20 @@
 
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+</description>
     </item>
     
     <item>
       <title>BOJ_1038 감소하는 수</title>
-      <link>https://meantint.github.io/post/boj_3/</link>
+      <link>https://meantint.github.io/post/boj_1038/</link>
       <pubDate>Tue, 14 Jul 2020 21:37:04 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/boj_3/</guid>
+      <guid>https://meantint.github.io/post/boj_1038/</guid>
       <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1038&#34;&gt;BOJ_1038&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1038&#34;&gt;감소하는 수&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;낚시하려고 만든건지 N값이 쓸데없이 크다.&lt;br&gt;
+&lt;p&gt; 낚시하려고 만든건지 N값이 쓸데없이 크다.&lt;br&gt;
 감소하는 수의 가장 큰 수인 9876543210이 &lt;code&gt;N = 1022&lt;/code&gt;이기 때문에..&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;i + 1번째 자릿수의 값이 j일 때 나오는 경우의 수를 저장해놓는 vec 변수를 선언하였다.&lt;/li&gt;
@@ -491,6 +574,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -534,17 +618,19 @@
         cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-1&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+</description>
     </item>
     
     <item>
       <title>BOJ_1022 소용돌이 예쁘게 출력하기</title>
-      <link>https://meantint.github.io/post/boj_2/</link>
+      <link>https://meantint.github.io/post/boj_1022/</link>
       <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/boj_2/</guid>
+      <guid>https://meantint.github.io/post/boj_1022/</guid>
       <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1022&#34;&gt;BOJ_1022&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1022&#34;&gt;소용돌이 예쁘게 출력하기&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;생각보다 간단하게 풀었다.&lt;/p&gt;
+&lt;p&gt; 생각보다 간단하게 풀었다.&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -582,6 +668,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;cout:.setf(ios::right)&lt;/code&gt;를 이용해 오른쪽 정렬로 만든 후에 &lt;code&gt;setw(maxLength)&lt;/code&gt;를 이용해 maxLength의 크기만큼 공백을 생성하였다.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -642,17 +729,19 @@
                 cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;;
         }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+</description>
     </item>
     
     <item>
       <title>BOJ_1041 주사위</title>
-      <link>https://meantint.github.io/post/boj_1/</link>
+      <link>https://meantint.github.io/post/boj_1041/</link>
       <pubDate>Sun, 12 Jul 2020 02:12:25 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/boj_1/</guid>
+      <guid>https://meantint.github.io/post/boj_1041/</guid>
       <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1041&#34;&gt;BOJ_1041&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1041&#34;&gt;주사위&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;처음에 주사위의 값들이 이동할 수 있다고 생각하고 6개의 값을 sort한 후에 풀었다..(당연히 그렇게 푸는거 아님)&lt;/p&gt;
+&lt;p&gt; 처음에 주사위의 값들이 이동할 수 있다고 생각하고 6개의 값을 sort한 후에 풀었다..(당연히 그렇게 푸는거 아님)&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -671,6 +760,7 @@
 &lt;p&gt;면이 1개인 주사위의 최소값 : 6개의 면 중에서 가장 작은 값&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -716,7 +806,8 @@
 
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+</description>
     </item>
     
   </channel>

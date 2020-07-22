@@ -13,13 +13,14 @@
     
     <item>
       <title>BOJ_1038 감소하는 수</title>
-      <link>https://meantint.github.io/post/boj_3/</link>
+      <link>https://meantint.github.io/post/boj_1038/</link>
       <pubDate>Tue, 14 Jul 2020 21:37:04 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/boj_3/</guid>
+      <guid>https://meantint.github.io/post/boj_1038/</guid>
       <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1038&#34;&gt;BOJ_1038&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1038&#34;&gt;감소하는 수&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt;낚시하려고 만든건지 N값이 쓸데없이 크다.&lt;br&gt;
+&lt;p&gt; 낚시하려고 만든건지 N값이 쓸데없이 크다.&lt;br&gt;
 감소하는 수의 가장 큰 수인 9876543210이 &lt;code&gt;N = 1022&lt;/code&gt;이기 때문에..&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;i + 1번째 자릿수의 값이 j일 때 나오는 경우의 수를 저장해놓는 vec 변수를 선언하였다.&lt;/li&gt;
@@ -198,6 +199,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
@@ -241,7 +243,8 @@
         cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-1&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+</description>
     </item>
     
   </channel>
