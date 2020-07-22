@@ -13,16 +13,22 @@ cover: ""
 draft: false
 ---
 
-[프로그래머스 - [크레인 인형뽑기 게임](https://programmers.co.kr/learn/courses/30/lessons/64061)]
+[[프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/64061) - [크레인 인형뽑기 게임](https://programmers.co.kr/learn/courses/30/lessons/64061)]
 
+<hr>
 
 # 풀이
+
 - 인형들을 담아두는 basket(vector&lt;int&gt; 변수)을 선언하였다.
 
 - 집은 인형과 바구니의 맨 위에 있는 인형이 같을 때 바구니 젤 위에 있는 인형을 제거해주었다.
 
 - 집은 인형과 바구니의 맨 위에 있는 인형이 다를 때 집은 인형을 바구니의 맨 위에 올리고 종료한다.
+
+<hr>
+
 # Code
+
 ```C++
 #include <bits/stdc++.h>
 
@@ -64,3 +70,5 @@ int solution(vector<vector<int>> board, vector<int> moves)
         return answer;
 }
 ```
+
+<hr>
