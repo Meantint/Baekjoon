@@ -3,33 +3,33 @@ defaultContentLanguage: "en-us"
 baseUrl: "https://meantint.github.io"
 title: "Meantint"
 theme: "anubis"
-paginate: 5
+paginate: 10
 disqusShortname: Meantint
 googleAnalytics: UA-123-45
 enableRobotsTXT: true
 
 menu:
   main:
-  - identifier: archive
-    name: All Post
-    title: All Post
-    url: /post/
-    weight: 0
-  - identifier: Git
-    name: Git
-    title: Git
-    url: /categories/git
-    weight: 1
-  - identifier: Programmers
-    name: Programmers
-    title: Programmers
-    url: /categories/programmers
-    weight: 1
-  - identifier: BOJ
-    name: BOJ
-    title: BOJ
-    url: /categories/boj
-    weight: 1
+    - identifier: archive
+      name: All Post
+      title: All Post
+      url: /post/
+      weight: 0
+    - identifier: Git
+      name: Git
+      title: Git
+      url: /categories/git
+      weight: 1
+    - identifier: Programmers
+      name: Programmers
+      title: Programmers
+      url: /categories/programmers
+      weight: 1
+    - identifier: BOJ
+      name: BOJ
+      title: BOJ
+      url: /categories/boj
+      weight: 1
 
 params:
   author: "Meantint"
