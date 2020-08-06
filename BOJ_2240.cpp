@@ -26,12 +26,6 @@ int dfs(int cur, int move, int num)
     if (ret != -1)
         return ret;
     ret = (tree[cur] == num) ? 1 : 0;
-    // int cnt = 0;
-    // for (int i = cur + 1; i < t; ++i) {
-    //     if (tree[i] == num) {
-    //         ++cnt;
-    //     }
-    // }
     int tmp = max({ dfs(cur + 1, move + 1, num % 2 + 1), dfs(cur + 1, move, num) /*, cnt */ });
 
     return (ret = ret + tmp);
@@ -46,12 +40,6 @@ int main()
     }
 
     cout << max(dfs(0, 1, 2), dfs(0, 0, 1)) << '\n';
-    // for (int i = 0; i < t; ++i) {
-    //     for (int j = 0; j < w; ++j) {
-    //         cout << dp[i][j] << ' ';
-    //     }
-    //     cout << '\n';
-    // }
 
     return 0;
 }
