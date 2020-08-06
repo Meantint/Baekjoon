@@ -10,10 +10,6 @@ bool isCheck[101];
 
 void check(int num, bool thisCase[])
 {
-    // if (arr[num] == num) {
-    //     isCheck[num] = true;
-    //     return;
-    // }
     if (thisCase[num] == true) {
         if (firstNum == num) {
             for (int i = 1; i < n + 1; ++i) {
