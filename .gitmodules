@@ -5,3 +5,6 @@
 	path = public
 	url = https://github.com/Meantint/meantint.github.io.git
 	branch = master
+[submodule "themes/zozo"]
+	path = themes/zozo
+	url = https://github.com/varkai/hugo-theme-zozo.git
