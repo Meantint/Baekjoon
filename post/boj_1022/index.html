@@ -2,164 +2,190 @@
 
 
 <html lang="ko-kr" data-theme="">
+
 <head>
-    
-        
-<meta charset="utf-8" />
-<meta name="HandheldFriendly" content="True" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="referrer" content="no-referrer-when-downgrade" />
 
-<title>BOJ_1022 소용돌이 예쁘게 출력하기 - Meantint</title>
-<meta name="description" content="" />
 
-<link rel="icon" type="image/x-icon" href="https://meantint.github.io/favicon.ico">
-<link rel="apple-touch-icon-precomposed" href="https://meantint.github.io/favicon.png">
-<link rel="stylesheet" href="https://meantint.github.io/css/light.css?rnd=1596207839" />
-<style>
+        <meta charset="utf-8" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="referrer" content="no-referrer-when-downgrade" />
 
-    [data-theme="dark"] {   
-        --font-color: #eee;
---bg-color: #212121;
+        <title>BOJ_1022 소용돌이 예쁘게 출력하기 - Meantint</title>
+        <meta name="description" content="" />
 
---link-color:#599ada;
---link-state-color:#ff5858;
---link-state-border-color: rgba(238, 54, 54, 0.5);
+        <link rel="icon" type="image/x-icon" href="https://meantint.github.io/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="https://meantint.github.io/favicon.png">
+        <link rel="stylesheet" href="https://meantint.github.io/css/light.css?rnd=1596207839" />
+        <style>
+                [data-theme="dark"] {
+                        --font-color: #eee;
+                        --bg-color: #212121;
 
---thead-bg-color: #343a40;
---table-border-color: lightgrey;
+                        --link-color: #599ada;
+                        --link-state-color: #ff5858;
+                        --link-state-border-color: rgba(238, 54, 54, 0.5);
 
---pre-color: #333;
---pre-bg-color: #f1f1f1;
+                        --thead-bg-color: #343a40;
+                        --table-border-color: lightgrey;
 
---bq-color: #ccc;
---hr-color: #ccc;
+                        --pre-color: #333;
+                        --pre-bg-color: #f1f1f1;
 
---pagination-bg-color: #373737;
---pagination-link-color: #b6b6b6;
+                        --bq-color: #ccc;
+                        --hr-color: #ccc;
 
---post-info-color: grey;
+                        --pagination-bg-color: #373737;
+                        --pagination-link-color: #b6b6b6;
 
---switcher-color: #333;
---switcher-bg-color: #fff;
+                        --post-info-color: grey;
 
-    }
+                        --switcher-color: #333;
+                        --switcher-bg-color: #fff;
 
-</style>
+                }
+        </style>
 
-<link rel="stylesheet" href="https://meantint.github.io/css/style.css?rnd=1596207839" />
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/gradient-dark.min.css">
+        <link rel="stylesheet" href="https://meantint.github.io/css/style.css?rnd=1596207839" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/gradient-dark.min.css">
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<link rel="stylesheet" href="https://meantint.github.io/css/my.css?rnd=1596207839" />
-<script src="https://meantint.github.io/js/main.js?rnd=1596207839" type="text/javascript" charset="utf-8"></script>
-<meta property="og:title" content="BOJ_1022 소용돌이 예쁘게 출력하기" />
-<meta property="og:description" content="[BOJ_1022 - 소용돌이 예쁘게 출력하기]
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <link rel="stylesheet" href="https://meantint.github.io/css/my.css?rnd=1596207839" />
+        <script src="https://meantint.github.io/js/main.js?rnd=1596207839" type="text/javascript"
+                charset="utf-8"></script>
+        <meta property="og:title" content="BOJ_1022 소용돌이 예쁘게 출력하기" />
+        <meta property="og:description"
+                content="[BOJ_1022 - 소용돌이 예쁘게 출력하기]
  생각보다 간단하게 풀었다.
-풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
+
+풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
   위치에 해당하는 값을 answer 변수의 각 위치에 넣음
   소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.
  홀수 제곱수 : (n, n)에 위치, (2n &#43; 1)^2 짝수 제곱수 : (-n, -n &#43; 1)에 위치, (2n)^2    홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://meantint.github.io/post/boj_1022/" />
-<meta property="og:image" content="https://meantint.github.io/images/og-featured.png"/>
-<meta property="article:published_time" content="2020-07-14T19:50:29+09:00" />
-<meta property="article:modified_time" content="2020-07-14T19:50:29+09:00" />
- <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://meantint.github.io/images/og-featured.png"/>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://meantint.github.io/post/boj_1022/" />
+        <meta property="og:image" content="https://meantint.github.io/images/og-featured.png" />
+        <meta property="article:published_time" content="2020-07-14T19:50:29+09:00" />
+        <meta property="article:modified_time" content="2020-07-14T19:50:29+09:00" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://meantint.github.io/images/og-featured.png" />
 
-<meta name="twitter:title" content="BOJ_1022 소용돌이 예쁘게 출력하기"/>
-<meta name="twitter:description" content="[BOJ_1022 - 소용돌이 예쁘게 출력하기]
+        <meta name="twitter:title" content="BOJ_1022 소용돌이 예쁘게 출력하기" />
+        <meta name="twitter:description"
+                content="[BOJ_1022 - 소용돌이 예쁘게 출력하기]
  생각보다 간단하게 풀었다.
-풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
+
+풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
   위치에 해당하는 값을 answer 변수의 각 위치에 넣음
   소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.
- 홀수 제곱수 : (n, n)에 위치, (2n &#43; 1)^2 짝수 제곱수 : (-n, -n &#43; 1)에 위치, (2n)^2    홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다."/>
+ 홀수 제곱수 : (n, n)에 위치, (2n &#43; 1)^2 짝수 제곱수 : (-n, -n &#43; 1)에 위치, (2n)^2    홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다." />
 
 
 
 
 
- 
-    
+
+
 </head>
+
 <body>
-    <a class="skip-main" href="#main"></a>
-    <div class="container">
-        <header class="common-header"> 
-            
-                <h1 class="site-title">
-    <a href="/">Meantint</a>
-</h1>
-<nav>
-    
-    
-    <a class="" href="https://meantint.github.io/categories/boj" title="BOJ">BOJ</a>
-    
-    <a class="" href="https://meantint.github.io/categories/git" title="Git">Git</a>
-    
-    <a class="" href="https://meantint.github.io/categories/programmers" title="Programmers">Programmers</a>
-    
-    <a class="" href="https://meantint.github.io/post/" title="All Post">All Post</a>
-    
-</nav>
+        <a class="skip-main" href="#main"></a>
+        <div class="container">
+                <header class="common-header">
 
-            
-        </header>
-        <main id="main" tabindex="-1"> 
-            
+                        <h1 class="site-title">
+                                <a href="/">Meantint</a>
+                        </h1>
+                        <nav>
 
 
-<article class="post">
-    <header class="post-header">
-        <h1 class="post-title">
-            BOJ_1022 소용돌이 예쁘게 출력하기</h1>
-    </header>
-    <div class="content">
-        <p>[<a href="https://www.acmicpc.net/problem/1022">BOJ_1022</a> - <a href="https://www.acmicpc.net/problem/1022">소용돌이 예쁘게 출력하기</a>]</p>
-<p> 생각보다 간단하게 풀었다.</p>
-<hr>
-<h1 id="풀이">풀이</h1>
-<ul>
-<li>
-<p>위치의 <code>row</code>, <code>col</code> 값을 저장하는 vec 변수를 선언.</p>
-</li>
-<li>
-<p>위치에 해당하는 값을 answer 변수의 각 위치에 넣음</p>
-</li>
-<li>
-<p>소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.</p>
-<ul>
-<li>홀수 제곱수 : <code>(n, n)</code>에 위치, <code>(2n + 1)^2</code></li>
-<li>짝수 제곱수 : <code>(-n, -n + 1)</code>에 위치, <code>(2n)^2</code></li>
-</ul>
-</li>
-<li>
-<p>홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.</p>
-<ul>
-<li>
-<p>(0, 0)과의 거리를 <code>range</code> 변수에 저장한 후 <code>range</code>에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.</p>
-<ul>
-<li>
-<p><code>range</code>의 <code>왼쪽 &amp; 아래</code>부분에 위치: <code>range</code>내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이</p>
-</li>
-<li>
-<p><code>range</code>의 <code>오른쪽 &amp; 위</code>부분에 위치: <code>range</code>내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/BOJ_2_Image.png" alt="ex_Image.png"></p>
-<figcaption>위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)</figcaption>
-<ul>
-<li><code>cout:.setf(ios::right)</code>를 이용해 오른쪽 정렬로 만든 후에 <code>setw(maxLength)</code>를 이용해 maxLength의 크기만큼 공백을 생성하였다.</li>
-</ul>
-<hr>
-<h1 id="code">Code</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+                                <a class="" href="https://meantint.github.io/categories/boj" title="BOJ">BOJ</a>
+
+                                <a class="" href="https://meantint.github.io/categories/git" title="Git">Git</a>
+
+                                <a class="" href="https://meantint.github.io/categories/programmers"
+                                        title="Programmers">Programmers</a>
+
+                                <a class="" href="https://meantint.github.io/post/" title="All Post">All Post</a>
+
+                        </nav>
+
+
+                </header>
+                <main id="main" tabindex="-1">
+
+
+
+                        <article class="post">
+                                <header class="post-header">
+                                        <h1 class="post-title">
+                                                BOJ_1022 소용돌이 예쁘게 출력하기</h1>
+                                </header>
+                                <div class="content">
+                                        <p>[<a href="https://www.acmicpc.net/problem/1022">BOJ_1022</a> - <a
+                                                        href="https://www.acmicpc.net/problem/1022">소용돌이 예쁘게 출력하기</a>]
+                                        </p>
+                                        <p> 생각보다 간단하게 풀었다.</p>
+                                        <hr>
+                                        <h1 id="풀이">풀이</h1>
+                                        <ul>
+                                                <li>
+                                                        <p>위치의 <code>row</code>, <code>col</code> 값을 저장하는 vec 변수를 선언.
+                                                        </p>
+                                                </li>
+                                                <li>
+                                                        <p>위치에 해당하는 값을 answer 변수의 각 위치에 넣음</p>
+                                                </li>
+                                                <li>
+                                                        <p>소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.</p>
+                                                        <ul>
+                                                                <li>홀수 제곱수 : <code>(n, n)</code>에 위치,
+                                                                        <code>(2n + 1)^2</code></li>
+                                                                <li>짝수 제곱수 : <code>(-n, -n + 1)</code>에 위치,
+                                                                        <code>(2n)^2</code></li>
+                                                        </ul>
+                                                </li>
+                                                <li>
+                                                        <p>홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여
+                                                                계산하였다.</p>
+                                                        <ul>
+                                                                <li>
+                                                                        <p>(0, 0)과의 거리를 <code>range</code> 변수에 저장한 후
+                                                                                <code>range</code>에 위치한 홀수/짝수 제곱수의 위치별로
+                                                                                따로 계산하였다.</p>
+                                                                        <ul>
+                                                                                <li>
+                                                                                        <p><code>range</code>의
+                                                                                                <code>왼쪽 &amp; 아래</code>부분에
+                                                                                                위치: <code>range</code>내의
+                                                                                                홀수 제곱수 - 현재 위치와 홀수 제곱수의
+                                                                                                좌표값 차이</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <p><code>range</code>의
+                                                                                                <code>오른쪽 &amp; 위</code>부분에
+                                                                                                위치: <code>range</code>내의
+                                                                                                짝수 제곱수 - 현재 위치와 짝수 제곱수의
+                                                                                                좌표값 차이</p>
+                                                                                </li>
+                                                                        </ul>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+                                        </ul>
+                                        <p><img src="/images/BOJ_2_Image.png" alt="ex_Image.png"></p>
+                                        <figcaption>위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)</figcaption>
+                                        <ul>
+                                                <li><code>cout:.setf(ios::right)</code>를 이용해 오른쪽 정렬로 만든 후에
+                                                        <code>setw(maxLength)</code>를 이용해 maxLength의 크기만큼 공백을 생성하였다.
+                                                </li>
+                                        </ul>
+                                        <hr>
+                                        <h1 id="code">Code</h1>
+                                        <div class="highlight">
+                                                <pre
+                                                        style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">#define PII pair&lt;int, int&gt;
 </span><span style="color:#75715e"></span>
@@ -218,85 +244,91 @@
                 cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
         }
 }
-</code></pre></div><hr>
+</code></pre>
+                                        </div>
+                                        <hr>
 
-    </div>
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2020-07-14</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://meantint.github.io/categories/BOJ">BOJ</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://meantint.github.io/tags/boj">#BOJ</a></li>
-                    
-                        <li><a href="https://meantint.github.io/tags/baekjoon">#Baekjoon</a></li>
-                    
-                        <li><a href="https://meantint.github.io/tags/boj_1022">#BOJ_1022</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-
-
-
-<div class="pagination post-pagination">
-    <div class="left pagination-item ">
-        
-        <a href="/post/boj_1038/">BOJ_1038 감소하는 수</a>
-        
-    </div>
-    <div class="right pagination-item ">
-        
-        <a href="/post/boj_1041/">BOJ_1041 주사위</a>
-        
-    </div>
-</div>
+                                </div>
 
 
 
 
 
+                                <div class="post-info">
 
-        </main>
-        
-            <footer class="common-footer">
-    
-    
+                                        <div class="post-date">2020-07-14</div>
 
-    <div class="copyright">
-        <p>©
-            2020 Meantint All Rights Reserved.<br>
-             <a target="_blank" rel="noopener noreferrer"
-                href="https://gohugo.io/">Hugo</a>,  <a target="_blank" rel="noopener noreferrer"
-                href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-        </p>
-    </div>
+                                        <div class="post-taxonomies">
 
-    
+                                                <ul class="post-categories">
 
-    
+                                                        <li><a href="https://meantint.github.io/categories/BOJ">BOJ</a>
+                                                        </li>
+
+                                                </ul>
 
 
+                                                <ul class="post-tags">
 
-</footer>
-        
-    </div>
+                                                        <li><a href="https://meantint.github.io/tags/boj">#BOJ</a></li>
+
+                                                        <li><a href="https://meantint.github.io/tags/baekjoon">#Baekjoon</a>
+                                                        </li>
+
+                                                        <li><a href="https://meantint.github.io/tags/boj_1022">#BOJ_1022</a>
+                                                        </li>
+
+                                                </ul>
+
+                                        </div>
+                                </div>
+
+                        </article>
+
+
+
+                        <div class="pagination post-pagination">
+                                <div class="left pagination-item ">
+
+                                        <a href="/post/boj_1038/">BOJ_1038 감소하는 수</a>
+
+                                </div>
+                                <div class="right pagination-item ">
+
+                                        <a href="/post/boj_1041/">BOJ_1041 주사위</a>
+
+                                </div>
+                        </div>
+
+
+
+
+
+
+                </main>
+
+                <footer class="common-footer">
+
+
+
+                        <div class="copyright">
+                                <p>©
+                                        2020 Meantint All Rights Reserved.<br>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>,
+                                        <a target="_blank" rel="noopener noreferrer"
+                                                href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+                                </p>
+                        </div>
+
+
+
+
+
+
+
+                </footer>
+
+        </div>
 </body>
+
 </html>
