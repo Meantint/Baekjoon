@@ -1,91 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BOJ_1654 on Meantint</title>
+    <title>BOJ_1654 on Meantint&#39;s BLog</title>
     <link>https://meantint.github.io/tags/boj_1654/</link>
-    <description>Meantint (BOJ_1654)</description>
+    <description>Recent content in BOJ_1654 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
+    <language>en-us</language>
     <lastBuildDate>Thu, 23 Jul 2020 00:56:42 +0900</lastBuildDate>
     
-    <atom:link href="https://meantint.github.io/tags/boj_1654/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://meantint.github.io/tags/boj_1654/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>BOJ_1654 랜선 자르기</title>
-      <link>https://meantint.github.io/post/boj_1654/</link>
+      <link>https://meantint.github.io/2020/07/boj_1654/</link>
       <pubDate>Thu, 23 Jul 2020 00:56:42 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/boj_1654/</guid>
-      <description>&lt;p&gt;[&lt;a href=&#34;https://www.acmicpc.net/problem/1654&#34;&gt;BOJ_1654&lt;/a&gt; - &lt;a href=&#34;https://www.acmicpc.net/problem/1654&#34;&gt;랜선 자르기&lt;/a&gt;]&lt;/p&gt;
-&lt;p&gt; 이분탐색을 이용하여 풀었다. &lt;code&gt;sum &amp;gt;= n&lt;/code&gt;인 경우 &lt;code&gt;start&lt;/code&gt;값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;풀이&#34;&gt;풀이&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;mid&lt;/code&gt;값은 &lt;code&gt;(start + end) / 2&lt;/code&gt;인데, &lt;code&gt;start&lt;/code&gt;는 1, &lt;code&gt;end&lt;/code&gt;는 랜선의 길이 중 가장 큰 값이다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;잘라서 나온 랜선의 개수가 &lt;code&gt;n&lt;/code&gt;보다 크거나 같다면&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;start = mid + 1&lt;/code&gt;을 해준다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;만약 &lt;code&gt;mid&lt;/code&gt;가 현재까지의 최대값 &lt;code&gt;max&lt;/code&gt;보다 크다면 &lt;code&gt;max&lt;/code&gt;를 &lt;code&gt;mid&lt;/code&gt;값으로 바꿔준다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;start&lt;/code&gt;의 값을 &lt;code&gt;mid + 1&lt;/code&gt;로 바꿔주는데 만약 바꾸고 나서 랜선의 개수가 &lt;code&gt;n&lt;/code&gt;보다 항상 작게 되면 정답을 도출할 수 없기 때문에 &lt;code&gt;max&lt;/code&gt;값을 둬서 &lt;code&gt;mid&lt;/code&gt;의 최대값을 저장해둔다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;잘라서 나온 랜선의 개수가 &lt;code&gt;n&lt;/code&gt;보다 작다면 &lt;code&gt;end = mid - 1&lt;/code&gt;을 해준다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; std;
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
-{
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; k, n;
-        cin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; k &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; n;
-
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; maxVal &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-        vector&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; val(k, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; k; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
-                cin &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; val[i];
-                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (maxVal &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; val[i])
-                        maxVal &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; val[i];
-        }
-
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; start &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; end &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; maxVal;
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; mid;
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; max &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (start &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; end) {
-                mid &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (start &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; end) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;;
-                &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;long&lt;/span&gt; sum &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; k; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i) {
-                        sum &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; (val[i] &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; mid);
-                }
-                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (sum &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; n) {
-                        start &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mid &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
-                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (mid &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; max) {
-                                max &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mid;
-                        }
-                }
-                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
-                        end &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mid &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
-        }
-        cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; max &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;;
-
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;</description>
+      <guid>https://meantint.github.io/2020/07/boj_1654/</guid>
+      <description>[BOJ_1654 - 랜선 자르기]
+ 이분탐색을 이용하여 풀었다. sum &amp;gt;= n인 경우 start값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.
+풀이   mid값은 (start + end) / 2인데, start는 1, end는 랜선의 길이 중 가장 큰 값이다.
+  잘라서 나온 랜선의 개수가 n보다 크거나 같다면
+  start = mid + 1을 해준다.
+  만약 mid가 현재까지의 최대값 max보다 크다면 max를 mid값으로 바꿔준다.
+  start의 값을 mid + 1로 바꿔주는데 만약 바꾸고 나서 랜선의 개수가 n보다 항상 작게 되면 정답을 도출할 수 없기 때문에 max값을 둬서 mid의 최대값을 저장해둔다.</description>
     </item>
     
   </channel>
