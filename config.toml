@@ -13,7 +13,7 @@
 # use grunt task `build` to synchronize assets
 
 baseURL = "https://meantint.github.io"
-languageCode = "en-us"
+languageCode = "ko-kr"
 defaultContentLanguage = "en-us"
 title = "Meantint's BLog"
 theme = "tranq"
@@ -31,8 +31,8 @@ canonifyurls = true
   archive = "archives"
 
 [author]
-  name = "..."
-  bio = "..."
+  name = "Meantint"
+  bio = ""
   job = "Your job title"
   location = "Korea"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
@@ -45,6 +45,12 @@ canonifyurls = true
   # twitter = "thibaudlepretre"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
   # googlePlus = "+ThibaudLepretre"
+
+# Use HTML
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 # Menu Configuration
 [[menu.main]]
