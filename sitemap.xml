@@ -3,8 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://meantint.github.io/2020/</loc>
-    <lastmod>2020-07-23T01:29:07+09:00</lastmod>
+    <loc>https://meantint.github.io/categories/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/html/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/2020/08/html-1/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/html5/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/categories/html5/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/post/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/</loc>
+    <lastmod>2020-08-09T12:40:48+09:00</lastmod>
   </url>
   
   <url>
@@ -28,22 +63,7 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/2020/07/boj_14502/</loc>
-    <lastmod>2020-07-23T01:29:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/categories/</loc>
-    <lastmod>2020-07-23T01:29:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/</loc>
-    <lastmod>2020-07-23T01:29:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/tags/</loc>
+    <loc>https://meantint.github.io/2020/07/boj_14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</loc>
     <lastmod>2020-07-23T01:29:07+09:00</lastmod>
   </url>
   
@@ -53,7 +73,7 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/2020/07/boj_1654/</loc>
+    <loc>https://meantint.github.io/2020/07/boj_1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</loc>
     <lastmod>2020-07-23T00:56:42+09:00</lastmod>
   </url>
   
@@ -63,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/2020/07/boj_1043/</loc>
+    <loc>https://meantint.github.io/2020/07/boj_1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</loc>
     <lastmod>2020-07-17T16:05:00+09:00</lastmod>
   </url>
   
@@ -73,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/2020/07/boj_1027/</loc>
+    <loc>https://meantint.github.io/2020/07/boj_1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</loc>
     <lastmod>2020-07-16T17:50:20+09:00</lastmod>
   </url>
   
@@ -83,7 +103,7 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/2020/07/boj_1038/</loc>
+    <loc>https://meantint.github.io/2020/07/boj_1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</loc>
     <lastmod>2020-07-14T21:37:04+09:00</lastmod>
   </url>
   
@@ -93,7 +113,7 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/2020/07/boj_1022/</loc>
+    <loc>https://meantint.github.io/2020/07/boj_1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</loc>
     <lastmod>2020-07-14T19:50:29+09:00</lastmod>
   </url>
   
@@ -103,13 +123,8 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/2020/07/boj_1041/</loc>
+    <loc>https://meantint.github.io/2020/07/boj_1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</loc>
     <lastmod>2020-07-12T02:12:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/post/</loc>
-    <lastmod>2020-07-09T22:10:55+09:00</lastmod>
   </url>
   
   <url>

@@ -5,7 +5,7 @@
     <link>https://meantint.github.io/tags/boj_1027/</link>
     <description>Recent content in BOJ_1027 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ko-kr</language>
     <lastBuildDate>Thu, 16 Jul 2020 17:50:20 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_1027/index.xml" rel="self" type="application/rss+xml" />
@@ -13,13 +13,14 @@
     
     <item>
       <title>BOJ_1027 고층 건물</title>
-      <link>https://meantint.github.io/2020/07/boj_1027/</link>
+      <link>https://meantint.github.io/2020/07/boj_1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</link>
       <pubDate>Thu, 16 Jul 2020 17:50:20 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/07/boj_1027/</guid>
+      <guid>https://meantint.github.io/2020/07/boj_1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</guid>
       <description>[BOJ_1027 - 고층 건물]
- 왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.그리고 굳이 vec를 vector&amp;lt;PII&amp;gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&amp;lt;int, int&amp;gt;
-풀이    i 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     Height 1 5 3 2 6 3 2 6 4 2 5 7 3 1 5      vec[i].</description>
+ 왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.
+그리고 굳이 vec를 vector&amp;lt;PII&amp;gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&amp;lt;int, int&amp;gt;
+풀이    i 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     Height 1 5 3 2 6 3 2 6 4 2 5 7 3 1 5    건물의 위치(i)와 높이(Height)  vec[i].</description>
     </item>
     
   </channel>

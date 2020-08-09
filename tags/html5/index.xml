@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML5 on Meantint&#39;s BLog</title>
+    <link>https://meantint.github.io/tags/html5/</link>
+    <description>Recent content in HTML5 on Meantint&#39;s BLog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 09 Aug 2020 12:40:48 +0900</lastBuildDate>
+    
+	<atom:link href="https://meantint.github.io/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML 1</title>
+      <link>https://meantint.github.io/2020/08/html-1/</link>
+      <pubDate>Sun, 09 Aug 2020 12:40:48 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/html-1/</guid>
+      <description> HTML(HyperText Markup Language)는 웹 문서를 작성하는 태그 언어이다.
+예제
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 간단한 html 예제 &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  &amp;lt;!DOCTYPE html&amp;gt; : HTML5 문서임을 브라우저에 알리는 지시어. &amp;lt;!-- --&amp;gt; : HTML에서의 주석. 여러줄에 걸쳐 사용할 수 있다.   </description>
+    </item>
+    
+  </channel>
+</rss>

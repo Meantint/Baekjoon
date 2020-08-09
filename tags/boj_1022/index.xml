@@ -5,7 +5,7 @@
     <link>https://meantint.github.io/tags/boj_1022/</link>
     <description>Recent content in BOJ_1022 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ko-kr</language>
     <lastBuildDate>Tue, 14 Jul 2020 19:50:29 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_1022/index.xml" rel="self" type="application/rss+xml" />
@@ -13,13 +13,13 @@
     
     <item>
       <title>BOJ_1022 소용돌이 예쁘게 출력하기</title>
-      <link>https://meantint.github.io/2020/07/boj_1022/</link>
+      <link>https://meantint.github.io/2020/07/boj_1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</link>
       <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/07/boj_1022/</guid>
+      <guid>https://meantint.github.io/2020/07/boj_1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</guid>
       <description>[BOJ_1022 - 소용돌이 예쁘게 출력하기]
  생각보다 간단하게 풀었다.
-풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
+풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
   위치에 해당하는 값을 answer 변수의 각 위치에 넣음
   소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.
  홀수 제곱수 : (n, n)에 위치, (2n + 1)^2 짝수 제곱수 : (-n, -n + 1)에 위치, (2n)^2    홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.</description>
