@@ -6,20 +6,31 @@
     <description>Recent content in Posts on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 09 Aug 2020 12:40:48 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 16:42:18 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>HTML 1</title>
-      <link>https://meantint.github.io/2020/08/html-1/</link>
+      <title>BOJ_9252 LCS 2</title>
+      <link>https://meantint.github.io/2020/08/boj_9252-lcs-2/</link>
+      <pubDate>Sun, 09 Aug 2020 16:42:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/boj_9252-lcs-2/</guid>
+      <description>[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] + 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &amp;gt;=가 아닌 &amp;gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</description>
+    </item>
+    
+    <item>
+      <title>HTML 태그 - 1</title>
+      <link>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-1/</link>
       <pubDate>Sun, 09 Aug 2020 12:40:48 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/08/html-1/</guid>
-      <description> HTML(HyperText Markup Language)는 웹 문서를 작성하는 태그 언어이다.
-예제
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 간단한 html 예제 &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  &amp;lt;!DOCTYPE html&amp;gt; : HTML5 문서임을 브라우저에 알리는 지시어. &amp;lt;!-- --&amp;gt; : HTML에서의 주석. 여러줄에 걸쳐 사용할 수 있다.   </description>
+      <guid>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-1/</guid>
+      <description>HTML(HyperText Markup Language)는 웹 문서를 작성하는 태그 언어이다. HTML 태그는 상황에 맞게 쓸 수 있는 태그 100개 이상으로 이루어져있다.
+/는 종료 태그에 붙는 기호이다. 태그 중에는 종료 태그가 없는 경우도 있다.
+예제 1 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 간단한 html 예제 &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;	 &amp;lt;!DOCTYPE html&amp;gt; : HTML5 문서임을 브라우저에 알리는 지시어. &amp;lt;!-- --&amp;gt; : HTML에서의 주석. 여러줄에 걸쳐 사용할 수 있다.</description>
     </item>
     
     <item>

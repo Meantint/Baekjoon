@@ -6,10 +6,21 @@
     <description>Recent content in Baekjoon on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 23 Jul 2020 01:29:07 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 16:42:18 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/baekjoon/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BOJ_9252 LCS 2</title>
+      <link>https://meantint.github.io/2020/08/boj_9252-lcs-2/</link>
+      <pubDate>Sun, 09 Aug 2020 16:42:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/boj_9252-lcs-2/</guid>
+      <description>[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] + 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &amp;gt;=가 아닌 &amp;gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</description>
+    </item>
     
     <item>
       <title>BOJ_14502 연구소</title>
