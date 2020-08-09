@@ -17,8 +17,8 @@ languageCode = "ko-kr"
 defaultContentLanguage = "en-us"
 title = "Meantint's BLog"
 theme = "tranq"
-disqusShortname = "hugo-tranquilpeak-theme"
-# googleAnalytics = "UA-123-45"
+# disqusShortname = "hugo-tranquilpeak-theme"
+googleAnalytics = "G-RBWB580JRH"
 paginate = 7
 canonifyurls = true
 
@@ -188,20 +188,20 @@ canonifyurls = true
   # Comment and uncomment to enable or disable sharing options
   # If you wanna add a sharing option, read user documentation :
   # Tranquilpeak configuration > Theme configuration > sharing-options
-  [[params.sharingOptions]]
-    name = "Facebook"
-    icon = "fa-facebook-official"
-    url = "https://www.facebook.com/sharer/sharer.php?u=%s"
+  #[[params.sharingOptions]]
+  #  name = "Facebook"
+  #  icon = "fa-facebook-official"
+  #  url = "https://www.facebook.com/sharer/sharer.php?u=%s"
 
-  [[params.sharingOptions]]
-    name = "Twitter"
-    icon = "fa-twitter"
-    url = "https://twitter.com/intent/tweet?text=%s"
+  #[[params.sharingOptions]]
+  #  name = "Twitter"
+  #  icon = "fa-twitter"
+  #  url = "https://twitter.com/intent/tweet?text=%s"
 
-  [[params.sharingOptions]]
-    name = "Google+"
-    icon = "fa-google-plus"
-    url = "https://plus.google.com/share?url=%s"
+  #[[params.sharingOptions]]
+  #  name = "Google+"
+  #  icon = "fa-google-plus"
+  #  url = "https://plus.google.com/share?url=%s"
 
   [params.header.rightLink]
     class = ""
