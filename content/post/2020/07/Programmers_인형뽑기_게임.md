@@ -1,12 +1,12 @@
 ---
-title: "Programmers - 인형뽑기 게임"
+title: "Programmers - 크레인 인형뽑기 게임"
 date: 2020-07-09T22:10:55+09:00
 categories:
 - Programmers
 tags:
 - Programmers
 - 프로그래머스
-- 크레인 인형뽑기
+- 크레인 인형뽑기 게임
 draft: false
 ---
 
