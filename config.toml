@@ -20,8 +20,8 @@ theme = "tranq"
 # disqusShortname = "hugo-tranquilpeak-theme"
 googleAnalytics = "G-RBWB580JRH"
 paginate = 7
-canonifyurls = true
-enableRobotsTXT = true
+canonifyurls = "true"
+enableRobotsTXT = "true"
 
 [permalinks]
   post = "/:year/:month/:slug/"
