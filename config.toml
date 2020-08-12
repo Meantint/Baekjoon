@@ -23,6 +23,11 @@ paginate = 7
 canonifyurls = "true"
 enableRobotsTXT = "true"
 
+[sitemap]
+  changefreq = "daily"
+  filename = "sitemap.xml"
+  priority = 0.5
+
 [permalinks]
   post = "/:year/:month/:slug/"
 
