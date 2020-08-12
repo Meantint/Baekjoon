@@ -7,16 +7,16 @@ tags:
 - Programmers
 - 프로그래머스
 - N으로 표현
-draft: true
+draft: false
 ---
 
 [[프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/42895) - [N으로 표현](https://programmers.co.kr/learn/courses/30/lessons/42895)]
 
 &nbsp;[https://woongsin94.tistory.com/232](https://woongsin94.tistory.com/232)를 참고하여 풀었습니다.
 
-처음에 dp로 풀면서 `dp[1] = 2`, `dp[11] = 3`, `dp[111] = 4` ... 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
+&nbsp;처음에 dp로 풀면서 `dp[1] = 2`, `dp[11] = 3`, `dp[111] = 4` ... 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
 
-참조한 코드를 보면서 특수 케이스(1, 11, 111...)을 어떻게 for문 안에 저런 식으로 표현하지라고 감탄했다.
+&nbsp;참조한 코드를 보면서 특수 케이스(1, 11, 111...)을 어떻게 for문 안에 저런 식으로 표현하지라고 감탄했다.
 
 <hr>
 
