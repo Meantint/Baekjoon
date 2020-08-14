@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>BOJ_1022 소용돌이 예쁘게 출력하기</title>
-      <link>https://meantint.github.io/2020/07/boj_1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</link>
+      <title>BOJ 1022 - 소용돌이 예쁘게 출력하기</title>
+      <link>https://meantint.github.io/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</link>
       <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/07/boj_1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</guid>
       <description>[BOJ_1022 - 소용돌이 예쁘게 출력하기]
  생각보다 간단하게 풀었다.
 풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
