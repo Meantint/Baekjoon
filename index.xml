@@ -6,10 +6,24 @@
     <description>Recent content on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 13 Aug 2020 13:34:49 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 14:12:09 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Programmers - 단어 변환</title>
+      <link>https://meantint.github.io/2020/08/programmers-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</link>
+      <pubDate>Fri, 14 Aug 2020 14:12:09 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/programmers-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</guid>
+      <description>[프로그래머스 - 단어 변환]
+ dfs를 이용한 완전 탐색으로 풀었다.
+풀이   dfs 안에서 단어가 다른 개수를 저장하는 diff를 만들었다.
+  만약 diff = 1이라면 dfs 실행, 아니라면 dfs 실행하지 않는다.
+  str과 gv_target의 값이 같다면 dfs를 answer = min(answer, cnt)를 실행 후 dfs를 종료한다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; bool isCheck[50]; int answer; string gv_begin = &amp;#34;&amp;#34;, gv_target = &amp;#34;&amp;#34;; vector&amp;lt;string&amp;gt; gv_words; void dfs(int cur, string str, int cnt) { if (cur == -1) { } else if (isCheck[cur]) { return; } if (str == gv_target) { answer = min(answer, cnt); return; } isCheck[cur] = true; int size = gv_words.</description>
+    </item>
     
     <item>
       <title>Programmers - 등굣길</title>
