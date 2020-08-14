@@ -1,5 +1,5 @@
 ---
-title: "Programmers - N으로 표현"
+title: "프로그래머스 - N으로 표현"
 date: 2020-08-11T17:17:50+09:00
 categories:
 - Programmers
