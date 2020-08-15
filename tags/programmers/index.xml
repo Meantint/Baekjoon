@@ -6,10 +6,24 @@
     <description>Recent content in Programmers on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 14 Aug 2020 14:12:09 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2020 08:50:24 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/programmers/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>프로그래머스 - 단속카메라</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
+      <pubDate>Sat, 15 Aug 2020 08:50:24 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
+      <description>[프로그래머스 - 단속카메라]
+ 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
+풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
+  routes[idx][0]을 계산하기 위한 idx를 선언한다.
+  i번째 자동차가 카메라에서 벗어나기 직전의 시점인 routes[i][1]에서 찍히는 자동차(routes[idx][0] ~ routes[idx][1])가 있는지 확인하고 있으면 ++idx, 없으면 continue를 진행한다.
+  나가는 순서대로 정렬을 했는데 ++idx를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다. 나가는 순서대로 정렬을 했다고 들어오는게 정렬이 된 것이 아니기 때문이다.</description>
+    </item>
     
     <item>
       <title>프로그래머스 - 단어 변환</title>
