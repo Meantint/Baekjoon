@@ -9,59 +9,43 @@
 <meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Meantint">
 <meta name="keywords" content="">
-<meta name="description" content="[프로그래머스 - 단속카메라]
- 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
-풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
-  routes[idx][0]을 계산하기 위한 idx를 선언한다.
-  i번째 자동차가 카메라에서 벗어나기 직전의 시점인 routes[i][1]에서 찍히는 자동차(routes[idx][0] ~ routes[idx][1])가 있는지 확인하고 있으면 &#43;&#43;idx, 없으면 continue를 진행한다.
-  나가는 순서대로 정렬을 했는데 &#43;&#43;idx를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다. 나가는 순서대로 정렬을 했다고 들어오는게 정렬이 된 것이 아니기 때문이다.">
+<meta name="description" content="[BOJ_1000 - A&#43;B]
+풀이  &hellip;?  Code #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int main() { int a, b; cin &gt;&gt; a &gt;&gt; b; cout &lt;&lt; a &#43; b &lt;&lt; &#39;\n&#39;; return 0; } ">
 
 
-<meta property="og:description" content="[프로그래머스 - 단속카메라]
- 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
-풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
-  routes[idx][0]을 계산하기 위한 idx를 선언한다.
-  i번째 자동차가 카메라에서 벗어나기 직전의 시점인 routes[i][1]에서 찍히는 자동차(routes[idx][0] ~ routes[idx][1])가 있는지 확인하고 있으면 &#43;&#43;idx, 없으면 continue를 진행한다.
-  나가는 순서대로 정렬을 했는데 &#43;&#43;idx를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다. 나가는 순서대로 정렬을 했다고 들어오는게 정렬이 된 것이 아니기 때문이다.">
+<meta property="og:description" content="[BOJ_1000 - A&#43;B]
+풀이  &hellip;?  Code #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int main() { int a, b; cin &gt;&gt; a &gt;&gt; b; cout &lt;&lt; a &#43; b &lt;&lt; &#39;\n&#39;; return 0; } ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="프로그래머스 - 단속카메라">
-<meta name="twitter:title" content="프로그래머스 - 단속카메라">
-<meta property="og:url" content="https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/">
-<meta property="twitter:url" content="https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/">
+<meta property="og:title" content="BOJ 1000 - A&#43;B">
+<meta name="twitter:title" content="BOJ 1000 - A&#43;B">
+<meta property="og:url" content="https://meantint.github.io/2020/08/boj-1000-a-b/">
+<meta property="twitter:url" content="https://meantint.github.io/2020/08/boj-1000-a-b/">
 <meta property="og:site_name" content="Meantint&#39;s BLog">
-<meta property="og:description" content="[프로그래머스 - 단속카메라]
- 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
-풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
-  routes[idx][0]을 계산하기 위한 idx를 선언한다.
-  i번째 자동차가 카메라에서 벗어나기 직전의 시점인 routes[i][1]에서 찍히는 자동차(routes[idx][0] ~ routes[idx][1])가 있는지 확인하고 있으면 &#43;&#43;idx, 없으면 continue를 진행한다.
-  나가는 순서대로 정렬을 했는데 &#43;&#43;idx를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다. 나가는 순서대로 정렬을 했다고 들어오는게 정렬이 된 것이 아니기 때문이다.">
-<meta name="twitter:description" content="[프로그래머스 - 단속카메라]
- 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
-풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
-  routes[idx][0]을 계산하기 위한 idx를 선언한다.
-  i번째 자동차가 카메라에서 벗어나기 직전의 시점인 routes[i][1]에서 찍히는 자동차(routes[idx][0] ~ routes[idx][1])가 있는지 확인하고 있으면 &#43;&#43;idx, 없으면 continue를 진행한다.
-  나가는 순서대로 정렬을 했는데 &#43;&#43;idx를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다. 나가는 순서대로 정렬을 했다고 들어오는게 정렬이 된 것이 아니기 때문이다.">
+<meta property="og:description" content="[BOJ_1000 - A&#43;B]
+풀이  &hellip;?  Code #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int main() { int a, b; cin &gt;&gt; a &gt;&gt; b; cout &lt;&lt; a &#43; b &lt;&lt; &#39;\n&#39;; return 0; } ">
+<meta name="twitter:description" content="[BOJ_1000 - A&#43;B]
+풀이  &hellip;?  Code #include &lt;bits/stdc&#43;&#43;.h&gt; using namespace std; int main() { int a, b; cin &gt;&gt; a &gt;&gt; b; cout &lt;&lt; a &#43; b &lt;&lt; &#39;\n&#39;; return 0; } ">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2020-08-15T08:50:24">
+    <meta property="article:published_time" content="2020-08-17T23:28:57">
   
   
-    <meta property="article:modified_time" content="2020-08-15T08:50:24">
+    <meta property="article:modified_time" content="2020-08-17T23:28:57">
   
-  
-  
-    
-      <meta property="article:section" content="Programmers">
-    
   
   
     
-      <meta property="article:tag" content="Programmers">
+      <meta property="article:section" content="BOJ">
     
-      <meta property="article:tag" content="프로그래머스">
+  
+  
     
-      <meta property="article:tag" content="단속카메라">
+      <meta property="article:tag" content="BOJ">
+    
+      <meta property="article:tag" content="Baekjoon">
+    
+      <meta property="article:tag" content="BOJ_1000">
     
   
 
@@ -82,14 +66,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/6b70894b95994b23522fffb7edc7fef9?s=640">
 
 
-  <title>프로그래머스 - 단속카메라</title>
+  <title>BOJ 1000 - A&#43;B</title>
 
   <link rel="icon" href="https://meantint.github.io/images/profile.png">
   
 
   
 
-  <link rel="canonical" href="https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/">
+  <link rel="canonical" href="https://meantint.github.io/2020/08/boj-1000-a-b/">
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -270,15 +254,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      프로그래머스 - 단속카메라
+      BOJ 1000 - A&#43;B
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-08-15T08:50:24&#43;09:00">
+      <time itemprop="datePublished" datetime="2020-08-17T23:28:57&#43;09:00">
         
-  August 15, 2020
+  August 17, 2020
 
       </time>
     
@@ -287,7 +271,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://meantint.github.io/categories/programmers">Programmers</a>
+      <a class="category-link" href="https://meantint.github.io/categories/boj">BOJ</a>
     
   
 
@@ -297,34 +281,11 @@ if (!doNotTrack) {
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/42884">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/42884">단속카메라</a>]</p>
-<p> 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.</p>
+              <p>[<a href="https://www.acmicpc.net/problem/1000">BOJ_1000</a> - <a href="https://www.acmicpc.net/problem/1000">A+B</a>]</p>
 <hr>
 <h1 id="풀이">풀이</h1>
 <ul>
-<li>
-<p>나가는 순서대로 정렬한 <code>routes</code>, 카메라를 만났는지의 여부를 확인하는 <code>isCheck</code>를 만든다.</p>
-</li>
-<li>
-<p><code>routes[idx][0]</code>을 계산하기 위한 <code>idx</code>를 선언한다.</p>
-</li>
-<li>
-<p><code>i</code>번째 자동차가 카메라에서 벗어나기 직전의 시점인 <code>routes[i][1]</code>에서 찍히는 자동차(<code>routes[idx][0]</code> ~ <code>routes[idx][1]</code>)가 있는지 확인하고 있으면 <code>++idx</code>, 없으면 <code>continue</code>를 진행한다.</p>
-<ul>
-<li>
-<p>나가는 순서대로 정렬을 했는데 <code>++idx</code>를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다. 나가는 순서대로 정렬을 했다고 들어오는게 정렬이 된 것이 아니기 때문이다. 결론을 말하자면 <code>i</code>에서 찾을 수 있는 차량들을 그 순간에 모두 찾지 않아도 답을 구할 수 있다.</p>
-</li>
-<li>
-<p>예를 들어 <code>routes[0] = (0, 5)</code>, <code>routes[1] = (6, 10)</code>, <code>routes[2] = (2, 15)</code>라고 하자. 처음에 <code>routes[0][1]</code>은 <code>routes[2][0]</code>과 <code>routes[2][1]</code>에는 속하지만 <code>routes[1][0]</code>과 <code>routes[1][1]</code>에는 속하지 않는다.</p>
-</li>
-<li>
-<p>그러면 내가 작성한 코드는 <code>idx</code>를 순차적으로 늘리면서 찾기 때문에 <code>idx = 2</code>인 경우를 검출을 하지 못하는 것이 아니냐고 생각할 수 있다. 아니다.</p>
-</li>
-<li>
-<p>정렬을 한 경우 <code>routes[1][1]</code>은 무조건 <code>routes[2][1]</code> 보다 작다. 그런데 예제에서 <code>routes[1][0]</code>이 <code>routes[2][0]</code> 보다 크기 때문에 <code>routes[2][0]</code>과 <code>routes[2][1]</code> 사이에는 항상 routes[1][1]이 있기 때문에 <code>i = 1</code>일 때 <code>idx = 2</code>가 검출되므로 굳이 <code>i = 0</code>일 때 <code>idx = 2</code>인 경우를 찾지 않아도 문제를 해결할 수 있다.</p>
-</li>
-</ul>
-</li>
+<li>&hellip;?</li>
 </ul>
 <hr>
 <h1 id="code">Code</h1>
@@ -332,44 +293,12 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 
-<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v1, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v2)
-{
-    <span style="color:#66d9ef">return</span> v1[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> v2[<span style="color:#ae81ff">1</span>];
-}
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> routes)
-{
-    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-
-    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> isCheck(routes.size(), false);
-    sort(routes.begin(), routes.end(), cmp);
-
-    <span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> routes.size();
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
-        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>isCheck[i]) {
-            isCheck[i] <span style="color:#f92672">=</span> true;
-            <span style="color:#f92672">++</span>answer;
-
-            <span style="color:#66d9ef">for</span> (; idx <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>idx) {
-                <span style="color:#66d9ef">if</span> (isCheck[idx]) {
-                    <span style="color:#66d9ef">continue</span>;
-                }
-                <span style="color:#66d9ef">if</span> (routes[i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> routes[idx][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;&amp;</span> routes[i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;=</span> routes[idx][<span style="color:#ae81ff">1</span>]) { <span style="color:#75715e">// 자른 부분이 다음 경로 안에 포함된다면
-</span><span style="color:#75715e"></span>                    isCheck[idx] <span style="color:#f92672">=</span> true;
-                    <span style="color:#66d9ef">continue</span>;
-                }
-                <span style="color:#66d9ef">break</span>;
-            }
-        }
-    }
-
-    <span style="color:#66d9ef">return</span> answer;
-}
-
 <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
 {
-    cout <span style="color:#f92672">&lt;&lt;</span> solution({ { <span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span> }, { <span style="color:#f92672">-</span><span style="color:#ae81ff">14</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span> }, { <span style="color:#f92672">-</span><span style="color:#ae81ff">18</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">13</span> }, { <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span> } }) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+    <span style="color:#66d9ef">int</span> a, b;
+
+    cin <span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">&gt;&gt;</span> b;
+    cout <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
 
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
@@ -385,11 +314,11 @@ if (!doNotTrack) {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/programmers/">Programmers</a>
+  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/boj/">BOJ</a>
 
-  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a>
+  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/baekjoon/">Baekjoon</a>
 
-  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/">단속카메라</a>
+  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/boj_1000/">BOJ_1000</a>
 
                   </div>
                 
@@ -402,7 +331,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/boj-1000-a-b/" data-tooltip="BOJ 1000 - A&#43;B">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -410,7 +339,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/" data-tooltip="프로그래머스 - 단어 변환">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/" data-tooltip="프로그래머스 - 단속카메라">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -460,7 +389,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/boj-1000-a-b/" data-tooltip="BOJ 1000 - A&#43;B">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -468,7 +397,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/" data-tooltip="프로그래머스 - 단어 변환">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/" data-tooltip="프로그래머스 - 단속카메라">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
