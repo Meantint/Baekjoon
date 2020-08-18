@@ -164,6 +164,20 @@
   </url>
   
   <url>
+    <loc>https://meantint.github.io/tags/html-tag/</loc>
+    <lastmod>2020-08-10T13:39:20+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/html-%ED%83%9C%EA%B7%B8/</loc>
+    <lastmod>2020-08-10T13:39:20+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-2/</loc>
     <lastmod>2020-08-10T13:39:20+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -178,7 +192,7 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/categories/html5/</loc>
+    <loc>https://meantint.github.io/categories/html_css_javascript/</loc>
     <lastmod>2020-08-10T13:39:20+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
