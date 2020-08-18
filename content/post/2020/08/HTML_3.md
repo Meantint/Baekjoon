@@ -10,7 +10,7 @@ tags:
 - Web form
 - 시맨틱 태그
 - 웹 폼
-draft: true
+draft: false
 ---
 
 &nbsp;요새 휴고(Hugo) 블로그를 작성 중인데, 블로그 안의 `.html` 파일들을 살펴보면 `<header>`, `<article>` 등의 태그가 보인다. 이런 태그들은 무엇이며 이전에 보았던 태그들과 차이점은 뭐고 왜 사용하는 것일까?
