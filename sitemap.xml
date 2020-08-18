@@ -3,6 +3,90 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://meantint.github.io/categories/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/html/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/2020/08/html-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EC%99%80-%EC%9B%B9-%ED%8F%BC/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/html5/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/categories/html_css_javascript/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/post/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/semantic-tag/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/web-form/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/%EC%9B%B9-%ED%8F%BC/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://meantint.github.io/tags/baekjoon/</loc>
     <lastmod>2020-08-17T23:28:57+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -32,34 +116,6 @@
   
   <url>
     <loc>https://meantint.github.io/tags/boj_1000/</loc>
-    <lastmod>2020-08-17T23:28:57+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/categories/</loc>
-    <lastmod>2020-08-17T23:28:57+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/</loc>
-    <lastmod>2020-08-17T23:28:57+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/post/</loc>
-    <lastmod>2020-08-17T23:28:57+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/tags/</loc>
     <lastmod>2020-08-17T23:28:57+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -157,13 +213,6 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/tags/html/</loc>
-    <lastmod>2020-08-10T13:39:20+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://meantint.github.io/tags/html-tag/</loc>
     <lastmod>2020-08-10T13:39:20+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -179,20 +228,6 @@
   
   <url>
     <loc>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-2/</loc>
-    <lastmod>2020-08-10T13:39:20+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/tags/html5/</loc>
-    <lastmod>2020-08-10T13:39:20+09:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://meantint.github.io/categories/html_css_javascript/</loc>
     <lastmod>2020-08-10T13:39:20+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
