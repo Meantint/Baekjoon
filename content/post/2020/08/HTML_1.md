@@ -2,10 +2,12 @@
 title: "HTML 태그 - 1"
 date: 2020-08-09T12:40:48+09:00
 categories:
-- HTML5
+- HTML_CSS_JAVASCRIPT
 tags:
 - HTML
 - HTML5
+- HTML tag
+- HTML 태그
 draft: false
 ---
 
