@@ -3,3 +3,11 @@ figcaption {
   padding: 0 15px 20px;
   margin: 0;
 }
+code {
+  font-size: 1.5rem;
+  display: inline-block;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  background-color: #f7f8f8;
+  padding: 0 10px; 
+}
