@@ -6,10 +6,25 @@
     <description>Recent content on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 18 Aug 2020 14:16:52 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 13:42:25 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BOJ 2169 - 로봇 조종하기</title>
+      <link>https://meantint.github.io/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Wed, 19 Aug 2020 13:42:25 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</guid>
+      <description>[BOJ_2169 - 로봇 조종하기]
+ 정말 많이 생각하고 힘들게 풀었다. 원래 푼 방식이 맞다고 생각이 들어서 고집을 부렸는데 그 방법은 아니었다.
+풀이   dp[i][j][k] = k 방향으로 들어와서 (i, j)에 들어왔을 때의 최댓값
+  3가지 경우가 있다.
+  왼쪽에서 들어왔을 때
+ ret = max(dfs(x, y + 1, 0), dfs(x + 1, y, 2)) 실행    오른쪽에서 들어왔을 때:
+ ret = max(dfs(x, y - 1, 1), dfs(x + 1, y, 2)) 실행    위쪽에서 들어왔을 때:</description>
+    </item>
     
     <item>
       <title>HTML - 시맨틱 태그와 웹 폼</title>
