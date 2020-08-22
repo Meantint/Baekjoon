@@ -1,5 +1,5 @@
 .header {
-  font-family: 'Noto Sans KR',"Raleway", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -56,7 +56,7 @@ article > footer {
 }
 
 #menu .brand {
-  font-family: 'Noto Sans KR', Raleway;
+  font-family: Raleway;
   font-weight: 400;
   font-size: 1em;
   letter-spacing: 0.1em;
