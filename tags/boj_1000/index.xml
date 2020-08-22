@@ -13,10 +13,10 @@
     
     <item>
       <title>BOJ 1000 - A&#43;B</title>
-      <link>https://meantint.github.io/2020/08/boj-1000-a-b/</link>
+      <link>https://meantint.github.io/post/2020/08/boj_1000/</link>
       <pubDate>Mon, 17 Aug 2020 23:28:57 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/08/boj-1000-a-b/</guid>
+      <guid>https://meantint.github.io/post/2020/08/boj_1000/</guid>
       <description>[BOJ_1000 - A+B]
 풀이  &amp;hellip;?  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a, b; cin &amp;gt;&amp;gt; a &amp;gt;&amp;gt; b; cout &amp;lt;&amp;lt; a + b &amp;lt;&amp;lt; &amp;#39;\n&amp;#39;; return 0; } </description>
     </item>
