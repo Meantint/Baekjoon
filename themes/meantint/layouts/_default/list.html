@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main role="main" class="column is-full has-background-light">
+	<section class="section">
+		<h4 class="title is-4">{{ .Section }}</h4>
+
+		{{ .Content }}
+
+		<ul>
+			{{ range .Data.Pages }}
+			<li>
+				<a href="{{ .URL }}">{{ .Title }}</a>
+			</li>
+			{{ end }}
+		</ul>
+	</section>
+</main>
+{{ end }}

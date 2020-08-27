@@ -1,0 +1,8 @@
+// dart-sass --watch -I sass sass/bulmaswatch/cerulean/:static/bulmaswatch/cerulean/ --style=compressed --no-source-map
+// dart-sass --watch -I sass sass/bulmaswatch:static/bulmaswatch --style=compressed --no-source-map
+// result in: bulmaswatch/cerulean/bulmaswatch.css
+
+/*! bulmaswatch v0.7.2 | MIT License */
+@import "variables";
+@import "vendors/bulma";
+@import "overrides";

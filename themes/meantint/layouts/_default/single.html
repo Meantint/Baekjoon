@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main role="main" class="column is-two-thirds has-background-primary">
+	<article class="blog-post">
+		<h4 class="title is-4">{{ .Title | default .Site.Title }}</h4>
+		{{ .Content }}
+	</article>
+</main>
+{{ end }}
+
+{{ define "aside" }}
+<aside class="column is-one-thirds has-background-info">
+	<div class="blog-sidebar">
+		Side menu
+	</div>
+</aside>
+{{ end }}
