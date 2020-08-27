@@ -5,7 +5,8 @@
     <link>https://meantint.github.io/tags/boj_1022/</link>
     <description>Recent content in BOJ_1022 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Tue, 14 Jul 2020 19:50:29 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_1022/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>BOJ 1022 - 소용돌이 예쁘게 출력하기</title>
-      <link>https://meantint.github.io/post/2020/07/boj_1022/</link>
+      <link>https://meantint.github.io/posts/2020/07/boj_1022/</link>
       <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/2020/07/boj_1022/</guid>
+      <guid>https://meantint.github.io/posts/2020/07/boj_1022/</guid>
       <description>[BOJ_1022 - 소용돌이 예쁘게 출력하기]
  생각보다 간단하게 풀었다.
 풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.

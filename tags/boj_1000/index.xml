@@ -5,7 +5,8 @@
     <link>https://meantint.github.io/tags/boj_1000/</link>
     <description>Recent content in BOJ_1000 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 17 Aug 2020 23:28:57 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_1000/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>BOJ 1000 - A&#43;B</title>
-      <link>https://meantint.github.io/post/2020/08/boj_1000/</link>
+      <link>https://meantint.github.io/posts/2020/08/boj_1000/</link>
       <pubDate>Mon, 17 Aug 2020 23:28:57 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/2020/08/boj_1000/</guid>
+      <guid>https://meantint.github.io/posts/2020/08/boj_1000/</guid>
       <description>[BOJ_1000 - A+B]
 풀이  &amp;hellip;?  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a, b; cin &amp;gt;&amp;gt; a &amp;gt;&amp;gt; b; cout &amp;lt;&amp;lt; a + b &amp;lt;&amp;lt; &amp;#39;\n&amp;#39;; return 0; } </description>
     </item>

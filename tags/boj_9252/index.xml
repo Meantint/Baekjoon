@@ -5,7 +5,8 @@
     <link>https://meantint.github.io/tags/boj_9252/</link>
     <description>Recent content in BOJ_9252 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 09 Aug 2020 16:42:18 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_9252/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>BOJ 9252 - LCS 2</title>
-      <link>https://meantint.github.io/post/2020/08/boj_9252/</link>
+      <link>https://meantint.github.io/posts/2020/08/boj_9252/</link>
       <pubDate>Sun, 09 Aug 2020 16:42:18 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/2020/08/boj_9252/</guid>
+      <guid>https://meantint.github.io/posts/2020/08/boj_9252/</guid>
       <description>[BOJ_9252 - LCS 2]
 풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] + 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
   이중 for문 안의 else에 등호를 &amp;gt;=가 아닌 &amp;gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</description>

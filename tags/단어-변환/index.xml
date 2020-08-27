@@ -5,7 +5,8 @@
     <link>https://meantint.github.io/tags/%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</link>
     <description>Recent content in 단어 변환 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 14 Aug 2020 14:12:09 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>프로그래머스 - 단어 변환</title>
-      <link>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%96%B4_%EB%B3%80%ED%99%98/</link>
+      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%96%B4_%EB%B3%80%ED%99%98/</link>
       <pubDate>Fri, 14 Aug 2020 14:12:09 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%96%B4_%EB%B3%80%ED%99%98/</guid>
+      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%96%B4_%EB%B3%80%ED%99%98/</guid>
       <description>[프로그래머스 - 단어 변환]
  dfs를 이용한 완전 탐색으로 풀었다.
 풀이   dfs 안에서 단어가 다른 개수를 저장하는 diff를 만들었다.

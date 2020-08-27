@@ -5,7 +5,8 @@
     <link>https://meantint.github.io/tags/boj_1038/</link>
     <description>Recent content in BOJ_1038 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Tue, 14 Jul 2020 21:37:04 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_1038/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>BOJ 1038 - 감소하는 수</title>
-      <link>https://meantint.github.io/post/2020/07/boj_1038/</link>
+      <link>https://meantint.github.io/posts/2020/07/boj_1038/</link>
       <pubDate>Tue, 14 Jul 2020 21:37:04 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/2020/07/boj_1038/</guid>
+      <guid>https://meantint.github.io/posts/2020/07/boj_1038/</guid>
       <description>[BOJ_1038 - 감소하는 수]
  낚시하려고 만든건지 N값이 쓸데없이 크다.
 감소하는 수의 가장 큰 수인 9876543210이 N = 1022이기 때문에..

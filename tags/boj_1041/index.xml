@@ -5,7 +5,8 @@
     <link>https://meantint.github.io/tags/boj_1041/</link>
     <description>Recent content in BOJ_1041 on Meantint&#39;s BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 12 Jul 2020 02:12:25 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_1041/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>BOJ 1041 - 주사위</title>
-      <link>https://meantint.github.io/post/2020/07/boj_1041/</link>
+      <link>https://meantint.github.io/posts/2020/07/boj_1041/</link>
       <pubDate>Sun, 12 Jul 2020 02:12:25 +0900</pubDate>
       
-      <guid>https://meantint.github.io/post/2020/07/boj_1041/</guid>
+      <guid>https://meantint.github.io/posts/2020/07/boj_1041/</guid>
       <description>[BOJ_1041 - 주사위]
  처음에 주사위의 값들이 이동할 수 있다고 생각하고 6개의 값을 sort한 후에 풀었다..(당연히 그렇게 푸는거 아님)
 풀이   5개의 면 중 3개의 면이 드러나는 주사위는 4개, 2개의 면이 드러나는 주사위는 8n - 12개,
