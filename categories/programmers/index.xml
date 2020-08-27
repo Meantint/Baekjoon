@@ -13,10 +13,10 @@
     
     <item>
       <title>프로그래머스 - 단속카메라</title>
-      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
+      <link>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
       <pubDate>Sat, 15 Aug 2020 08:50:24 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
+      <guid>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
       <description>[프로그래머스 - 단속카메라]
  그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
 풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
@@ -27,10 +27,10 @@
     
     <item>
       <title>프로그래머스 - 단어 변환</title>
-      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</link>
+      <link>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%96%B4_%EB%B3%80%ED%99%98/</link>
       <pubDate>Fri, 14 Aug 2020 14:12:09 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</guid>
+      <guid>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%8B%A8%EC%96%B4_%EB%B3%80%ED%99%98/</guid>
       <description>[프로그래머스 - 단어 변환]
  dfs를 이용한 완전 탐색으로 풀었다.
 풀이   dfs 안에서 단어가 다른 개수를 저장하는 diff를 만들었다.
@@ -41,10 +41,10 @@
     
     <item>
       <title>프로그래머스 - 등굣길</title>
-      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</link>
+      <link>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%93%B1%EA%B5%A3%EA%B8%B8/</link>
       <pubDate>Thu, 13 Aug 2020 13:34:49 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</guid>
+      <guid>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%93%B1%EA%B5%A3%EA%B8%B8/</guid>
       <description>[프로그래머스 - 등굣길]
  Level 3 난이도 중 그나마 쉬웠다. 다른게 어려운건가?
 풀이   vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dp를 만들고 0으로 초기화 시킨다.
@@ -56,10 +56,10 @@
     
     <item>
       <title>프로그래머스 - 디스크 컨트롤러</title>
-      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</link>
+      <link>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%94%94%EC%8A%A4%ED%81%AC_%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</link>
       <pubDate>Wed, 12 Aug 2020 16:53:22 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</guid>
+      <guid>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EB%94%94%EC%8A%A4%ED%81%AC_%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</guid>
       <description>[프로그래머스 - 디스크 컨트롤러]
  https://mungto.tistory.com/15를 참고하여 풀었습니다.
  프로그래머스 레벨 2를 한문제를 남겨놓고 레벨 3에 입문했는데 혼자 힘만으로 풀 수 있는 문제가 거의 존재하지 않는걸 보니 아직도 실력이 많이 부족한 것 같다.
@@ -68,10 +68,10 @@
     
     <item>
       <title>프로그래머스 - N으로 표현</title>
-      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</link>
+      <link>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_n%EC%9C%BC%EB%A1%9C_%ED%91%9C%ED%98%84/</link>
       <pubDate>Tue, 11 Aug 2020 17:17:50 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</guid>
+      <guid>https://meantint.github.io/post/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_n%EC%9C%BC%EB%A1%9C_%ED%91%9C%ED%98%84/</guid>
       <description>[프로그래머스 - N으로 표현]
  https://woongsin94.tistory.com/232를 참고하여 풀었습니다.
  처음에 dp로 풀면서 dp[1] = 2, dp[11] = 3, dp[111] = 4 &amp;hellip; 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
@@ -82,10 +82,10 @@
     
     <item>
       <title>프로그래머스 - 크레인 인형뽑기 게임</title>
-      <link>https://meantint.github.io/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</link>
+      <link>https://meantint.github.io/post/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0_%EA%B2%8C%EC%9E%84/</link>
       <pubDate>Thu, 09 Jul 2020 22:10:55 +0900</pubDate>
       
-      <guid>https://meantint.github.io/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</guid>
+      <guid>https://meantint.github.io/post/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4_%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0_%EA%B2%8C%EC%9E%84/</guid>
       <description>[프로그래머스 - 크레인 인형뽑기 게임]
 풀이   인형들을 담아두는 basket(vector&amp;lt;int&amp;gt; 변수)을 선언하였다.
   집은 인형과 바구니의 맨 위에 있는 인형이 같을 때 바구니 젤 위에 있는 인형을 제거해주었다.

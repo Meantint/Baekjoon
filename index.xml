@@ -254,5 +254,16 @@
   Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; // 바구니 vector&amp;lt;int&amp;gt; basket(0); int answer = 0; void change(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; board, int idx) { int rowSize = board.</description>
     </item>
     
+    <item>
+      <title>Everyday I Ask</title>
+      <link>https://meantint.github.io/post/daily-wish/</link>
+      <pubDate>Sat, 03 Oct 2015 08:08:15 +0700</pubDate>
+      
+      <guid>https://meantint.github.io/post/daily-wish/</guid>
+      <description>You know, some people makes mistakes, and have to bear the consequences, for the rest of their life. I made, one good decision when I was far younger than you are. Later I know it was the right decision. But I also have to bear the consquences, for the rest of my life.
+ I wish you a good family, and happiness.
+ </description>
+    </item>
+    
   </channel>
 </rss>

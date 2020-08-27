@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://meantint.github.io/categories/boj/</loc>
+    <lastmod>2020-08-19T13:42:25+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://meantint.github.io/post/2020/08/boj_2169/</loc>
     <lastmod>2020-08-19T13:42:25+09:00</lastmod>
     <changefreq>daily</changefreq>
@@ -25,6 +32,13 @@
   
   <url>
     <loc>https://meantint.github.io/tags/boj_2169/</loc>
+    <lastmod>2020-08-19T13:42:25+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/categories/</loc>
     <lastmod>2020-08-19T13:42:25+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -67,6 +81,13 @@
   
   <url>
     <loc>https://meantint.github.io/tags/html5/</loc>
+    <lastmod>2020-08-18T14:16:52+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/categories/html_css_javascript/</loc>
     <lastmod>2020-08-18T14:16:52+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -116,6 +137,13 @@
   
   <url>
     <loc>https://meantint.github.io/tags/programmers/</loc>
+    <lastmod>2020-08-15T08:50:24+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/categories/programmers/</loc>
     <lastmod>2020-08-15T08:50:24+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -353,7 +381,29 @@
   </url>
   
   <url>
-    <loc>https://meantint.github.io/topics/</loc>
+    <loc>https://meantint.github.io/post/daily-wish/</loc>
+    <lastmod>2015-10-03T08:08:15+07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/categories/love/</loc>
+    <lastmod>2015-10-03T08:08:15+07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/story/</loc>
+    <lastmod>2015-10-03T08:08:15+07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://meantint.github.io/tags/wishful/</loc>
+    <lastmod>2015-10-03T08:08:15+07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
