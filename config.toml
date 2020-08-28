@@ -42,7 +42,7 @@ author = "Meantint"
   defaultTheme = "dark"
 
 [taxonomies]
-    category = "blog"
+    category = "categories"
     tag      = "tags"
     series   = "series"
 
@@ -67,3 +67,8 @@ author = "Meantint"
     identifier = "blog"
     name       = "Blog"
     url        = "/posts"
+
+  [[menu.main]]
+    identifier = "category"
+    name       = "Category"
+    url        = "/categories"
