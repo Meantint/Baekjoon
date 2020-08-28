@@ -4,22 +4,26 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
-<meta name="description" content="[BOJ_1038 - 감소하는 수]
+<meta name="author"
+    content="">
+<meta name="description"
+    content="[BOJ_1038 - 감소하는 수]
  낚시하려고 만든건지 N값이 쓸데없이 크다.
 감소하는 수의 가장 큰 수인 9876543210이 N = 1022이기 때문에..
 풀이  i &#43; 1번째 자릿수의 값이 j일 때 나오는 경우의 수를 저장해놓는 vec 변수를 선언하였다.     i, j 0 1 2 3 4 5 6 7 8 9     0 1 1 1 1 1 1 1 1 1 1   1 0 1 2 3 4 5 6 7 8 9   2 0 0 1 3 6 10 15 21 28 36   3 0 0 0 1 4 10 20 35 56 84   4 0 0 0 0 1 5 15 35 70 126   5 0 0 0 0 0 1 6 21 56 126   6 0 0 0 0 0 0 1 7 28 84   7 0 0 0 0 0 0 0 1 8 36   8 0 0 0 0 0 0 0 0 1 9   9 0 0 0 0 0 0 0 0 0 1    vec[i][j] : i &#43; 1번째 자릿수가 j일 때 만들 수 있는 모든 경우의 수(i &#43; 1이 제일 큰 자릿수)  vec[i][j] = vec[i - 1][0] &#43; vec[i - 1][1] &#43; &amp;hellip; &#43; vec[i - 1][j - 1]" />
-<meta name="keywords" content=", BOJ, Baekjoon, BOJ_1038" />
+<meta name="keywords"
+    content=", BOJ, Baekjoon, BOJ_1038" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://meantint.github.io/posts/2020/07/boj_1038/" />
+<link rel="shortcut icon" href="https://meantint.github.io/images/profile.png" type="image/x-icon" />
 
 
-    <title>
-        
-            BOJ 1038 - 감소하는 수 :: Meantint&#39;s BLog  — A simple theme for Hugo
-        
-    </title>
+<title>
+    
+    BOJ 1038 - 감소하는 수 :: Meantint&#39;s BLog  — A simple theme for Hugo
+    
+</title>
 
 
 
@@ -59,7 +63,7 @@
 
 
 
-    <meta property="og:title" content="BOJ 1038 - 감소하는 수" />
+<meta property="og:title" content="BOJ 1038 - 감소하는 수" />
 <meta property="og:description" content="[BOJ_1038 - 감소하는 수]
  낚시하려고 만든건지 N값이 쓸데없이 크다.
 감소하는 수의 가장 큰 수인 9876543210이 N = 1022이기 때문에..
@@ -73,12 +77,11 @@
 
 
 
-    <meta property="article:section" content="BOJ" />
+<meta property="article:section" content="BOJ" />
 
 
 
-    <meta property="article:published_time" content="2020-07-14 21:37:04 &#43;0900 KST" />
-
+<meta property="article:published_time" content="2020-07-14 21:37:04 &#43;0900 KST" />
 
 
 
