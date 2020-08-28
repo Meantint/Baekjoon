@@ -2027,25 +2027,5 @@ HTML 태그는 상황에 맞게 쓸 수 있는 태그 100개 이상으로 이루
 ]]></content>
         </item>
         
-        <item>
-            <title>Everyday I Ask</title>
-            <link>https://meantint.github.io/posts/daily-wish/</link>
-            <pubDate>Sat, 03 Oct 2015 08:08:15 +0700</pubDate>
-            
-            <guid>https://meantint.github.io/posts/daily-wish/</guid>
-            <description>You know, some people makes mistakes, and have to bear the consequences, for the rest of their life. I made, one good decision when I was far younger than you are. Later I know it was the right decision. But I also have to bear the consquences, for the rest of my life.
- I wish you a good family, and happiness.
- </description>
-            <content type="html"><![CDATA[<p>You know, some people makes mistakes,
-and have to bear the consequences, for the rest of their life.
-I made, one good decision when I was far younger than you are.
-Later I know it was the right decision.
-But I also have to bear the consquences, for the rest of my life.</p>
-<blockquote>
-<p>I wish you a good family, and happiness.</p>
-</blockquote>
-]]></content>
-        </item>
-        
     </channel>
 </rss>
