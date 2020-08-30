@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 pre {
-	font-family: consolas, monospace, monospace; /* 1 */
+	font-family: 'Noto Sans KR',consolas, monospace, monospace; /* 1 */
 	font-display: auto;
 	font-size: 1em; /* 2 */
 }
@@ -7,7 +9,7 @@ pre {
 code,
 kbd,
 samp {
-	font-family: consolas, monospace, monospace; /* 1 */
+	font-family: 'Noto Sans KR',consolas, monospace, monospace; /* 1 */
 	font-display: auto;
 	font-size: 1em; /* 2 */
 }
