@@ -6,8 +6,117 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 19 Aug 2020 13:42:25 +0900</lastBuildDate>
+        <lastBuildDate>Sun, 30 Aug 2020 13:06:04 +0900</lastBuildDate>
         <atom:link href="https://meantint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>프로그래머스 - 추석 트래픽</title>
+            <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</link>
+            <pubDate>Sun, 30 Aug 2020 13:06:04 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</guid>
+            <description>[프로그래머스 - 추석 트래픽]
+ 처음 풀었을 때 시간을 많이 들였는데도 예외케이스들을 생각하니 너무 복잡해서 풀지 못하고 시간이 꽤 흐른 후 다시 풀게 되었는데 어렵지 않게 풀었다. 하나의 생각에 너무 묶여있어서 못 풀었던것 같다.
+풀이   changeSec : 처리가 끝난 시간, changeSec_start : 처리가 시작된 시간
+  처음에 double type으로 풀었으나 소수점 부분의 미세한 오차 때문에 답이 제대로 출력되지 않는 경우가 있어서 0.001s의 단위를 1로 바꿔주는 작업(모두 1000씩 곱함.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/17676">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/17676">추석 트래픽</a>]</p>
+<p> 처음 풀었을 때 시간을 많이 들였는데도 예외케이스들을 생각하니 너무 복잡해서 풀지 못하고 시간이 꽤 흐른 후 다시 풀게 되었는데 어렵지 않게 풀었다. 하나의 생각에 너무 묶여있어서 못 풀었던것 같다.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p><code>changeSec</code> : 처리가 끝난 시간, <code>changeSec_start</code> : 처리가 시작된 시간</p>
+</li>
+<li>
+<p>처음에 <code>double type</code>으로 풀었으나 소수점 부분의 미세한 오차 때문에 답이 제대로 출력되지 않는 경우가 있어서 <code>0.001s</code>의 단위를 1로 바꿔주는 작업(모두 1000씩 곱함. <code>int type</code>이 됨)을 해주었다.</p>
+</li>
+<li>
+<p>끝 부분을 기준으로만 해도 최대값을 구할 수 있기 때문에 0번째 index부터 순서대로 탐색하면서 최대값을 갱신해 주었다.</p>
+</li>
+<li>
+<p>끝 부분 사이 간격이 4초를 넘게되면 처리시간이 최대값이어도 만나지 않기 때문에 <code>break</code>해주었다.</p>
+</li>
+<li>
+<p><code>j번째 응답시작시간</code> &lt;= <code>i번째 응답완료시간 + 0.999s</code>라면 <code>++cnt</code>를 해준다.</p>
+</li>
+<li>
+<p>이전까지의 최대값 <code>answer</code>보다 현재 최대값 <code>cnt</code>가 더 크다면 <code>answer</code>를 <code>cnt</code>로 바꿔준다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> lines)
+{
+    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> lines.size();
+    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> changeSec(size, <span style="color:#ae81ff">0</span>);
+    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> changeSec_start(size, <span style="color:#ae81ff">0</span>);
+    
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+        changeSec[i] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3600000</span> <span style="color:#f92672">*</span> stoi(lines[i].substr(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">2</span>));
+        changeSec[i] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">60000</span> <span style="color:#f92672">*</span> stoi(lines[i].substr(<span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">2</span>));
+        changeSec[i] <span style="color:#f92672">+=</span> (<span style="color:#66d9ef">int</span>)(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> stod(lines[i].substr(<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">6</span>)));
+        string tmp <span style="color:#f92672">=</span> lines[i].substr(<span style="color:#ae81ff">24</span>);
+        tmp.pop_back();
+        changeSec_start[i] <span style="color:#f92672">=</span> changeSec[i] <span style="color:#f92672">-</span> (<span style="color:#66d9ef">int</span>)(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> stod(tmp)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+
+        <span style="color:#75715e">// test
+</span><span style="color:#75715e"></span>        cout <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+        cout <span style="color:#f92672">&lt;&lt;</span> changeSec_start[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">&lt;&lt;</span> changeSec[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>;
+    }
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">int</span> cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i; j <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>j) {
+            <span style="color:#66d9ef">if</span> (changeSec[j] <span style="color:#f92672">-</span> changeSec[i] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4000</span>) {
+                <span style="color:#66d9ef">break</span>;
+            }
+            <span style="color:#66d9ef">if</span> (changeSec_start[j] <span style="color:#f92672">&lt;=</span> changeSec[i] <span style="color:#f92672">+</span> <span style="color:#ae81ff">999</span>) {
+                <span style="color:#f92672">++</span>cnt;
+            }
+        }
+        answer <span style="color:#f92672">=</span> max(answer, cnt);
+    }
+
+    <span style="color:#66d9ef">return</span> answer;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#75715e">// vector&lt;string&gt; vec = {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:04.001 2.0s&#34;,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:07.000 2s&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// };
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// vector&lt;string&gt; vec = {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:04.002 2.0s&#34;,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:07.000 2s&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// };
+</span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> vec <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:57.421 0.351s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:58.233 1.181s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:58.299 0.8s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:58.688 1.041s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:59.591 1.412s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.464 1.466s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.741 1.581s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.748 2.31s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.966 0.381s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:02.066 2.62s&#34;</span>
+    };
+    cout <span style="color:#f92672">&lt;&lt;</span> solution(vec) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
         
         <item>
             <title>BOJ 2169 - 로봇 조종하기</title>
