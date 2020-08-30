@@ -1,22 +1,38 @@
 baseURL = "https://meantint.github.io/"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
-paginate     = 10
+title = "Meantint's Blog"
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
 
 googleAnalytics = "G-RBWB580JRH"
 enableRobotsTXT = true
-author = "Meantint"
-
 [sitemap]
   changefreq = "daily"
   filename = "sitemap.xml"
   priority = 0.5
 
-# Use HTML
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
+
+[author]
+  name = "Meantint"
+
+[taxonomies]
+    category = "categories"
+    tag      = "tags"
+    series   = "series"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -24,43 +40,64 @@ author = "Meantint"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
-  # Subtitle for home
-  homeSubtitle = "A simple and beautiful blog"
+  # Metadata mostly used in document's head
+  description = "Nice theme for homepages and blogs"
+  keywords = ""
+  images = [""]
+
+  homeSubtitle = "오른쪽 위를 누르면 light theme로 바뀝니다."
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # gitUrl = ""
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
 
-  # Enable sharing buttons, if you linke
+  # Sharing buttons
+  # There are a lot of buttons preconfigured. If you want to change them,
+  # generate the buttons here: https://sharingbuttons.io
+  # and add them into your own `layouts/partials/sharing-buttons.html`
   enableSharingButtons = true
 
-  # Metadata mostly used in document's head
-  description = "My new homepage or blog"
-  keywords = "homepage, blog"
-  images = [""]
+  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  customCSS = []
+  customJS  = []
+
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  justifyContent = false  # Set "text-align: justify" to .post-content.
 
   # Default theme "light" or "dark"
   defaultTheme = "dark"
+  themeColor = "#252627"
 
-[taxonomies]
-    category = "categories"
-    tag      = "tags"
-    series   = "series"
+  # Colors for favicons
+  [params.favicon.color]
+    mask = "#252627"
+    msapplication = "#252627"
+    theme = "#252627"
+
+  [params.logo]
+    logoText     = "$ cd /Meantint's Blog/"
+    logoHomeLink = "/"
+    # Set true to remove the logo cursor entirely.
+    # logoCursorDisabled = false
+    # Set to a valid CSS color to change the cursor in the logo.
+    # logoCursorColor    = "#67a2c9"
+    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
+    # logoCursorAnimate  = "2s"
+
+  # Uncomment this if you want a portrait on your start page
+  # [params.portrait]
+  #   path     = "/img/image.jpg"
+  #   alt      = "Portrait"
+  #   maxWidth = "50px"
 
 [languages]
   [languages.en]
-    title = "Meantint's BLog"
-    subtitle = "A simple theme for Hugo"
-    keywords = ""
+    subtitle  = "Hello Friend NG Theme"
+    weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "Read other posts"
-
-    [languages.en.params.logo]
-      logoText = "Meantint's BLog"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
 
   # And you can even create generic menu
   [[menu.main]]
@@ -72,3 +109,9 @@ author = "Meantint"
     identifier = "category"
     name       = "Category"
     url        = "/categories"
+
+# Use HTML
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
