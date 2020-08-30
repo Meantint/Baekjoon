@@ -1,0 +1,13 @@
+pre {
+	font-family: consolas, monospace, monospace; /* 1 */
+	font-display: auto;
+	font-size: 1em; /* 2 */
+}
+
+code,
+kbd,
+samp {
+	font-family: consolas, monospace, monospace; /* 1 */
+	font-display: auto;
+	font-size: 1em; /* 2 */
+}
