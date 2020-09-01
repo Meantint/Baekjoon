@@ -22,6 +22,7 @@
  https://woongsin94.tistory.com/232를 참고하여 풀었습니다.
  처음에 dp로 풀면서 dp[1] = 2, dp[11] = 3, dp[111] = 4 &amp;hellip; 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
  참조한 코드를 보면서 특수 케이스(1, 11, 111&amp;hellip;)을 어떻게 for문 안에 저런 식으로 표현하지라고 감탄했다.
+My Programmers Code : https://github.com/Meantint/Programmers
 풀이   dp가 아닌 dfs로 해결하였다.
   N부터 NNNNNNNN까지 순차적으로 늘어나면서 for문을 돈다.</description>
     </item>

@@ -20,6 +20,7 @@
       <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</guid>
       <description>[프로그래머스 - 단어 변환]
  dfs를 이용한 완전 탐색으로 풀었다.
+My Programmers Code : https://github.com/Meantint/Programmers
 풀이   dfs 안에서 단어가 다른 개수를 저장하는 diff를 만들었다.
   만약 diff = 1이라면 dfs 실행, 아니라면 dfs 실행하지 않는다.
   str과 gv_target의 값이 같다면 dfs를 answer = min(answer, cnt)를 실행 후 dfs를 종료한다.
