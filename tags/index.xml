@@ -7,17 +7,53 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 30 Aug 2020 13:06:04 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 02:14:18 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Binary Search</title>
+      <link>https://meantint.github.io/tags/binary-search/</link>
+      <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/tags/binary-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Programmers</title>
       <link>https://meantint.github.io/tags/programmers/</link>
-      <pubDate>Sun, 30 Aug 2020 13:06:04 +0900</pubDate>
+      <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
       
       <guid>https://meantint.github.io/tags/programmers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>무지의 먹방 라이브</title>
+      <link>https://meantint.github.io/tags/%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</link>
+      <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/tags/%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>이분탐색</title>
+      <link>https://meantint.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/</link>
+      <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>프로그래머스</title>
+      <link>https://meantint.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/</link>
+      <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/</guid>
       <description></description>
     </item>
     
@@ -27,15 +63,6 @@
       <pubDate>Sun, 30 Aug 2020 13:06:04 +0900</pubDate>
       
       <guid>https://meantint.github.io/tags/%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>프로그래머스</title>
-      <link>https://meantint.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/</link>
-      <pubDate>Sun, 30 Aug 2020 13:06:04 +0900</pubDate>
-      
-      <guid>https://meantint.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/</guid>
       <description></description>
     </item>
     
@@ -72,33 +99,6 @@
       <pubDate>Tue, 18 Aug 2020 14:16:52 +0900</pubDate>
       
       <guid>https://meantint.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTML5</title>
-      <link>https://meantint.github.io/tags/html5/</link>
-      <pubDate>Tue, 18 Aug 2020 14:16:52 +0900</pubDate>
-      
-      <guid>https://meantint.github.io/tags/html5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Semantic tag</title>
-      <link>https://meantint.github.io/tags/semantic-tag/</link>
-      <pubDate>Tue, 18 Aug 2020 14:16:52 +0900</pubDate>
-      
-      <guid>https://meantint.github.io/tags/semantic-tag/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web form</title>
-      <link>https://meantint.github.io/tags/web-form/</link>
-      <pubDate>Tue, 18 Aug 2020 14:16:52 +0900</pubDate>
-      
-      <guid>https://meantint.github.io/tags/web-form/</guid>
       <description></description>
     </item>
     
