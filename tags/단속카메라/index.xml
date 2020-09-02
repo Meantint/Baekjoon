@@ -5,8 +5,7 @@
     <link>https://meantint.github.io/tags/%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
     <description>Recent content in 단속카메라 on Meantint&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <language>ko-kr</language>
     <lastBuildDate>Sat, 15 Aug 2020 08:50:24 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +13,10 @@
     
     <item>
       <title>프로그래머스 - 단속카메라</title>
-      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
       <pubDate>Sat, 15 Aug 2020 08:50:24 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
       <description>[프로그래머스 - 단속카메라]
  그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
 My Programmers Code : https://github.com/Meantint/Programmers

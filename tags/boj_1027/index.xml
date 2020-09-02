@@ -5,8 +5,7 @@
     <link>https://meantint.github.io/tags/boj_1027/</link>
     <description>Recent content in BOJ_1027 on Meantint&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <language>ko-kr</language>
     <lastBuildDate>Thu, 16 Jul 2020 17:50:20 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/tags/boj_1027/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +13,10 @@
     
     <item>
       <title>BOJ 1027 - 고층 건물</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</link>
+      <link>https://meantint.github.io/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</link>
       <pubDate>Thu, 16 Jul 2020 17:50:20 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</guid>
       <description>[BOJ_1027 - 고층 건물]
  왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.
 그리고 굳이 vec를 vector&amp;lt;PII&amp;gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&amp;lt;int, int&amp;gt;

@@ -5,8 +5,7 @@
     <link>https://meantint.github.io/</link>
     <description>Recent content on Meantint&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <language>ko-kr</language>
     <lastBuildDate>Wed, 02 Sep 2020 02:14:18 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +13,10 @@
     
     <item>
       <title>프로그래머스 - 무지의 먹방 라이브</title>
-      <link>https://meantint.github.io/posts/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</link>
+      <link>https://meantint.github.io/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</link>
       <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</guid>
+      <guid>https://meantint.github.io/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</guid>
       <description>[프로그래머스 - 무지의 먹방 라이브]
  카카오 블라인드 채용 대비를 하면서 풀었던 문제. 꽤 잘 풀렸다. 풀고 나서 다른 사람들의 풀이를 봤는데 대부분 우선순위큐를 이용하여 풀었다. 탐색하는 순서의 차이(Binary Search vs min Heap)를 제외한 기본적인 틀은 같은 것 같다.
 My Programmers Code : https://github.com/Meantint/Programmers
@@ -27,10 +26,10 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>프로그래머스 - 추석 트래픽</title>
-      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</link>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</link>
       <pubDate>Sun, 30 Aug 2020 13:06:04 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</guid>
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</guid>
       <description>[프로그래머스 - 추석 트래픽]
  처음 풀었을 때 시간을 많이 들였는데도 예외케이스들을 생각하니 너무 복잡해서 풀지 못하고 시간이 꽤 흐른 후 다시 풀게 되었는데 어렵지 않게 풀었다. 하나의 생각에 너무 묶여있어서 못 풀었던것 같다.
 My Programmers Code : https://github.com/Meantint/Programmers
@@ -40,10 +39,10 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>BOJ 2169 - 로봇 조종하기</title>
-      <link>https://meantint.github.io/posts/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</link>
+      <link>https://meantint.github.io/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</link>
       <pubDate>Wed, 19 Aug 2020 13:42:25 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://meantint.github.io/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</guid>
       <description>[BOJ_2169 - 로봇 조종하기]
  정말 많이 생각하고 힘들게 풀었다. 원래 푼 방식이 맞다고 생각이 들어서 고집을 부렸는데 그 방법은 아니었다.
 풀이   dp[i][j][k] = k 방향으로 들어와서 (i, j)에 들어왔을 때의 최댓값
@@ -55,10 +54,10 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>HTML - 시맨틱 태그와 웹 폼</title>
-      <link>https://meantint.github.io/posts/2020/08/html-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EC%99%80-%EC%9B%B9-%ED%8F%BC/</link>
+      <link>https://meantint.github.io/2020/08/html-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EC%99%80-%EC%9B%B9-%ED%8F%BC/</link>
       <pubDate>Tue, 18 Aug 2020 14:16:52 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/html-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EC%99%80-%EC%9B%B9-%ED%8F%BC/</guid>
+      <guid>https://meantint.github.io/2020/08/html-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EC%99%80-%EC%9B%B9-%ED%8F%BC/</guid>
       <description>요새 휴고(Hugo) 블로그를 작성 중인데, 블로그 안의 .html 파일들을 살펴보면 &amp;lt;header&amp;gt;, &amp;lt;article&amp;gt; 등의 태그가 보인다. 이런 태그들은 무엇이며 이전에 보았던 태그들과 차이점은 뭐고 왜 사용하는 것일까?
 시맨틱 웹이란?   시맨틱 웹(Semantic Web): 검색 엔진이 특정한 문서를 찾는 것이 용이할 수 있도록 문서를 구조화 해놓은 웹.
   예전의 웹과 시맨틱 웹의 차이는 어떤 정보가 주어졌을 때 예전의 웹은 단순한 문자열로 해석하는 것이고 시맨틱 웹은 정보를 의미있는 형태로 받아들여 읽는 것이다.</description>
@@ -66,20 +65,20 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>BOJ 1000 - A&#43;B</title>
-      <link>https://meantint.github.io/posts/2020/08/boj-1000-a-b/</link>
+      <link>https://meantint.github.io/2020/08/boj-1000-a-b/</link>
       <pubDate>Mon, 17 Aug 2020 23:28:57 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/boj-1000-a-b/</guid>
+      <guid>https://meantint.github.io/2020/08/boj-1000-a-b/</guid>
       <description>[BOJ_1000 - A+B]
 풀이  &amp;hellip;?  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a, b; cin &amp;gt;&amp;gt; a &amp;gt;&amp;gt; b; cout &amp;lt;&amp;lt; a + b &amp;lt;&amp;lt; &amp;#39;\n&amp;#39;; return 0; } </description>
     </item>
     
     <item>
       <title>프로그래머스 - 단속카메라</title>
-      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
       <pubDate>Sat, 15 Aug 2020 08:50:24 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
       <description>[프로그래머스 - 단속카메라]
  그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
 My Programmers Code : https://github.com/Meantint/Programmers
@@ -91,10 +90,10 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>프로그래머스 - 단어 변환</title>
-      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</link>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</link>
       <pubDate>Fri, 14 Aug 2020 14:12:09 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</guid>
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</guid>
       <description>[프로그래머스 - 단어 변환]
  dfs를 이용한 완전 탐색으로 풀었다.
 My Programmers Code : https://github.com/Meantint/Programmers
@@ -106,10 +105,10 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>프로그래머스 - 등굣길</title>
-      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</link>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</link>
       <pubDate>Thu, 13 Aug 2020 13:34:49 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</guid>
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</guid>
       <description>[프로그래머스 - 등굣길]
  Level 3 난이도 중 그나마 쉬웠다. 다른게 어려운건가?
 My Programmers Code : https://github.com/Meantint/Programmers
@@ -122,10 +121,10 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>프로그래머스 - 디스크 컨트롤러</title>
-      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</link>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</link>
       <pubDate>Wed, 12 Aug 2020 16:53:22 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</guid>
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</guid>
       <description>[프로그래머스 - 디스크 컨트롤러]
  https://mungto.tistory.com/15를 참고하여 풀었습니다.
  프로그래머스 레벨 2를 한문제를 남겨놓고 레벨 3에 입문했는데 혼자 힘만으로 풀 수 있는 문제가 거의 존재하지 않는걸 보니 아직도 실력이 많이 부족한 것 같다.
@@ -134,10 +133,10 @@ My Programmers Code : https://github.com/Meantint/Programmers
     
     <item>
       <title>프로그래머스 - N으로 표현</title>
-      <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</link>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</link>
       <pubDate>Tue, 11 Aug 2020 17:17:50 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</guid>
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</guid>
       <description>[프로그래머스 - N으로 표현]
  https://woongsin94.tistory.com/232를 참고하여 풀었습니다.
  처음에 dp로 풀면서 dp[1] = 2, dp[11] = 3, dp[111] = 4 &amp;hellip; 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
@@ -145,6 +144,145 @@ My Programmers Code : https://github.com/Meantint/Programmers
 My Programmers Code : https://github.com/Meantint/Programmers
 풀이   dp가 아닌 dfs로 해결하였다.
   N부터 NNNNNNNN까지 순차적으로 늘어나면서 for문을 돈다.</description>
+    </item>
+    
+    <item>
+      <title>HTML 태그 - 2</title>
+      <link>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-2/</link>
+      <pubDate>Mon, 10 Aug 2020 13:39:20 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-2/</guid>
+      <description>HTML 태그들을 조금 더 알아보자.
+예제 1 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;img src=&amp;#34;HTML_image_1-1.png&amp;#34; width=&amp;#34;800&amp;#34; /&amp;gt; &amp;lt;img src=&amp;#34;HTML_image_1-1.png&amp;#34; width=&amp;#34;800&amp;#34; height=&amp;#34;200&amp;#34; /&amp;gt; &amp;lt;img src=&amp;#34;HTML_image_1-1.png&amp;#34; height=&amp;#34;200&amp;#34; /&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   &amp;lt;img&amp;gt; : 이미지를 삽입해주는 HTML 태그.
+ src : 이미지 파일의 url width : 이미지의 가로 길이. height : 이미지의 세로 길이. width와 height 둘 중에 하나만 있다면 비율을 유지한 채로 축소된다.</description>
+    </item>
+    
+    <item>
+      <title>BOJ 9252 - LCS 2</title>
+      <link>https://meantint.github.io/2020/08/boj-9252-lcs-2/</link>
+      <pubDate>Sun, 09 Aug 2020 16:42:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/boj-9252-lcs-2/</guid>
+      <description>[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] + 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &amp;gt;=가 아닌 &amp;gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</description>
+    </item>
+    
+    <item>
+      <title>HTML 태그 - 1</title>
+      <link>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-1/</link>
+      <pubDate>Sun, 09 Aug 2020 12:40:48 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-1/</guid>
+      <description>HTML(HyperText Markup Language)는 웹 문서를 작성하는 태그 언어이다. HTML 태그는 상황에 맞게 쓸 수 있는 태그 100개 이상으로 이루어져있다.
+/는 종료 태그에 붙는 기호이다. 태그 중에는 종료 태그가 없는 경우도 있다.
+예제 1 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 간단한 html 예제 &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;	 &amp;lt;!DOCTYPE html&amp;gt; : HTML5 문서임을 브라우저에 알리는 지시어. &amp;lt;!-- --&amp;gt; : HTML에서의 주석. 여러줄에 걸쳐 사용할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>BOJ 14502 - 연구소</title>
+      <link>https://meantint.github.io/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</link>
+      <pubDate>Thu, 23 Jul 2020 01:29:07 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</guid>
+      <description>[BOJ_14502 - 연구소]
+ Brute Force로 해결하였다. 문제에서 제시된 2차원 배열의 범위가 작아서 시간 복잡도가 꽤 여유롭다.
+풀이   벽을 3칸 치는 작업을 완전탐색을 이용하여 한다.
+  벽을 3칸 쳤다면 바이러스를 벽이 없는 사방으로 퍼뜨리는 virus()를 호출한다.
+  호출한 후 안전영역의 개수를 구한 후, 기존에 저장되어 있는 값과 비교하여 갱신해준다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int answer = -1; int safeArea; int n, m; void virus(int i, int j, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; vec) { if (i &amp;lt; 0 || i &amp;gt;= n || j &amp;lt; 0 || j &amp;gt;= m) return; if (vec[i][j] !</description>
+    </item>
+    
+    <item>
+      <title>BOJ 1654 - 랜선 자르기</title>
+      <link>https://meantint.github.io/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</link>
+      <pubDate>Thu, 23 Jul 2020 00:56:42 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</guid>
+      <description>[BOJ_1654 - 랜선 자르기]
+ 이분탐색을 이용하여 풀었다. sum &amp;gt;= n인 경우 start값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.
+풀이   mid값은 (start + end) / 2인데, start는 1, end는 랜선의 길이 중 가장 큰 값이다.
+  잘라서 나온 랜선의 개수가 n보다 크거나 같다면
+  start = mid + 1을 해준다.
+  만약 mid가 현재까지의 최대값 max보다 크다면 max를 mid값으로 바꿔준다.
+  start의 값을 mid + 1로 바꿔주는데 만약 바꾸고 나서 랜선의 개수가 n보다 항상 작게 되면 정답을 도출할 수 없기 때문에 max값을 둬서 mid의 최대값을 저장해둔다.</description>
+    </item>
+    
+    <item>
+      <title>BOJ 1043 - 거짓말</title>
+      <link>https://meantint.github.io/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</link>
+      <pubDate>Fri, 17 Jul 2020 16:05:00 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</guid>
+      <description>[BOJ_1043 - 거짓말]
+ 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 Union_Find를 이용하여 풀었더라. Union_Find를 공부하자.
+풀이     사람 -&amp;gt; 1 2 3 4     파티 ↓        1  1 1 0 0   2  0 0 1 0   3  0 1 1 1    파티, 사람간의 관계를 갖는 2차원 배열  만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다.</description>
+    </item>
+    
+    <item>
+      <title>BOJ 1027 - 고층 건물</title>
+      <link>https://meantint.github.io/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</link>
+      <pubDate>Thu, 16 Jul 2020 17:50:20 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</guid>
+      <description>[BOJ_1027 - 고층 건물]
+ 왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.
+그리고 굳이 vec를 vector&amp;lt;PII&amp;gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&amp;lt;int, int&amp;gt;
+풀이    i 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     Height 1 5 3 2 6 3 2 6 4 2 5 7 3 1 5    건물의 위치(i)와 높이(Height)  vec[i].</description>
+    </item>
+    
+    <item>
+      <title>BOJ 1038 - 감소하는 수</title>
+      <link>https://meantint.github.io/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</link>
+      <pubDate>Tue, 14 Jul 2020 21:37:04 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</guid>
+      <description>[BOJ_1038 - 감소하는 수]
+ 낚시하려고 만든건지 N값이 쓸데없이 크다.
+감소하는 수의 가장 큰 수인 9876543210이 N = 1022이기 때문에..
+풀이  i + 1번째 자릿수의 값이 j일 때 나오는 경우의 수를 저장해놓는 vec 변수를 선언하였다.     i, j 0 1 2 3 4 5 6 7 8 9     0 1 1 1 1 1 1 1 1 1 1   1 0 1 2 3 4 5 6 7 8 9   2 0 0 1 3 6 10 15 21 28 36   3 0 0 0 1 4 10 20 35 56 84   4 0 0 0 0 1 5 15 35 70 126   5 0 0 0 0 0 1 6 21 56 126   6 0 0 0 0 0 0 1 7 28 84   7 0 0 0 0 0 0 0 1 8 36   8 0 0 0 0 0 0 0 0 1 9   9 0 0 0 0 0 0 0 0 0 1    vec[i][j] : i + 1번째 자릿수가 j일 때 만들 수 있는 모든 경우의 수(i + 1이 제일 큰 자릿수)  vec[i][j] = vec[i - 1][0] + vec[i - 1][1] + &amp;hellip; + vec[i - 1][j - 1]</description>
+    </item>
+    
+    <item>
+      <title>BOJ 1022 - 소용돌이 예쁘게 출력하기</title>
+      <link>https://meantint.github.io/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</guid>
+      <description>[BOJ_1022 - 소용돌이 예쁘게 출력하기]
+ 생각보다 간단하게 풀었다.
+풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
+  위치에 해당하는 값을 answer 변수의 각 위치에 넣음
+  소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.
+ 홀수 제곱수 : (n, n)에 위치, (2n + 1)^2 짝수 제곱수 : (-n, -n + 1)에 위치, (2n)^2    홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.</description>
+    </item>
+    
+    <item>
+      <title>BOJ 1041 - 주사위</title>
+      <link>https://meantint.github.io/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</link>
+      <pubDate>Sun, 12 Jul 2020 02:12:25 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</guid>
+      <description>[BOJ_1041 - 주사위]
+ 처음에 주사위의 값들이 이동할 수 있다고 생각하고 6개의 값을 sort한 후에 풀었다..(당연히 그렇게 푸는거 아님)
+풀이   5개의 면 중 3개의 면이 드러나는 주사위는 4개, 2개의 면이 드러나는 주사위는 8n - 12개,
+1개의 면이 드러나는 주사위는 5n^2 - 16n + 12개이다.
+  면이 3개인 주사위의 최소값 : 마주보는 면 중에서 더 작은 값들 3개의 합이 최소값이다.
+  면이 2개인 주사위의 최소값 : 하나하나 다 해봄.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - 크레인 인형뽑기 게임</title>
+      <link>https://meantint.github.io/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</link>
+      <pubDate>Thu, 09 Jul 2020 22:10:55 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</guid>
+      <description>[프로그래머스 - 크레인 인형뽑기 게임]
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   인형들을 담아두는 basket(vector&amp;lt;int&amp;gt; 변수)을 선언하였다.
+  집은 인형과 바구니의 맨 위에 있는 인형이 같을 때 바구니 젤 위에 있는 인형을 제거해주었다.
+  집은 인형과 바구니의 맨 위에 있는 인형이 다를 때 집은 인형을 바구니의 맨 위에 올리고 종료한다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; // 바구니 vector&amp;lt;int&amp;gt; basket(0); int answer = 0; void change(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; board, int idx) { int rowSize = board.</description>
     </item>
     
   </channel>

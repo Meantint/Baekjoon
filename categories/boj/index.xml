@@ -5,8 +5,7 @@
     <link>https://meantint.github.io/categories/boj/</link>
     <description>Recent content in BOJ on Meantint&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <language>ko-kr</language>
     <lastBuildDate>Wed, 19 Aug 2020 13:42:25 +0900</lastBuildDate>
     
 	<atom:link href="https://meantint.github.io/categories/boj/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +13,10 @@
     
     <item>
       <title>BOJ 2169 - 로봇 조종하기</title>
-      <link>https://meantint.github.io/posts/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</link>
+      <link>https://meantint.github.io/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</link>
       <pubDate>Wed, 19 Aug 2020 13:42:25 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://meantint.github.io/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</guid>
       <description>[BOJ_2169 - 로봇 조종하기]
  정말 많이 생각하고 힘들게 풀었다. 원래 푼 방식이 맞다고 생각이 들어서 고집을 부렸는데 그 방법은 아니었다.
 풀이   dp[i][j][k] = k 방향으로 들어와서 (i, j)에 들어왔을 때의 최댓값
@@ -29,20 +28,20 @@
     
     <item>
       <title>BOJ 1000 - A&#43;B</title>
-      <link>https://meantint.github.io/posts/2020/08/boj-1000-a-b/</link>
+      <link>https://meantint.github.io/2020/08/boj-1000-a-b/</link>
       <pubDate>Mon, 17 Aug 2020 23:28:57 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/boj-1000-a-b/</guid>
+      <guid>https://meantint.github.io/2020/08/boj-1000-a-b/</guid>
       <description>[BOJ_1000 - A+B]
 풀이  &amp;hellip;?  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a, b; cin &amp;gt;&amp;gt; a &amp;gt;&amp;gt; b; cout &amp;lt;&amp;lt; a + b &amp;lt;&amp;lt; &amp;#39;\n&amp;#39;; return 0; } </description>
     </item>
     
     <item>
       <title>BOJ 9252 - LCS 2</title>
-      <link>https://meantint.github.io/posts/2020/08/boj-9252-lcs-2/</link>
+      <link>https://meantint.github.io/2020/08/boj-9252-lcs-2/</link>
       <pubDate>Sun, 09 Aug 2020 16:42:18 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/08/boj-9252-lcs-2/</guid>
+      <guid>https://meantint.github.io/2020/08/boj-9252-lcs-2/</guid>
       <description>[BOJ_9252 - LCS 2]
 풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] + 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
   이중 for문 안의 else에 등호를 &amp;gt;=가 아닌 &amp;gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</description>
@@ -50,10 +49,10 @@
     
     <item>
       <title>BOJ 14502 - 연구소</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</link>
+      <link>https://meantint.github.io/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</link>
       <pubDate>Thu, 23 Jul 2020 01:29:07 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</guid>
       <description>[BOJ_14502 - 연구소]
  Brute Force로 해결하였다. 문제에서 제시된 2차원 배열의 범위가 작아서 시간 복잡도가 꽤 여유롭다.
 풀이   벽을 3칸 치는 작업을 완전탐색을 이용하여 한다.
@@ -64,10 +63,10 @@
     
     <item>
       <title>BOJ 1654 - 랜선 자르기</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</link>
+      <link>https://meantint.github.io/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</link>
       <pubDate>Thu, 23 Jul 2020 00:56:42 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</guid>
       <description>[BOJ_1654 - 랜선 자르기]
  이분탐색을 이용하여 풀었다. sum &amp;gt;= n인 경우 start값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.
 풀이   mid값은 (start + end) / 2인데, start는 1, end는 랜선의 길이 중 가장 큰 값이다.
@@ -79,10 +78,10 @@
     
     <item>
       <title>BOJ 1043 - 거짓말</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</link>
+      <link>https://meantint.github.io/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</link>
       <pubDate>Fri, 17 Jul 2020 16:05:00 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</guid>
       <description>[BOJ_1043 - 거짓말]
  2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 Union_Find를 이용하여 풀었더라. Union_Find를 공부하자.
 풀이     사람 -&amp;gt; 1 2 3 4     파티 ↓        1  1 1 0 0   2  0 0 1 0   3  0 1 1 1    파티, 사람간의 관계를 갖는 2차원 배열  만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다.</description>
@@ -90,10 +89,10 @@
     
     <item>
       <title>BOJ 1027 - 고층 건물</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</link>
+      <link>https://meantint.github.io/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</link>
       <pubDate>Thu, 16 Jul 2020 17:50:20 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</guid>
       <description>[BOJ_1027 - 고층 건물]
  왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.
 그리고 굳이 vec를 vector&amp;lt;PII&amp;gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&amp;lt;int, int&amp;gt;
@@ -102,10 +101,10 @@
     
     <item>
       <title>BOJ 1038 - 감소하는 수</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</link>
+      <link>https://meantint.github.io/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</link>
       <pubDate>Tue, 14 Jul 2020 21:37:04 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</guid>
       <description>[BOJ_1038 - 감소하는 수]
  낚시하려고 만든건지 N값이 쓸데없이 크다.
 감소하는 수의 가장 큰 수인 9876543210이 N = 1022이기 때문에..
@@ -114,10 +113,10 @@
     
     <item>
       <title>BOJ 1022 - 소용돌이 예쁘게 출력하기</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</link>
+      <link>https://meantint.github.io/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</link>
       <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</guid>
       <description>[BOJ_1022 - 소용돌이 예쁘게 출력하기]
  생각보다 간단하게 풀었다.
 풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
@@ -128,10 +127,10 @@
     
     <item>
       <title>BOJ 1041 - 주사위</title>
-      <link>https://meantint.github.io/posts/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</link>
+      <link>https://meantint.github.io/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</link>
       <pubDate>Sun, 12 Jul 2020 02:12:25 +0900</pubDate>
       
-      <guid>https://meantint.github.io/posts/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</guid>
+      <guid>https://meantint.github.io/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</guid>
       <description>[BOJ_1041 - 주사위]
  처음에 주사위의 값들이 이동할 수 있다고 생각하고 6개의 값을 sort한 후에 풀었다..(당연히 그렇게 푸는거 아님)
 풀이   5개의 면 중 3개의 면이 드러나는 주사위는 4개, 2개의 면이 드러나는 주사위는 8n - 12개,
