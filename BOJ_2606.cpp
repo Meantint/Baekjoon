@@ -3,11 +3,6 @@
 
 using namespace std;
 
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
 struct Union_Find {
     vector<int> parent, rank;
 
