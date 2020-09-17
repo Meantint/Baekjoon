@@ -20,6 +20,7 @@ long long init(vector<long long>& a, vector<long long>& tree, int node, int star
 
 void update(vector<long long>& tree, int node, int start, int end, int index, long long diff)
 {
+    // index가 범위([start, end]) 밖이면 종료
     if (index < start || index > end) return;
     tree[node] += diff;
     // 단말 노드가 아니라면
