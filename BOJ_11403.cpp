@@ -1,4 +1,4 @@
-// 플로이드 와샬 알고리즘 사용
+// Floyd-Warshall Algorithm
 
 #include <algorithm>
 #include <iostream>
