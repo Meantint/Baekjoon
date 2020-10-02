@@ -1,3 +1,5 @@
+// 마지막에 갈 수 없는 경우를 0으로 바꿔줘야 한다.
+
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
@@ -57,6 +59,10 @@ int main()
     floyd();
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
+            if (adj[i][j] == INF) {
+                cout << '0' << ' ';
+                continue;
+            }
             cout << adj[i][j] << ' ';
         }
         cout << '\n';
