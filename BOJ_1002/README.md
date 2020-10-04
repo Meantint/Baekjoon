@@ -1,4 +1,4 @@
-&nbsp;점의 위치와 반지름에 길이에 따른 교점 갯수를 잘 세어야한다.  컴파일을 하는데 y0, y1...는 이미 함수로 선언되어 있어서 이름을 바꿔줘야했다.
+&nbsp;점의 위치와 반지름에 길이에 따른 교점 개수를 잘 세어야 한다. 컴파일을 하는데 y0, y1... 는 이미 함수로 선언되어 있어서 이름을 바꿔줘야 했다.
 
 #### Baekjoon - [터렛](https://www.acmicpc.net/problem/1002)
 #### My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
