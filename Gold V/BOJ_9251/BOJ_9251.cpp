@@ -17,7 +17,7 @@ int main()
     dp = vector<vector<int>>(row, vector<int>(col, 0));
     for (int i = 1; i < row; ++i) {
         for (int j = 1; j < col; ++j) {
-            if (s1[i] == s2[j]) {
+            if (s1[i - 1] == s2[j - 1]) {
                 dp[i][j] = dp[i - 1][j - 1] + 1;
             }
             else {
