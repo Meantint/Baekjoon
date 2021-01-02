@@ -16,13 +16,13 @@
 
 - `prime[ed]`의 값이 찾는 값 `n`보다 크다면 더 탐색할 필요가 없으므로 `break` 해준다.
 
-- `cur`: `st ~ ed` 인덱스 구간의 모든 합을 저장해놓은 변수
+- `cur` : `st ~ ed` 인덱스 구간의 모든 합을 저장해놓은 변수
 
-- `cur > n`: `cur -= prime[st]`를 실행 후 `++st`를 해준다.
+- `cur > n` : `cur -= prime[st]`를 실행 후 `++st`를 해준다.
 
-- `cur < n`: `++ed`를 해준 후 `cur += prime[ed]`를 실행해준다.
+- `cur < n` : `++ed`를 해준 후 `cur += prime[ed]`를 실행해준다.
 
-- `cur == n`:  `++answer`를 해준 후 `++ed` & `cur += prime[ed]`를 해준다.
+- `cur == n` : `++answer`를 해준 후 `++ed` & `cur += prime[ed]`를 해준다.
 
 ## Code
 
