@@ -1,14 +1,16 @@
 # BOJ_1001 - A-B
 
-&nbsp;기본적인 뺄셈
+## 문제/코드 링크
 
 - Baekjoon - [A-B](https://www.acmicpc.net/problem/1001)
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- My Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
-- 기본적인 뺄셈!
+- 각 언어에 맞는 입출력을 사용하면 되는 문제.
+
+- C++의 표준 입출력은 `cin`과 `cout`이다.
 
 ## Code
 
@@ -22,6 +24,7 @@ int a, b;
 int main()
 {
     cin >> a >> b;
+
     cout << a - b << '\n';
 
     return 0;
