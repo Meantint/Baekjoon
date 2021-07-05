@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Meantint">
+<meta name="keywords" content="">
+<meta name="description" content="[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] &#43; 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &gt;=가 아닌 &gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.">
+
+
+<meta property="og:description" content="[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] &#43; 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &gt;=가 아닌 &gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BOJ 9252 - LCS 2">
+<meta name="twitter:title" content="BOJ 9252 - LCS 2">
+<meta property="og:url" content="https://meantint.github.io/2020/08/boj-9252-lcs-2/">
+<meta property="twitter:url" content="https://meantint.github.io/2020/08/boj-9252-lcs-2/">
+<meta property="og:site_name" content="Meantint&#39;s Blog">
+<meta property="og:description" content="[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] &#43; 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &gt;=가 아닌 &gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.">
+<meta name="twitter:description" content="[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] &#43; 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &gt;=가 아닌 &gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2020-08-09T16:42:18">
+  
+  
+    <meta property="article:modified_time" content="2020-08-09T16:42:18">
+  
+  
+  
+    
+      <meta property="article:section" content="BOJ">
+    
+  
+  
+    
+      <meta property="article:tag" content="BOJ">
+    
+      <meta property="article:tag" content="Baekjoon">
+    
+      <meta property="article:tag" content="BOJ_9252">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/6b70894b95994b23522fffb7edc7fef9?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/6b70894b95994b23522fffb7edc7fef9?s=640">
+
+
+    <title>BOJ 9252 - LCS 2</title>
+
+    <link rel="icon" href="https://meantint.github.io/images/profile.png">
+    
+
+    
+
+    <link rel="canonical" href="https://meantint.github.io/2020/08/boj-9252-lcs-2/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://meantint.github.io/css/style-aeazlkju5l5x8ay77wla1kqzc5573lti80rnfuybmelghlckeahkeu2llh.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-RBWB580JRH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://meantint.github.io/">Meantint&#39;s Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://meantint.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/6b70894b95994b23522fffb7edc7fef9?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://meantint.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/6b70894b95994b23522fffb7edc7fef9?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Meantint</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://meantint.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://meantint.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://meantint.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://meantint.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://meantint.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/meantint" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://meantint.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      BOJ 9252 - LCS 2
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-08-09T16:42:18&#43;09:00">
+        
+  August 9, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://meantint.github.io/categories/boj">BOJ</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>[<a href="https://www.acmicpc.net/problem/9252">BOJ_9252</a> - <a href="https://www.acmicpc.net/problem/9252">LCS 2</a>]</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ol>
+<li><code>str1[i] == str2[j]</code>
+<ul>
+<li><code>dp[i][j] = dp[i - 1][j - 1] + 1</code></li>
+</ul>
+</li>
+<li><code>str1[i] != str2[j]</code>
+<ul>
+<li><code>dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])</code></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<p>위의 조건식을 문자열이 저장되어 있는 <code>dp[i][j].second</code>도 그대로 따른다.</p>
+</li>
+<li>
+<p>이중 for문 안의 else에 등호를 <code>&gt;=</code>가 아닌 <code>&gt;</code>로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</p>
+<blockquote>
+<p>LCS가 여러 가지인 경우에는 아무거나 출력하고, LCS의 길이가 0인 경우에는 둘째 줄을 출력하지 않는다.</p>
+</blockquote>
+</li>
+</ul>
+<center>
+<p><img src="https://meantint.github.io/images/2020/08/BOJ_9252_1.png" alt="result"></p>
+<figcaption>(first, second) = (최대 길이, 최대 길이일 때의 문자열)</figcaption>
+</center>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define PIS pair&lt;int, string&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+string str1, str2;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        cin <span style="color:#f92672">&gt;&gt;</span> str1 <span style="color:#f92672">&gt;&gt;</span> str2;
+
+        <span style="color:#66d9ef">int</span> size1 <span style="color:#f92672">=</span> str1.size();
+        <span style="color:#66d9ef">int</span> size2 <span style="color:#f92672">=</span> str2.size();
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>PIS<span style="color:#f92672">&gt;&gt;</span> dp(size1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vector<span style="color:#f92672">&lt;</span>PIS<span style="color:#f92672">&gt;</span>(size2 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, make_pair(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;&#34;</span>)));
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> size1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> size2 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (str1[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> str2[j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) {
+                                dp[i][j].first <span style="color:#f92672">=</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                                dp[i][j].second <span style="color:#f92672">=</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].second <span style="color:#f92672">+</span> str2[j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+                        }
+                        <span style="color:#66d9ef">else</span> {
+                                dp[i][j].first <span style="color:#f92672">=</span> (dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].first <span style="color:#f92672">&gt;=</span> dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first) <span style="color:#f92672">?</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].first : dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first;
+                                dp[i][j].second <span style="color:#f92672">=</span> (dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].first <span style="color:#f92672">&gt;=</span> dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first) <span style="color:#f92672">?</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].second : dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].second;
+                        }
+                }
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> dp[size1][size2].first <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>
+             <span style="color:#f92672">&lt;&lt;</span> dp[size1][size2].second <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+        
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/boj/">BOJ</a>
+
+  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/baekjoon/">Baekjoon</a>
+
+  <a class="tag tag--primary tag--small" href="https://meantint.github.io/tags/boj_9252/">BOJ_9252</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-2/" data-tooltip="HTML 태그 - 2">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-1/" data-tooltip="HTML 태그 - 1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 <a href="https://github.com/meantint">Meantint</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-2/" data-tooltip="HTML 태그 - 2">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://meantint.github.io/2020/08/html-%ED%83%9C%EA%B7%B8-1/" data-tooltip="HTML 태그 - 1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/6b70894b95994b23522fffb7edc7fef9?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Meantint</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Your job title
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://meantint.github.io/images/new_background.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://meantint.github.io/js/script-vo9ru0wirewodh7zcepqghf6t9j7k1qxk7qqoa8oigj48igegp7lifgysov.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/meantint.github.io\/2020\/08\/boj-9252-lcs-2\/';
+          
+            this.page.identifier = '\/2020\/08\/boj-9252-lcs-2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

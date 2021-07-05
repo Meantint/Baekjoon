@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+
+<html lang="ko-kr" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+<title>BOJ_1027 고층 건물 - Meantint</title>
+<meta name="description" content="" />
+
+<link rel="icon" type="image/x-icon" href="https://meantint.github.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://meantint.github.io/favicon.png">
+<link rel="stylesheet" href="https://meantint.github.io/css/light.css?rnd=1594971840" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #ccc;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://meantint.github.io/css/style.css?rnd=1594971840" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/gradient-dark.min.css">
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://meantint.github.io/css/my.css?rnd=1594971840" />
+<script src="https://meantint.github.io/js/main.js?rnd=1594971840" type="text/javascript" charset="utf-8"></script>
+<meta property="og:title" content="BOJ_1027 고층 건물" />
+<meta property="og:description" content="[BOJ_1027 - 고층 건물]
+왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.
+그리고 굳이 vec를 vector&lt;PII&gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&lt;int, int&gt;
+풀이    i 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     Height 1 5 3 2 6 3 2 6 4 2 5 7 3 1 5    건물의 위치(i)와 높이(Height)  vec[i]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://meantint.github.io/post/boj_4/" />
+<meta property="og:image" content="https://meantint.github.io/images/og-featured.png"/>
+<meta property="article:published_time" content="2020-07-16T17:50:20+09:00" />
+<meta property="article:modified_time" content="2020-07-16T17:50:20+09:00" />
+ <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://meantint.github.io/images/og-featured.png"/>
+
+<meta name="twitter:title" content="BOJ_1027 고층 건물"/>
+<meta name="twitter:description" content="[BOJ_1027 - 고층 건물]
+왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.
+그리고 굳이 vec를 vector&lt;PII&gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&lt;int, int&gt;
+풀이    i 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     Height 1 5 3 2 6 3 2 6 4 2 5 7 3 1 5    건물의 위치(i)와 높이(Height)  vec[i]."/>
+
+
+
+
+
+ 
+    
+</head>
+<body>
+    <a class="skip-main" href="#main"></a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">Meantint</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://meantint.github.io/categories/boj" title="BOJ">BOJ</a>
+    
+    <a class="" href="https://meantint.github.io/categories/git" title="Git">Git</a>
+    
+    <a class="" href="https://meantint.github.io/categories/programmers" title="Programmers">Programmers</a>
+    
+    <a class="" href="https://meantint.github.io/post/" title="All Post">All Post</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">
+            BOJ_1027 고층 건물</h1>
+    </header>
+    <div class="content">
+        <p>[<a href="https://www.acmicpc.net/problem/1027">BOJ_1027</a> - <a href="https://www.acmicpc.net/problem/1027">고층 건물</a>]</p>
+<p>왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.<br><br>
+그리고 굳이 vec를 <code>vector&lt;PII&gt; type</code>으로 할 필요가 없다.
+<br>vec[idx].first = idx이기 때문에.. <code>PII = pair&lt;int, int&gt;</code></p>
+<h1 id="풀이">풀이</h1>
+<center>
+<table>
+<thead>
+<tr>
+<th align="center">i</th>
+<th align="right">0</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+<th align="right">5</th>
+<th align="right">6</th>
+<th align="right">7</th>
+<th align="right">8</th>
+<th align="right">9</th>
+<th align="right">10</th>
+<th align="right">11</th>
+<th align="right">12</th>
+<th align="right">13</th>
+<th align="right">14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Height</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figcaption>건물의 위치(i)와 높이(Height)</figcaption>
+<ul>
+<li>
+<p><code>vec[i].first</code> : <code>i</code> 건물의 위치<br><code>vec[i].second</code> : <code>i</code> 건물의 높이</p>
+</li>
+<li>
+<p>검색하는 <code>i</code>를 기준으로 왼쪽, 오른쪽을 따로 탐색한 후의 <code>cnt</code>가 <code>answer</code>보다 크다면 <code>answer</code>의 값을 변경한다.</p>
+</li>
+<li>
+<p>탐색하는 방법은 기울기를 사용하였는데 탐색하는 위치인 <code>i</code>에서 가까운 곳부터 순차적으로 탐색하였다.</p>
+</li>
+<li>
+<p>만약 이전에 탐색했던 곳 중 가장 컸던 기울기보다 현재 탐색한 곳의 기울기가 더 크다면 그 건물은 <code>i</code>건물에서 보이는 건물이다.</p>
+</li>
+<li>
+<p>주의할 점은 <code>i</code>에서 왼쪽으로 탐색할 때 역시 <code>i</code>가 기준이므로 그래프 상으로 생긴 기울기는 음수일지 몰라도 양수로 봐야 한다는 것이다.</p>
+<ul>
+<li><code>vec[j].first</code> - <code>vec[i].first</code>가 왼쪽으로 탐색할 때는 무조건 음수가 나오므로<br><code>vec[i].first</code> - <code>vec[j].first</code>으로 바꿔주었다.</li>
+</ul>
+</li>
+</ul>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define PII pair&lt;int, int&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">int</span> N;
+        cin <span style="color:#f92672">&gt;&gt;</span> N;
+
+        vector<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;</span> vec;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> N; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> height;
+                cin <span style="color:#f92672">&gt;&gt;</span> height;
+
+                vec.push_back(make_pair(i, height));
+        }
+
+        <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> vec.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                <span style="color:#66d9ef">double</span> prev <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2000000000</span>;
+                <span style="color:#75715e">// 왼쪽으로 가면서 만나는 건물들을 비교
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#f92672">--</span>j) {
+                        <span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>)(vec[j].second <span style="color:#f92672">-</span> vec[i].second) <span style="color:#f92672">/</span> (<span style="color:#66d9ef">double</span>)(vec[i].first <span style="color:#f92672">-</span> vec[j].first);
+                        <span style="color:#66d9ef">if</span> (val <span style="color:#f92672">&gt;</span> prev) {
+                                <span style="color:#f92672">++</span>cnt;
+                                prev <span style="color:#f92672">=</span> val;
+                        }
+                }
+                prev <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2000000000</span>;
+                <span style="color:#75715e">// 오른쪽으로 가면서 만나는 건물들을 비교
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>)(vec[j].second <span style="color:#f92672">-</span> vec[i].second) <span style="color:#f92672">/</span> (<span style="color:#66d9ef">double</span>)(vec[j].first <span style="color:#f92672">-</span> vec[i].first);
+                        <span style="color:#66d9ef">if</span> (val <span style="color:#f92672">&gt;</span> prev) {
+                                <span style="color:#f92672">++</span>cnt;
+                                prev <span style="color:#f92672">=</span> val;
+                        }
+                }
+                answer <span style="color:#f92672">=</span> max(answer, cnt);
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+    </div>
+    
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-07-16</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://meantint.github.io/categories/BOJ">BOJ</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://meantint.github.io/tags/boj">#BOJ</a></li>
+                    
+                        <li><a href="https://meantint.github.io/tags/baekjoon">#Baekjoon</a></li>
+                    
+                        <li><a href="https://meantint.github.io/tags/boj_1027">#BOJ_1027</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+
+
+
+<div class="pagination post-pagination">
+    <div class="left pagination-item ">
+        
+        <a href="/post/boj_5/">BOJ_1043 거짓말</a>
+        
+    </div>
+    <div class="right pagination-item ">
+        
+        <a href="/post/boj_3/">BOJ_1038 감소하는 수</a>
+        
+    </div>
+</div>
+
+
+
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>©
+            2020 Meantint All Rights Reserved.<br>
+             <a target="_blank" rel="noopener noreferrer"
+                href="https://gohugo.io/">Hugo</a>,  <a target="_blank" rel="noopener noreferrer"
+                href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+        </p>
+    </div>
+
+    
+
+    
+
+
+
+</footer>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>프로그래머스 on Meantint&#39;s Blog</title>
+    <link>https://meantint.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/</link>
+    <description>Recent content in 프로그래머스 on Meantint&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 02 Sep 2020 02:14:18 +0900</lastBuildDate>
+    
+	<atom:link href="https://meantint.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>프로그래머스 - 무지의 먹방 라이브</title>
+      <link>https://meantint.github.io/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</link>
+      <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</guid>
+      <description>[프로그래머스 - 무지의 먹방 라이브]
+ 카카오 블라인드 채용 대비를 하면서 풀었던 문제. 꽤 잘 풀렸다. 풀고 나서 다른 사람들의 풀이를 봤는데 대부분 우선순위큐를 이용하여 풀었다. 탐색하는 순서의 차이(Binary Search vs min Heap)를 제외한 기본적인 틀은 같은 것 같다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   이 문제는 k + 1번째 먹을 음식의 번호를 물어본다고 할 수 있다.
+  food_times의 총합 test가 k + 1보다 작으면 섭취해야 할 음식이 없으므로 -1을 리턴한다.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - 추석 트래픽</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</link>
+      <pubDate>Sun, 30 Aug 2020 13:06:04 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</guid>
+      <description>[프로그래머스 - 추석 트래픽]
+ 처음 풀었을 때 시간을 많이 들였는데도 예외케이스들을 생각하니 너무 복잡해서 풀지 못하고 시간이 꽤 흐른 후 다시 풀게 되었는데 어렵지 않게 풀었다. 하나의 생각에 너무 묶여있어서 못 풀었던것 같다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   changeSec : 처리가 끝난 시간, changeSec_start : 처리가 시작된 시간
+  처음에 double type으로 풀었으나 소수점 부분의 미세한 오차 때문에 답이 제대로 출력되지 않는 경우가 있어서 0.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - 단속카메라</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
+      <pubDate>Sat, 15 Aug 2020 08:50:24 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
+      <description>[프로그래머스 - 단속카메라]
+ 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
+  routes[idx][0]을 계산하기 위한 idx를 선언한다.
+  i번째 자동차가 카메라에서 벗어나기 직전의 시점인 routes[i][1]에서 찍히는 자동차(routes[idx][0] ~ routes[idx][1])가 있는지 확인하고 있으면 ++idx, 없으면 continue를 진행한다.
+  나가는 순서대로 정렬을 했는데 ++idx를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - 단어 변환</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</link>
+      <pubDate>Fri, 14 Aug 2020 14:12:09 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</guid>
+      <description>[프로그래머스 - 단어 변환]
+ dfs를 이용한 완전 탐색으로 풀었다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   dfs 안에서 단어가 다른 개수를 저장하는 diff를 만들었다.
+  만약 diff = 1이라면 dfs 실행, 아니라면 dfs 실행하지 않는다.
+  str과 gv_target의 값이 같다면 dfs를 answer = min(answer, cnt)를 실행 후 dfs를 종료한다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; bool isCheck[50]; int answer; string gv_begin = &amp;#34;&amp;#34;, gv_target = &amp;#34;&amp;#34;; vector&amp;lt;string&amp;gt; gv_words; void dfs(int cur, string str, int cnt) { if (cur == -1) { } else if (isCheck[cur]) { return; } if (str == gv_target) { answer = min(answer, cnt); return; } isCheck[cur] = true; int size = gv_words.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - 등굣길</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</link>
+      <pubDate>Thu, 13 Aug 2020 13:34:49 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</guid>
+      <description>[프로그래머스 - 등굣길]
+ Level 3 난이도 중 그나마 쉬웠다. 다른게 어려운건가?
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dp를 만들고 0으로 초기화 시킨다.
+  puddles에 속해 있는 위치를 -1로 변경시킨다.
+  dp[i][j] = dp[i - 1][j] + dp[i][j - 1]이다. 단, dp[i - 1][j]와 dp[i][j - 1]이 -1이라면 더해주지 않는다.
+  dp[i][j] 연산 후 1000000007을 나눠준다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int solution(int m, int n, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; puddles) { int answer = 0; vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dp(m + 1, vector&amp;lt;int&amp;gt;(n + 1, 0)); int size = puddles.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - 디스크 컨트롤러</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</link>
+      <pubDate>Wed, 12 Aug 2020 16:53:22 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</guid>
+      <description>[프로그래머스 - 디스크 컨트롤러]
+ https://mungto.tistory.com/15를 참고하여 풀었습니다.
+ 프로그래머스 레벨 2를 한문제를 남겨놓고 레벨 3에 입문했는데 혼자 힘만으로 풀 수 있는 문제가 거의 존재하지 않는걸 보니 아직도 실력이 많이 부족한 것 같다.
+ 하나 더, 문제를 풀면서 cmp를 짤 때 p1.first + p1.second &amp;gt; p2.first + p2.second여야 한다고 생각했는데 실제 조건은 p1.second &amp;gt; p2.second여야 해서 헷갈렸다. 결론만 말하자면 작업 요청이 얼마나 빨리 들어왔는지의 유무와는 상관없이 작업이 걸리는 시간만 답에 영향을 미친다.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - N으로 표현</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</link>
+      <pubDate>Tue, 11 Aug 2020 17:17:50 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</guid>
+      <description>[프로그래머스 - N으로 표현]
+ https://woongsin94.tistory.com/232를 참고하여 풀었습니다.
+ 처음에 dp로 풀면서 dp[1] = 2, dp[11] = 3, dp[111] = 4 &amp;hellip; 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
+ 참조한 코드를 보면서 특수 케이스(1, 11, 111&amp;hellip;)을 어떻게 for문 안에 저런 식으로 표현하지라고 감탄했다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   dp가 아닌 dfs로 해결하였다.
+  N부터 NNNNNNNN까지 순차적으로 늘어나면서 for문을 돈다.</description>
+    </item>
+    
+    <item>
+      <title>프로그래머스 - 크레인 인형뽑기 게임</title>
+      <link>https://meantint.github.io/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</link>
+      <pubDate>Thu, 09 Jul 2020 22:10:55 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</guid>
+      <description>[프로그래머스 - 크레인 인형뽑기 게임]
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   인형들을 담아두는 basket(vector&amp;lt;int&amp;gt; 변수)을 선언하였다.
+  집은 인형과 바구니의 맨 위에 있는 인형이 같을 때 바구니 젤 위에 있는 인형을 제거해주었다.
+  집은 인형과 바구니의 맨 위에 있는 인형이 다를 때 집은 인형을 바구니의 맨 위에 올리고 종료한다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; // 바구니 vector&amp;lt;int&amp;gt; basket(0); int answer = 0; void change(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; board, int idx) { int rowSize = board.</description>
+    </item>
+    
+  </channel>
+</rss>

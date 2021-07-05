@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="">
+<meta name="description"
+    content="[BOJ_1043 - 거짓말]
+ 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 Union_Find를 이용하여 풀었더라. Union_Find를 공부하자.
+풀이     사람 -&amp;gt; 1 2 3 4     파티 ↓        1  1 1 0 0   2  0 0 1 0   3  0 1 1 1    파티, 사람간의 관계를 갖는 2차원 배열  만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다." />
+<meta name="keywords"
+    content=", BOJ, Baekjoon, BOJ_1043" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://meantint.github.io/posts/2020/07/boj_1043/" />
+<link rel="shortcut icon" href="https://meantint.github.io/images/profile.png" type="image/x-icon" />
+
+
+<title>
+    
+    BOJ 1043 - 거짓말 :: Meantint&#39;s BLog  — A simple theme for Hugo
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+<link rel="shortcut icon" href="https://meantint.github.io/images/profile.png" type="image/x-icon" />
+
+<meta itemprop="name" content="BOJ 1043 - 거짓말">
+<meta itemprop="description" content="[BOJ_1043 - 거짓말]
+ 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 Union_Find를 이용하여 풀었더라. Union_Find를 공부하자.
+풀이     사람 -&gt; 1 2 3 4     파티 ↓        1  1 1 0 0   2  0 0 1 0   3  0 1 1 1    파티, 사람간의 관계를 갖는 2차원 배열  만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다.">
+<meta itemprop="datePublished" content="2020-07-17T16:05:00+09:00" />
+<meta itemprop="dateModified" content="2020-07-17T16:05:00+09:00" />
+<meta itemprop="wordCount" content="393">
+<meta itemprop="image" content="https://meantint.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="BOJ,Baekjoon,BOJ_1043," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://meantint.github.io/"/>
+
+<meta name="twitter:title" content="BOJ 1043 - 거짓말"/>
+<meta name="twitter:description" content="[BOJ_1043 - 거짓말]
+ 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 Union_Find를 이용하여 풀었더라. Union_Find를 공부하자.
+풀이     사람 -&gt; 1 2 3 4     파티 ↓        1  1 1 0 0   2  0 0 1 0   3  0 1 1 1    파티, 사람간의 관계를 갖는 2차원 배열  만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다."/>
+
+
+
+<meta property="og:title" content="BOJ 1043 - 거짓말" />
+<meta property="og:description" content="[BOJ_1043 - 거짓말]
+ 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 Union_Find를 이용하여 풀었더라. Union_Find를 공부하자.
+풀이     사람 -&gt; 1 2 3 4     파티 ↓        1  1 1 0 0   2  0 0 1 0   3  0 1 1 1    파티, 사람간의 관계를 갖는 2차원 배열  만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://meantint.github.io/posts/2020/07/boj_1043/" />
+<meta property="og:image" content="https://meantint.github.io/"/>
+<meta property="article:published_time" content="2020-07-17T16:05:00+09:00" />
+<meta property="article:modified_time" content="2020-07-17T16:05:00+09:00" /><meta property="og:site_name" content="Meantint&#39;s BLog" />
+
+
+
+
+<meta property="article:section" content="BOJ" />
+
+
+
+<meta property="article:published_time" content="2020-07-17 16:05:00 &#43;0900 KST" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Meantint&#39;s BLog</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://meantint.github.io/posts">Blog</a></li><li><a href="https://meantint.github.io/categories">Category</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+<main class="post">
+
+  <div class="post-info">
+    <p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-clock">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      2 minutes
+
+      
+    </p>
+  </div>
+
+  <article>
+    <h1 class="post-title">
+      <a href="https://meantint.github.io/posts/2020/07/boj_1043/">BOJ 1043 - 거짓말</a>
+    </h1>
+
+    
+
+    <div class="post-content">
+      <p>[<a href="https://www.acmicpc.net/problem/1043">BOJ_1043</a> - <a href="https://www.acmicpc.net/problem/1043">거짓말</a>]</p>
+<p> 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 <code>Union_Find</code>를 이용하여 풀었더라. <code>Union_Find</code>를 공부하자.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<center>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="right">사람 -&gt;</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">파티 ↓</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="right"></td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="right"></td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="right"></td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figcaption>파티, 사람간의 관계를 갖는 2차원 배열</figcaption>
+<ul>
+<li>
+<p>만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다.</p>
+<ul>
+<li>연결을 제거하는 위치에서 재귀적으로 반복한다.(진실을 알고 있는 사람과 이어져있는 다른 사람의 파티가 존재하는지)</li>
+</ul>
+</li>
+<li>
+<p>그 후 파티를 검색하면서 1이 존재하는 파티(거짓을 말해도 상관없는 파티)를 발견하면 <code>++answer</code>를 해준 후 <code>break</code>한다.</p>
+</li>
+<li>
+<p>n번 사람이 진실을 알고 있다고 할 때</p>
+<ol>
+<li>
+<p>n번이 속해있는 파티에서는 무조건 진실을 말해야 한다.</p>
+<ul>
+<li><code>vec[1][n]</code> ~ <code>vec[m][n]</code> 중 value가 1인 곳(n번 사람이 파티에 속한 곳)을 찾는다.</li>
+</ul>
+</li>
+<li>
+<p>찾은 파티에서 순차적으로 탐색(1번 사람부터 N번 사람까지)하면서 <code>value = 1</code>인 곳이 있으면</p>
+<ol>
+<li>
+<p><code>value = 0</code>으로 바꾼다.</p>
+</li>
+<li>
+<p><code>value = 0</code>으로 바꾼 위치에서 <code>1번</code>을 재귀적으로 실행한다.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">erase</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> vec, <span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+{
+        vec[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> vec.size(); <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">if</span> (vec[i][y] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        erase(vec, i, y);
+                }
+        }
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> vec[<span style="color:#ae81ff">0</span>].size(); <span style="color:#f92672">++</span>j) {
+                <span style="color:#66d9ef">if</span> (vec[x][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        erase(vec, x, j);
+                }
+        }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+        <span style="color:#66d9ef">int</span> n, m;
+        cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vec(m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> truth(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+
+        <span style="color:#66d9ef">int</span> num;
+        cin <span style="color:#f92672">&gt;&gt;</span> num;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> num; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> tmp;
+                cin <span style="color:#f92672">&gt;&gt;</span> tmp;
+
+                truth[tmp] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> T;
+                cin <span style="color:#f92672">&gt;&gt;</span> T;
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> T; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">int</span> tmp;
+                        cin <span style="color:#f92672">&gt;&gt;</span> tmp;
+                        vec[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][tmp] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                }
+        }
+
+        <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> truth.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">if</span> (truth[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>j) {
+                                <span style="color:#66d9ef">if</span> (vec[j][i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                                        erase(vec, j, i);
+                                }
+                        }
+                }
+        }
+        <span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> vec.size();
+        <span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> vec[<span style="color:#ae81ff">0</span>].size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> row; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> col; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                                <span style="color:#f92672">++</span>answer;
+                                <span style="color:#66d9ef">break</span>;
+                        }
+                }
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+
+    </div>
+  </article>
+
+  <hr />
+
+  <div class="post-info">
+    <p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-tag meta-icon">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+        <line x1="7" y1="7" x2="7" y2="7"></line>
+      </svg><span class="tag"><a href="https://meantint.github.io/tags/boj/">BOJ</a></span><span class="tag"><a href="https://meantint.github.io/tags/baekjoon/">Baekjoon</a></span><span class="tag"><a href="https://meantint.github.io/tags/boj_1043/">BOJ_1043</a></span>
+    </p>
+
+    <p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-file-text">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+      393 Words
+    </p>
+
+    <p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-calendar">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      2020-07-17 16:05 &#43;0900
+    </p>
+  </div>
+
+  
+
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://meantint.github.io/posts/2020/07/boj_1654/">
+          <span class="button__icon">←</span>
+          <span class="button__text">BOJ 1654 - 랜선 자르기</span>
+        </a>
+      </span>
+      
+
+      
+      <span class="button next">
+        <a href="https://meantint.github.io/posts/2020/07/boj_1027/">
+          <span class="button__text">BOJ 1027 - 고층 건물</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+
+  
+
+</main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            
+                <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            <span> <a href="https://meantint.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-RBWB580JRH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+    </body>
+</html>

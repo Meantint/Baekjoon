@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BOJ_1654 on Meantint&#39;s Blog</title>
+    <link>https://meantint.github.io/tags/boj_1654/</link>
+    <description>Recent content in BOJ_1654 on Meantint&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 23 Jul 2020 00:56:42 +0900</lastBuildDate>
+    
+	<atom:link href="https://meantint.github.io/tags/boj_1654/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BOJ 1654 - 랜선 자르기</title>
+      <link>https://meantint.github.io/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</link>
+      <pubDate>Thu, 23 Jul 2020 00:56:42 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</guid>
+      <description>[BOJ_1654 - 랜선 자르기]
+ 이분탐색을 이용하여 풀었다. sum &amp;gt;= n인 경우 start값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.
+풀이   mid값은 (start + end) / 2인데, start는 1, end는 랜선의 길이 중 가장 큰 값이다.
+  잘라서 나온 랜선의 개수가 n보다 크거나 같다면
+  start = mid + 1을 해준다.
+  만약 mid가 현재까지의 최대값 max보다 크다면 max를 mid값으로 바꿔준다.
+  start의 값을 mid + 1로 바꿔주는데 만약 바꾸고 나서 랜선의 개수가 n보다 항상 작게 되면 정답을 도출할 수 없기 때문에 max값을 둬서 mid의 최대값을 저장해둔다.</description>
+    </item>
+    
+  </channel>
+</rss>

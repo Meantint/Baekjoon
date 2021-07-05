@@ -1,0 +1,2301 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Meantint&#39;s Blog</title>
+        <link>https://meantint.github.io/posts/</link>
+        <description>Recent content in Posts on Meantint&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Wed, 02 Sep 2020 02:14:18 +0900</lastBuildDate>
+        <atom:link href="https://meantint.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>프로그래머스 - 무지의 먹방 라이브</title>
+            <link>https://meantint.github.io/posts/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</link>
+            <pubDate>Wed, 02 Sep 2020 02:14:18 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/09/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C/</guid>
+            <description>[프로그래머스 - 무지의 먹방 라이브]
+ 카카오 블라인드 채용 대비를 하면서 풀었던 문제. 꽤 잘 풀렸다. 풀고 나서 다른 사람들의 풀이를 봤는데 대부분 우선순위큐를 이용하여 풀었다. 탐색하는 순서의 차이(Binary Search vs min Heap)를 제외한 기본적인 틀은 같은 것 같다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   이 문제는 k + 1번째 먹을 음식의 번호를 물어본다고 할 수 있다.
+  food_times의 총합 test가 k + 1보다 작으면 섭취해야 할 음식이 없으므로 -1을 리턴한다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/42891">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/42891">무지의 먹방 라이브</a>]</p>
+<p> 카카오 블라인드 채용 대비를 하면서 풀었던 문제. 꽤 잘 풀렸다. 풀고 나서 다른 사람들의 풀이를 봤는데 대부분 우선순위큐를 이용하여 풀었다. 탐색하는 순서의 차이(<code>Binary Search</code> vs <code>min Heap</code>)를 제외한 기본적인 틀은 같은 것 같다.</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>이 문제는 <code>k + 1</code>번째 먹을 음식의 번호를 물어본다고 할 수 있다.</p>
+</li>
+<li>
+<p><code>food_times</code>의 총합 <code>test</code>가 <code>k + 1</code>보다 작으면 섭취해야 할 음식이 없으므로 -1을 리턴한다.</p>
+</li>
+<li>
+<p><code>start = 1</code>, <code>end = k</code>, <code>mid = (start + end) / 2</code>로 설정한다.</p>
+</li>
+<li>
+<p>모든 음식을 <code>mid</code>번 먹었을 때(<code>food_times[i]</code>의 값이 <code>mid</code>보다 작다면 <code>food_times[i]</code>번 먹음) 걸린 시간 <code>sum</code>이</p>
+<ol>
+<li>
+<p><code>k</code>보다 작거나 같을 때</p>
+<ul>
+<li>
+<p><code>save</code>에 현재 <code>mid</code> 값을 저장하고 <code>save_k</code>에 <code>k - sum</code>을 저장한다.</p>
+</li>
+<li>
+<p><code>start = mid + 1</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>k</code>보다 클 때</p>
+<ul>
+<li><code>end = mid - 1</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>위의 과정을 반복하고 while문을 빠져나오면 <code>sum &lt;= k</code>을 만족하는 <code>mid</code>의 최대값이 <code>save</code>에 저장되어 있다.</p>
+</li>
+<li>
+<p>for문을 실행하여 <code>food_times[i] &gt; save</code>이고</p>
+<ol>
+<li>
+<p><code>save_k == 0</code>이라면</p>
+<ul>
+<li><code>i</code>가 <code>k + 1</code>번째 먹을 음식이기 때문에 <code>i + 1</code>(index보다 번호가 1만큼 크기 떄문에, <code>index[0] = 1번</code>)을 반환한다.</li>
+</ul>
+</li>
+<li>
+<p><code>save_k &gt; 0</code>이라면</p>
+<ul>
+<li>음식을 <code>k</code>번 먹지 않았기 때문에(문제는 <code>k + 1</code>번째 먹을 음식의 번호를 물어본다고 볼 수 있다.) <code>--save_k</code> 해준다.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> food_times, <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> k)
+{
+    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> test <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">int</span> foodSize <span style="color:#f92672">=</span> food_times.size();
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> foodSize; <span style="color:#f92672">++</span>i) {
+        test <span style="color:#f92672">+=</span> (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span>)food_times[i];
+    }
+    <span style="color:#66d9ef">if</span> (test <span style="color:#f92672">&lt;</span> k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }
+
+    <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> start, end, mid;
+    start <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    end <span style="color:#f92672">=</span> k;
+
+    <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> save <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> save_k <span style="color:#f92672">=</span> k;
+    <span style="color:#66d9ef">while</span> (start <span style="color:#f92672">&lt;=</span> end) {
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        mid <span style="color:#f92672">=</span> (start <span style="color:#f92672">+</span> end) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> cp <span style="color:#f92672">=</span> food_times;
+        <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> food_times.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+            <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">&gt;</span> cp[i]) {
+                sum <span style="color:#f92672">+=</span> (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span>)cp[i];
+                cp[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            }
+            <span style="color:#66d9ef">else</span> {
+                sum <span style="color:#f92672">+=</span> (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span>)mid;
+                cp[i] <span style="color:#f92672">-=</span> mid;
+            }
+        }
+        <span style="color:#66d9ef">if</span> (sum <span style="color:#f92672">&gt;</span> k) {
+            end <span style="color:#f92672">=</span> mid <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#66d9ef">else</span> {  <span style="color:#75715e">// sum &lt;= k
+</span><span style="color:#75715e"></span>            save <span style="color:#f92672">=</span> mid;
+            save_k <span style="color:#f92672">=</span> k <span style="color:#f92672">-</span> sum;
+            start <span style="color:#f92672">=</span> mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+        }
+    }
+    <span style="color:#75715e">// cout &lt;&lt; save &lt;&lt; &#39;\n&#39;;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> foodSize; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">if</span> (food_times[i] <span style="color:#f92672">&gt;</span> save) {
+            <span style="color:#66d9ef">if</span> (save_k <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                <span style="color:#66d9ef">return</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+            }
+            <span style="color:#66d9ef">else</span> {
+                <span style="color:#f92672">--</span>save_k;
+            }
+        }
+    }
+
+    <span style="color:#66d9ef">return</span> answer;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    cout <span style="color:#f92672">&lt;&lt;</span> solution({<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}, <span style="color:#ae81ff">5</span>) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+    cout <span style="color:#f92672">&lt;&lt;</span> solution({<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}, <span style="color:#ae81ff">7</span>) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+    cout <span style="color:#f92672">&lt;&lt;</span> solution({<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>}, <span style="color:#ae81ff">25</span>) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+    cout <span style="color:#f92672">&lt;&lt;</span> solution({<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>}, <span style="color:#ae81ff">28</span>) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+    cout <span style="color:#f92672">&lt;&lt;</span> solution({<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>프로그래머스 - 추석 트래픽</title>
+            <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</link>
+            <pubDate>Sun, 30 Aug 2020 13:06:04 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD/</guid>
+            <description>[프로그래머스 - 추석 트래픽]
+ 처음 풀었을 때 시간을 많이 들였는데도 예외케이스들을 생각하니 너무 복잡해서 풀지 못하고 시간이 꽤 흐른 후 다시 풀게 되었는데 어렵지 않게 풀었다. 하나의 생각에 너무 묶여있어서 못 풀었던것 같다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   changeSec : 처리가 끝난 시간, changeSec_start : 처리가 시작된 시간
+  처음에 double type으로 풀었으나 소수점 부분의 미세한 오차 때문에 답이 제대로 출력되지 않는 경우가 있어서 0.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/17676">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/17676">추석 트래픽</a>]</p>
+<p> 처음 풀었을 때 시간을 많이 들였는데도 예외케이스들을 생각하니 너무 복잡해서 풀지 못하고 시간이 꽤 흐른 후 다시 풀게 되었는데 어렵지 않게 풀었다. 하나의 생각에 너무 묶여있어서 못 풀었던것 같다.</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p><code>changeSec</code> : 처리가 끝난 시간, <code>changeSec_start</code> : 처리가 시작된 시간</p>
+</li>
+<li>
+<p>처음에 <code>double type</code>으로 풀었으나 소수점 부분의 미세한 오차 때문에 답이 제대로 출력되지 않는 경우가 있어서 <code>0.001s</code>의 단위를 1로 바꿔주는 작업(모두 1000씩 곱함. <code>int type</code>이 됨)을 해주었다.</p>
+</li>
+<li>
+<p>끝 부분을 기준으로만 해도 최대값을 구할 수 있기 때문에 0번째 index부터 순서대로 탐색하면서 최대값을 갱신해 주었다.</p>
+</li>
+<li>
+<p>끝 부분 사이 간격이 4초를 넘게되면 처리시간이 최대값이어도 만나지 않기 때문에 <code>break</code>해주었다.</p>
+</li>
+<li>
+<p><code>j번째 응답시작시간</code> &lt;= <code>i번째 응답완료시간 + 0.999s</code>라면 <code>++cnt</code>를 해준다.</p>
+</li>
+<li>
+<p>이전까지의 최대값 <code>answer</code>보다 현재 최대값 <code>cnt</code>가 더 크다면 <code>answer</code>를 <code>cnt</code>로 바꿔준다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> lines)
+{
+    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> lines.size();
+    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> changeSec(size, <span style="color:#ae81ff">0</span>);
+    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> changeSec_start(size, <span style="color:#ae81ff">0</span>);
+    
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+        changeSec[i] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3600000</span> <span style="color:#f92672">*</span> stoi(lines[i].substr(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">2</span>));
+        changeSec[i] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">60000</span> <span style="color:#f92672">*</span> stoi(lines[i].substr(<span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">2</span>));
+        changeSec[i] <span style="color:#f92672">+=</span> (<span style="color:#66d9ef">int</span>)(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> stod(lines[i].substr(<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">6</span>)));
+        string tmp <span style="color:#f92672">=</span> lines[i].substr(<span style="color:#ae81ff">24</span>);
+        tmp.pop_back();
+        changeSec_start[i] <span style="color:#f92672">=</span> changeSec[i] <span style="color:#f92672">-</span> (<span style="color:#66d9ef">int</span>)(<span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> stod(tmp)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+
+        <span style="color:#75715e">// test
+</span><span style="color:#75715e"></span>        cout <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+        cout <span style="color:#f92672">&lt;&lt;</span> changeSec_start[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">&lt;&lt;</span> changeSec[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>;
+    }
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">int</span> cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i; j <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>j) {
+            <span style="color:#66d9ef">if</span> (changeSec[j] <span style="color:#f92672">-</span> changeSec[i] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4000</span>) {
+                <span style="color:#66d9ef">break</span>;
+            }
+            <span style="color:#66d9ef">if</span> (changeSec_start[j] <span style="color:#f92672">&lt;=</span> changeSec[i] <span style="color:#f92672">+</span> <span style="color:#ae81ff">999</span>) {
+                <span style="color:#f92672">++</span>cnt;
+            }
+        }
+        answer <span style="color:#f92672">=</span> max(answer, cnt);
+    }
+
+    <span style="color:#66d9ef">return</span> answer;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#75715e">// vector&lt;string&gt; vec = {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:04.001 2.0s&#34;,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:07.000 2s&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// };
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// vector&lt;string&gt; vec = {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:04.002 2.0s&#34;,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     &#34;2016-09-15 01:00:07.000 2s&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// };
+</span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> vec <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:57.421 0.351s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:58.233 1.181s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:58.299 0.8s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:58.688 1.041s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 20:59:59.591 1.412s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.464 1.466s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.741 1.581s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.748 2.31s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:00.966 0.381s&#34;</span>,
+        <span style="color:#e6db74">&#34;2016-09-15 21:00:02.066 2.62s&#34;</span>
+    };
+    cout <span style="color:#f92672">&lt;&lt;</span> solution(vec) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 2169 - 로봇 조종하기</title>
+            <link>https://meantint.github.io/posts/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</link>
+            <pubDate>Wed, 19 Aug 2020 13:42:25 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/boj-2169-%EB%A1%9C%EB%B4%87-%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0/</guid>
+            <description>[BOJ_2169 - 로봇 조종하기]
+ 정말 많이 생각하고 힘들게 풀었다. 원래 푼 방식이 맞다고 생각이 들어서 고집을 부렸는데 그 방법은 아니었다.
+풀이   dp[i][j][k] = k 방향으로 들어와서 (i, j)에 들어왔을 때의 최댓값
+  3가지 경우가 있다.
+  왼쪽에서 들어왔을 때
+ ret = max(dfs(x, y + 1, 0), dfs(x + 1, y, 2)) 실행    오른쪽에서 들어왔을 때:
+ ret = max(dfs(x, y - 1, 1), dfs(x + 1, y, 2)) 실행    위쪽에서 들어왔을 때:</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/2169">BOJ_2169</a> - <a href="https://www.acmicpc.net/problem/2169">로봇 조종하기</a>]</p>
+<p> 정말 많이 생각하고 힘들게 풀었다. 원래 푼 방식이 맞다고 생각이 들어서 고집을 부렸는데 그 방법은 아니었다.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p><code>dp[i][j][k]</code> = <code>k</code> 방향으로 들어와서 <code>(i, j)</code>에 들어왔을 때의 최댓값</p>
+</li>
+<li>
+<p>3가지 경우가 있다.</p>
+<ol>
+<li>
+<p>왼쪽에서 들어왔을 때</p>
+<ul>
+<li><code>ret = max(dfs(x, y + 1, 0), dfs(x + 1, y, 2))</code> 실행</li>
+</ul>
+</li>
+<li>
+<p>오른쪽에서 들어왔을 때:</p>
+<ul>
+<li><code>ret = max(dfs(x, y - 1, 1), dfs(x + 1, y, 2))</code> 실행</li>
+</ul>
+</li>
+<li>
+<p>위쪽에서 들어왔을 때:</p>
+<ul>
+<li><code>ret = max({ dfs(x, y - 1, 1), dfs(x, y + 1, 0), dfs(x + 1, y, 2) })</code> 실행</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>이 중 최대값을 반환한다.</p>
+</li>
+<li>
+<p>범위를 벗어났다면 <code>return NOT_FIND</code></p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define NOT_FIND -2112345678
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> n, m;
+<span style="color:#66d9ef">int</span> dp[<span style="color:#ae81ff">1000</span>][<span style="color:#ae81ff">1000</span>][<span style="color:#ae81ff">3</span>]; <span style="color:#75715e">// 3번째 index는 이전에 넘어온 방향 0: left, 1: right, 2: top
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> cost[<span style="color:#ae81ff">1000</span>][<span style="color:#ae81ff">1000</span>];
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> direct)
+{
+    <span style="color:#75715e">// 기저 사례
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> x <span style="color:#f92672">&gt;=</span> n <span style="color:#f92672">||</span> y <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> y <span style="color:#f92672">&gt;=</span> m) {
+        <span style="color:#66d9ef">return</span> NOT_FIND;
+    }
+    <span style="color:#75715e">// 마지막 부분에 도착했다면
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">==</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> y <span style="color:#f92672">==</span> m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#66d9ef">return</span> cost[x][y];
+    }
+    <span style="color:#66d9ef">int</span><span style="color:#f92672">&amp;</span> ret <span style="color:#f92672">=</span> dp[x][y][direct];
+    <span style="color:#75715e">// 이미 방문한 곳이라면
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (ret <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+        <span style="color:#66d9ef">return</span> ret;
+    }
+    <span style="color:#66d9ef">if</span> (direct <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) { <span style="color:#75715e">// 이전에 넘어온 방향이 left
+</span><span style="color:#75715e"></span>        ret <span style="color:#f92672">=</span> max(dfs(x, y <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), dfs(x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, y, <span style="color:#ae81ff">2</span>));
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (direct <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// 이전에 넘어온 방향이 right
+</span><span style="color:#75715e"></span>        ret <span style="color:#f92672">=</span> max(dfs(x, y <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), dfs(x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, y, <span style="color:#ae81ff">2</span>));
+    }
+    <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 이전에 넘어온 방향이 top
+</span><span style="color:#75715e"></span>        ret <span style="color:#f92672">=</span> max({ dfs(x, y <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), dfs(x, y <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), dfs(x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, y, <span style="color:#ae81ff">2</span>) });
+    }
+    ret <span style="color:#f92672">+=</span> cost[x][y];
+
+    <span style="color:#66d9ef">return</span> ret;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    ios<span style="color:#f92672">::</span>sync_with_stdio(<span style="color:#ae81ff">0</span>);
+    cin.tie(<span style="color:#ae81ff">0</span>);
+
+    memset(dp, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">sizeof</span>(dp));
+    cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>j) {
+            cin <span style="color:#f92672">&gt;&gt;</span> cost[i][j];
+        }
+    }
+    cout <span style="color:#f92672">&lt;&lt;</span> dfs(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+    <span style="color:#75715e">// output
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// cout &lt;&lt; &#39;\n&#39;;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// for (int k = 0; k &lt; 3; ++k) {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     cout &lt;&lt; &#39;\n&#39;;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     for (int i = 0; i &lt; n; ++i) {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//         for (int j = 0; j &lt; m; ++j) {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//             cout &lt;&lt; dp[i][j][k] &lt;&lt; &#39; &#39;;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//         }
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//         cout &lt;&lt; &#39;\n&#39;;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     }
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>HTML - 시맨틱 태그와 웹 폼</title>
+            <link>https://meantint.github.io/posts/2020/08/html-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EC%99%80-%EC%9B%B9-%ED%8F%BC/</link>
+            <pubDate>Tue, 18 Aug 2020 14:16:52 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/html-%EC%8B%9C%EB%A7%A8%ED%8B%B1-%ED%83%9C%EA%B7%B8%EC%99%80-%EC%9B%B9-%ED%8F%BC/</guid>
+            <description>요새 휴고(Hugo) 블로그를 작성 중인데, 블로그 안의 .html 파일들을 살펴보면 &amp;lt;header&amp;gt;, &amp;lt;article&amp;gt; 등의 태그가 보인다. 이런 태그들은 무엇이며 이전에 보았던 태그들과 차이점은 뭐고 왜 사용하는 것일까?
+시맨틱 웹이란?   시맨틱 웹(Semantic Web): 검색 엔진이 특정한 문서를 찾는 것이 용이할 수 있도록 문서를 구조화 해놓은 웹.
+  예전의 웹과 시맨틱 웹의 차이는 어떤 정보가 주어졌을 때 예전의 웹은 단순한 문자열로 해석하는 것이고 시맨틱 웹은 정보를 의미있는 형태로 받아들여 읽는 것이다.</description>
+            <content type="html"><![CDATA[<p> 요새 휴고(Hugo) 블로그를 작성 중인데, 블로그 안의 <code>.html</code> 파일들을 살펴보면 <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code> 등의 태그가 보인다. 이런 태그들은 무엇이며 이전에 보았던 태그들과 차이점은 뭐고 왜 사용하는 것일까?</p>
+<hr>
+<h2 id="시맨틱-웹이란">시맨틱 웹이란?</h2>
+<ul>
+<li>
+<p>시맨틱 웹(Semantic Web): 검색 엔진이 특정한 문서를 찾는 것이 용이할 수 있도록 문서를 구조화 해놓은 웹.</p>
+</li>
+<li>
+<p>예전의 웹과 시맨틱 웹의 차이는 어떤 정보가 주어졌을 때 예전의 웹은 단순한 문자열로 해석하는 것이고 시맨틱 웹은 정보를 의미있는 형태로 받아들여 읽는 것이다.</p>
+</li>
+</ul>
+<hr>
+<h2 id="시맨틱-태그">시맨틱 태그</h2>
+<p> <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code> 등의 태그들을 시맨틱 태그라고 한다. 시맨틱 태그는 문서의 구조 그리고 의미를 표현해주는 태그이다.<br><br></p>
+<ul>
+<li><code>&lt;header&gt;</code>: 간단한 설명을 해주는 머리말 태그</li>
+<li><code>&lt;footer&gt;</code>: 부가 정보(저작권, 나에 대한 정보)들을 보여주는 태그. 주로 하단에 작성</li>
+<li><code>&lt;section&gt;</code>: 주제별로 나눠주는 태그</li>
+<li><code>&lt;article&gt;</code>: 독립적인 내용을 담는 태그. 블로그 기준으로는 하나의 포스트라고 볼 수 있다.</li>
+<li><code>&lt;nav&gt;</code> : 사이트 안의 다른 페이지를 연결해주는 태그. 블로그의 카테고리라고 보면 되겠다.</li>
+</ul>
+<hr>
+<h2 id="시맨틱-블록-태그">시맨틱 블록 태그</h2>
+<ul>
+<li>블록(Block)을 구성하는 시맨틱 태그를 말한다.</li>
+<li><code>&lt;figure&gt;</code>, <code>&lt;details&gt;</code> 등의 태그가 있다.</li>
+</ul>
+<hr>
+<h2 id="시맨틱-인라인-태그">시맨틱 인라인 태그</h2>
+<ul>
+<li>인라인(Inline)을 구성하는 시맨틱 태그를 말한다.</li>
+<li><code>&lt;mark&gt;</code>, <code>&lt;time&gt;</code> 등의 태그가 있다.</li>
+</ul>
+<hr>
+<h2 id="웹-폼과-폼-요소">웹 폼과 폼 요소</h2>
+<ul>
+<li>웹 폼(Web Form): 웹 페이지를 통해 사용자 입력을 받는 것</li>
+<li>폼 요소: 폼(Form)을 만들기 위한 요소들. 대표적 폼 요소로 <code>&lt;input&gt;</code>이 있다.</li>
+</ul>
+<hr>
+<h2 id="폼-요소의-종류">폼 요소의 종류</h2>
+<p> 폼 요소들은 <code>&lt;input type=&quot;type&quot;&gt;</code>의 형태로 사용할 수 있다. 그 중 몇 가지를 알아보자.<br><br></p>
+<ul>
+<li><code>&lt;input type=&quot;text&quot;&gt;</code>: 텍스트를 입력받는 폼 요소</li>
+<li><code>&lt;input type=&quot;password&quot;&gt;</code>: 패스워드를 입력받는 폼 요소. &lsquo;*&lsquo;로 나타내어진다.</li>
+<li><code>&lt;input type=&quot;button&quot;&gt;</code>: 버튼을 나타내는 폼 요소</li>
+<li><code>&lt;input type=&quot;submit&quot;&gt;</code>: 데이터를 전송하는 폼 요소</li>
+<li><code>&lt;input type=&quot;checkbox&quot;&gt;</code>: 체크박스를 나타내는 폼 요소. 중복 체크 불가능</li>
+<li><code>&lt;input type=&quot;radio&quot;&gt;</code>: 라디오버튼을 나타내는 폼 요소. 중복 체크 가능</li>
+<li><code>&lt;input type=&quot;search&quot;&gt;</code>: 검색어 입력 창을 만들어주는 태그</li>
+<li><code>&lt;datalist&gt;</code>: 데이터 목록을 가진 창</li>
+<li><code>&lt;label&gt;</code>: 캡션과 폼 요소를 한 단위로 묶어주는 태그</li>
+<li><code>&lt;fieldset&gt;</code>: 폼 요소들을 그룹으로 묶어주는 태그</li>
+</ul>
+<hr>
+<h2 id="마무리">마무리</h2>
+<p> 문서의 구조화는 시맨틱 태그와 웹 폼을 이용하여 사이트의 정보를 이전의 웹보다 더 명확하게 넘겨주는 것이 가능하고 검색을 수월하게 만들어 사이트의 가치를 더욱 더 높게 만들어 주기 때문에 필수적이라고 할 수 있다.</p>
+<hr>]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 1000 - A&#43;B</title>
+            <link>https://meantint.github.io/posts/2020/08/boj-1000-a-b/</link>
+            <pubDate>Mon, 17 Aug 2020 23:28:57 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/boj-1000-a-b/</guid>
+            <description>[BOJ_1000 - A+B]
+풀이  &amp;hellip;?  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a, b; cin &amp;gt;&amp;gt; a &amp;gt;&amp;gt; b; cout &amp;lt;&amp;lt; a + b &amp;lt;&amp;lt; &amp;#39;\n&amp;#39;; return 0; } </description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/1000">BOJ_1000</a> - <a href="https://www.acmicpc.net/problem/1000">A+B</a>]</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>&hellip;?</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#66d9ef">int</span> a, b;
+
+    cin <span style="color:#f92672">&gt;&gt;</span> a <span style="color:#f92672">&gt;&gt;</span> b;
+    cout <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>프로그래머스 - 단속카메라</title>
+            <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</link>
+            <pubDate>Sat, 15 Aug 2020 08:50:24 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%86%8D%EC%B9%B4%EB%A9%94%EB%9D%BC/</guid>
+            <description>[프로그래머스 - 단속카메라]
+ 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   나가는 순서대로 정렬한 routes, 카메라를 만났는지의 여부를 확인하는 isCheck를 만든다.
+  routes[idx][0]을 계산하기 위한 idx를 선언한다.
+  i번째 자동차가 카메라에서 벗어나기 직전의 시점인 routes[i][1]에서 찍히는 자동차(routes[idx][0] ~ routes[idx][1])가 있는지 확인하고 있으면 ++idx, 없으면 continue를 진행한다.
+  나가는 순서대로 정렬을 했는데 ++idx를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/42884">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/42884">단속카메라</a>]</p>
+<p> 그리디(Greedy)를 이용해 풀었다. 방법을 못찾아서 꽤 오랫동안 헤맸다.</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>나가는 순서대로 정렬한 <code>routes</code>, 카메라를 만났는지의 여부를 확인하는 <code>isCheck</code>를 만든다.</p>
+</li>
+<li>
+<p><code>routes[idx][0]</code>을 계산하기 위한 <code>idx</code>를 선언한다.</p>
+</li>
+<li>
+<p><code>i</code>번째 자동차가 카메라에서 벗어나기 직전의 시점인 <code>routes[i][1]</code>에서 찍히는 자동차(<code>routes[idx][0]</code> ~ <code>routes[idx][1]</code>)가 있는지 확인하고 있으면 <code>++idx</code>, 없으면 <code>continue</code>를 진행한다.</p>
+<ul>
+<li>
+<p>나가는 순서대로 정렬을 했는데 <code>++idx</code>를 하면서 탐색하는 이유를 생각해내는 것이 어려웠다. 나가는 순서대로 정렬을 했다고 들어오는게 정렬이 된 것이 아니기 때문이다. 결론을 말하자면 <code>i</code>에서 찾을 수 있는 차량들을 그 순간에 모두 찾지 않아도 답을 구할 수 있다.</p>
+</li>
+<li>
+<p>예를 들어 <code>routes[0] = (0, 5)</code>, <code>routes[1] = (6, 10)</code>, <code>routes[2] = (2, 15)</code>라고 하자. 처음에 <code>routes[0][1]</code>은 <code>routes[2][0]</code>과 <code>routes[2][1]</code>에는 속하지만 <code>routes[1][0]</code>과 <code>routes[1][1]</code>에는 속하지 않는다.</p>
+</li>
+<li>
+<p>그러면 내가 작성한 코드는 <code>idx</code>를 순차적으로 늘리면서 찾기 때문에 <code>idx = 2</code>인 경우를 검출을 하지 못하는 것이 아니냐고 생각할 수 있다. 아니다.</p>
+</li>
+<li>
+<p>정렬을 한 경우 <code>routes[1][1]</code>은 무조건 <code>routes[2][1]</code> 보다 작다. 그런데 예제에서 <code>routes[1][0]</code>이 <code>routes[2][0]</code> 보다 크기 때문에 <code>routes[2][0]</code>과 <code>routes[2][1]</code> 사이에는 항상 routes[1][1]이 있기 때문에 <code>i = 1</code>일 때 <code>idx = 2</code>가 검출되므로 굳이 <code>i = 0</code>일 때 <code>idx = 2</code>인 경우를 찾지 않아도 문제를 해결할 수 있다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v1, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v2)
+{
+    <span style="color:#66d9ef">return</span> v1[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> v2[<span style="color:#ae81ff">1</span>];
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> routes)
+{
+    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> isCheck(routes.size(), false);
+    sort(routes.begin(), routes.end(), cmp);
+
+    <span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> routes.size();
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>isCheck[i]) {
+            isCheck[i] <span style="color:#f92672">=</span> true;
+            <span style="color:#f92672">++</span>answer;
+
+            <span style="color:#66d9ef">for</span> (; idx <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>idx) {
+                <span style="color:#66d9ef">if</span> (isCheck[idx]) {
+                    <span style="color:#66d9ef">continue</span>;
+                }
+                <span style="color:#66d9ef">if</span> (routes[i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> routes[idx][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;&amp;</span> routes[i][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;=</span> routes[idx][<span style="color:#ae81ff">1</span>]) { <span style="color:#75715e">// 자른 부분이 다음 경로 안에 포함된다면
+</span><span style="color:#75715e"></span>                    isCheck[idx] <span style="color:#f92672">=</span> true;
+                    <span style="color:#66d9ef">continue</span>;
+                }
+                <span style="color:#66d9ef">break</span>;
+            }
+        }
+    }
+
+    <span style="color:#66d9ef">return</span> answer;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    cout <span style="color:#f92672">&lt;&lt;</span> solution({ { <span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">15</span> }, { <span style="color:#f92672">-</span><span style="color:#ae81ff">14</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span> }, { <span style="color:#f92672">-</span><span style="color:#ae81ff">18</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">13</span> }, { <span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">3</span> } }) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>프로그래머스 - 단어 변환</title>
+            <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</link>
+            <pubDate>Fri, 14 Aug 2020 14:12:09 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%8B%A8%EC%96%B4-%EB%B3%80%ED%99%98/</guid>
+            <description>[프로그래머스 - 단어 변환]
+ dfs를 이용한 완전 탐색으로 풀었다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   dfs 안에서 단어가 다른 개수를 저장하는 diff를 만들었다.
+  만약 diff = 1이라면 dfs 실행, 아니라면 dfs 실행하지 않는다.
+  str과 gv_target의 값이 같다면 dfs를 answer = min(answer, cnt)를 실행 후 dfs를 종료한다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; bool isCheck[50]; int answer; string gv_begin = &amp;#34;&amp;#34;, gv_target = &amp;#34;&amp;#34;; vector&amp;lt;string&amp;gt; gv_words; void dfs(int cur, string str, int cnt) { if (cur == -1) { } else if (isCheck[cur]) { return; } if (str == gv_target) { answer = min(answer, cnt); return; } isCheck[cur] = true; int size = gv_words.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/43163">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/43163">단어 변환</a>]</p>
+<p> dfs를 이용한 완전 탐색으로 풀었다.</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>dfs 안에서 단어가 다른 개수를 저장하는 <code>diff</code>를 만들었다.</p>
+</li>
+<li>
+<p>만약 <code>diff = 1</code>이라면 dfs 실행, 아니라면 dfs 실행하지 않는다.</p>
+</li>
+<li>
+<p><code>str</code>과 <code>gv_target</code>의 값이 같다면 dfs를 <code>answer = min(answer, cnt)</code>를 실행 후 dfs를 종료한다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">bool</span> isCheck[<span style="color:#ae81ff">50</span>];
+<span style="color:#66d9ef">int</span> answer;
+string gv_begin <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>, gv_target <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> gv_words;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> cur, string str, <span style="color:#66d9ef">int</span> cnt)
+{
+    <span style="color:#66d9ef">if</span> (cur <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+    }
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (isCheck[cur]) {
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">if</span> (str <span style="color:#f92672">==</span> gv_target) {
+        answer <span style="color:#f92672">=</span> min(answer, cnt);
+        <span style="color:#66d9ef">return</span>;
+    }
+
+    isCheck[cur] <span style="color:#f92672">=</span> true;
+    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> gv_words.size();
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">int</span> diff <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">int</span> wordSize <span style="color:#f92672">=</span> gv_words[i].size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> wordSize; <span style="color:#f92672">++</span>j) {
+            <span style="color:#66d9ef">if</span> (str[j] <span style="color:#f92672">!=</span> gv_words[i][j]) {
+                <span style="color:#f92672">++</span>diff;
+            }
+        }
+        <span style="color:#66d9ef">if</span> (diff <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+            dfs(i, gv_words[i], cnt <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(string begin, string target, vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> words)
+{
+    memset(isCheck, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(isCheck));
+    gv_begin <span style="color:#f92672">=</span> begin, gv_target <span style="color:#f92672">=</span> target;
+    gv_words <span style="color:#f92672">=</span> words;
+    answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">2112345678</span>;
+
+    dfs(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, begin, <span style="color:#ae81ff">0</span>);
+
+    <span style="color:#66d9ef">if</span> (answer <span style="color:#f92672">==</span> <span style="color:#ae81ff">2112345678</span>) {
+        answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    }
+    <span style="color:#66d9ef">return</span> answer;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    cout <span style="color:#f92672">&lt;&lt;</span> solution(<span style="color:#e6db74">&#34;hit&#34;</span>, <span style="color:#e6db74">&#34;cog&#34;</span>, { <span style="color:#e6db74">&#34;hot&#34;</span>, <span style="color:#e6db74">&#34;dot&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;lot&#34;</span>, <span style="color:#e6db74">&#34;log&#34;</span>, <span style="color:#e6db74">&#34;cog&#34;</span> }) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+    cout <span style="color:#f92672">&lt;&lt;</span> solution(<span style="color:#e6db74">&#34;hit&#34;</span>, <span style="color:#e6db74">&#34;cog&#34;</span>, { <span style="color:#e6db74">&#34;hot&#34;</span>, <span style="color:#e6db74">&#34;dot&#34;</span>, <span style="color:#e6db74">&#34;dog&#34;</span>, <span style="color:#e6db74">&#34;lot&#34;</span>, <span style="color:#e6db74">&#34;log&#34;</span> }) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>프로그래머스 - 등굣길</title>
+            <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</link>
+            <pubDate>Thu, 13 Aug 2020 13:34:49 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%93%B1%EA%B5%A3%EA%B8%B8/</guid>
+            <description>[프로그래머스 - 등굣길]
+ Level 3 난이도 중 그나마 쉬웠다. 다른게 어려운건가?
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dp를 만들고 0으로 초기화 시킨다.
+  puddles에 속해 있는 위치를 -1로 변경시킨다.
+  dp[i][j] = dp[i - 1][j] + dp[i][j - 1]이다. 단, dp[i - 1][j]와 dp[i][j - 1]이 -1이라면 더해주지 않는다.
+  dp[i][j] 연산 후 1000000007을 나눠준다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int solution(int m, int n, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; puddles) { int answer = 0; vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; dp(m + 1, vector&amp;lt;int&amp;gt;(n + 1, 0)); int size = puddles.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/42884">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/42884">등굣길</a>]</p>
+<p> Level 3 난이도 중 그나마 쉬웠다. 다른게 어려운건가?</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p><code>vector&lt;vector&lt;int&gt;&gt; dp</code>를 만들고 0으로 초기화 시킨다.</p>
+</li>
+<li>
+<p><code>puddles</code>에 속해 있는 위치를 -1로 변경시킨다.</p>
+</li>
+<li>
+<p><code>dp[i][j] = dp[i - 1][j] + dp[i][j - 1]</code>이다. 단, <code>dp[i - 1][j]</code>와 <code>dp[i][j - 1]</code>이 -1이라면 더해주지 않는다.</p>
+</li>
+<li>
+<p><code>dp[i][j]</code> 연산 후 <code>1000000007</code>을 나눠준다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(<span style="color:#66d9ef">int</span> m, <span style="color:#66d9ef">int</span> n, vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> puddles)
+{
+    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> dp(m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> puddles.size();
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+        dp[puddles[i][<span style="color:#ae81ff">0</span>]][puddles[i][<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }
+    dp[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;=</span> m; <span style="color:#f92672">++</span>i) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;=</span> n; <span style="color:#f92672">++</span>j) {
+            <span style="color:#66d9ef">if</span> (dp[i][j] <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+                <span style="color:#66d9ef">continue</span>;
+            }
+            <span style="color:#66d9ef">if</span> (dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j] <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+                dp[i][j] <span style="color:#f92672">=</span> (dp[i][j] <span style="color:#f92672">+</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j]) <span style="color:#f92672">%</span> <span style="color:#ae81ff">1000000007</span>;
+            }
+            <span style="color:#66d9ef">if</span> (dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+                dp[i][j] <span style="color:#f92672">=</span> (dp[i][j] <span style="color:#f92672">+</span> dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">%</span> <span style="color:#ae81ff">1000000007</span>;
+            }
+        }
+    }
+    answer <span style="color:#f92672">=</span> dp[m][n];
+
+    <span style="color:#66d9ef">return</span> answer;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>프로그래머스 - 디스크 컨트롤러</title>
+            <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</link>
+            <pubDate>Wed, 12 Aug 2020 16:53:22 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC/</guid>
+            <description>[프로그래머스 - 디스크 컨트롤러]
+ https://mungto.tistory.com/15를 참고하여 풀었습니다.
+ 프로그래머스 레벨 2를 한문제를 남겨놓고 레벨 3에 입문했는데 혼자 힘만으로 풀 수 있는 문제가 거의 존재하지 않는걸 보니 아직도 실력이 많이 부족한 것 같다.
+ 하나 더, 문제를 풀면서 cmp를 짤 때 p1.first + p1.second &amp;gt; p2.first + p2.second여야 한다고 생각했는데 실제 조건은 p1.second &amp;gt; p2.second여야 해서 헷갈렸다. 결론만 말하자면 작업 요청이 얼마나 빨리 들어왔는지의 유무와는 상관없이 작업이 걸리는 시간만 답에 영향을 미친다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/42627">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/42627">디스크 컨트롤러</a>]</p>
+<p> <a href="https://mungto.tistory.com/15">https://mungto.tistory.com/15</a>를 참고하여 풀었습니다.</p>
+<p> 프로그래머스 레벨 2를 한문제를 남겨놓고 레벨 3에 입문했는데 혼자 힘만으로 풀 수 있는 문제가 거의 존재하지 않는걸 보니 아직도 실력이 많이 부족한 것 같다.</p>
+<p> 하나 더, 문제를 풀면서 <code>cmp</code>를 짤 때 <code>p1.first + p1.second &gt; p2.first + p2.second</code>여야 한다고 생각했는데 실제 조건은 <code>p1.second &gt; p2.second</code>여야 해서 헷갈렸다. 결론만 말하자면 작업 요청이 얼마나 빨리 들어왔는지의 유무와는 상관없이 작업이 걸리는 시간만 답에 영향을 미친다.</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p><code>priority_queue</code>를 사용해야 하므로 선언해준다.</p>
+</li>
+<li>
+<p><code>jobs</code>가 어떤 식으로 입력되어있는지 모르기 때문에 요청 받은 시간을 기준으로 오름차순 정렬한다.</p>
+</li>
+<li>
+<p><code>idx</code>가 <code>size</code>보다 작고 <code>jobs[idx][0]</code>이 <code>time</code>보다 작거나 같다면 우선순위 큐에 <code>jobs[idx]</code>를 넣어준다.</p>
+<ul>
+<li><code>time</code>보다 작은 요청들 모두 우선순위 큐에 넣어놓아야 하기 때문에 <code>continue</code> 사용.</li>
+</ul>
+</li>
+<li>
+<p>우선순위 큐가 비어있지 않다면 <code>time</code>과 <code>answer</code>의 값을 변경해준 후 <code>pq.pop()</code></p>
+</li>
+<li>
+<p>우선순위 큐가 비어있다면 <code>time</code>을 다음 요청인 <code>jobs[idx][0]</code>으로 변경 시켜준다.</p>
+</li>
+<li>
+<p>while문을 완료한 후 나온 정답을 <code>jobs.size()</code>로 나누어준다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define PII pair&lt;int, int&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">cmp</span> {
+    <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">operator</span>()(PII p1, PII p2)
+    {
+        <span style="color:#66d9ef">return</span> p1.second <span style="color:#f92672">&gt;</span> p2.second;
+    }
+};
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> jobs)
+{
+    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, time <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+    sort(jobs.begin(), jobs.end());
+    priority_queue<span style="color:#f92672">&lt;</span>PII, vector<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;</span>, cmp<span style="color:#f92672">&gt;</span> pq;
+
+    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> jobs.size();
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty() <span style="color:#f92672">||</span> idx <span style="color:#f92672">&lt;</span> size) {
+        <span style="color:#66d9ef">if</span> (idx <span style="color:#f92672">&lt;</span> size <span style="color:#f92672">&amp;&amp;</span> jobs[idx][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;=</span> time) {
+            pq.push(make_pair(jobs[idx][<span style="color:#ae81ff">0</span>], jobs[idx][<span style="color:#ae81ff">1</span>]));
+            <span style="color:#f92672">++</span>idx;
+            <span style="color:#66d9ef">continue</span>;
+        }
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>pq.empty()) {
+            time <span style="color:#f92672">+=</span> pq.top().second;
+            answer <span style="color:#f92672">+=</span> time <span style="color:#f92672">-</span> pq.top().first;
+            pq.pop();
+        }
+        <span style="color:#66d9ef">else</span> {
+            time <span style="color:#f92672">=</span> jobs[idx][<span style="color:#ae81ff">0</span>];
+        }
+    }
+    answer <span style="color:#f92672">/=</span> size;
+
+    <span style="color:#66d9ef">return</span> answer;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    cout <span style="color:#f92672">&lt;&lt;</span> solution({ { <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span> }, { <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span> }, { <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span> } }) <span style="color:#f92672">&lt;&lt;</span> endl;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>프로그래머스 - N으로 표현</title>
+            <link>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</link>
+            <pubDate>Tue, 11 Aug 2020 17:17:50 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</guid>
+            <description>[프로그래머스 - N으로 표현]
+ https://woongsin94.tistory.com/232를 참고하여 풀었습니다.
+ 처음에 dp로 풀면서 dp[1] = 2, dp[11] = 3, dp[111] = 4 &amp;hellip; 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
+ 참조한 코드를 보면서 특수 케이스(1, 11, 111&amp;hellip;)을 어떻게 for문 안에 저런 식으로 표현하지라고 감탄했다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   dp가 아닌 dfs로 해결하였다.
+  N부터 NNNNNNNN까지 순차적으로 늘어나면서 for문을 돈다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/42895">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/42895">N으로 표현</a>]</p>
+<p> <a href="https://woongsin94.tistory.com/232">https://woongsin94.tistory.com/232</a>를 참고하여 풀었습니다.</p>
+<p> 처음에 dp로 풀면서 <code>dp[1] = 2</code>, <code>dp[11] = 3</code>, <code>dp[111] = 4</code> &hellip; 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.</p>
+<p> 참조한 코드를 보면서 특수 케이스(1, 11, 111&hellip;)을 어떻게 for문 안에 저런 식으로 표현하지라고 감탄했다.</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>dp가 아닌 dfs로 해결하였다.</p>
+</li>
+<li>
+<p><code>N</code>부터 <code>NNNNNNNN</code>까지 순차적으로 늘어나면서 for문을 돈다.</p>
+</li>
+<li>
+<p><code>(55 / 5) + (5 / 5)</code> 같은 경우 나타낼 수 없지 않나?라고 생각했는데 애초에 이 케이스 자체가 정답이 아닌 케이스다. <code>(55 + 5 / 5)</code>를 하면 위의 케이스 보다 1만큼 작은 값이 정답이 되기 때문이다.</p>
+</li>
+<li>
+<p>한가지 더, 미리 <code>11</code>, <code>111</code>인 케이스일 때 쓰이는 숫자 개수를 저장 해놓았는데 이런식으로 한다면 예외 케이스가 존재한다.</p>
+<ul>
+<li><code>N = 5</code>, <code>number = 270</code>인 경우 <code>55 * 5 - 5</code>가 정답이기 때문에 <code>55</code>를 써야하는데 <code>11</code>을 저장해놓은 경우 정답을 제대로 도출할 수가 없다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> gvN, gvnumber;
+<span style="color:#66d9ef">int</span> gvAnswer <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> cnt, <span style="color:#66d9ef">int</span> cur)
+{
+    <span style="color:#66d9ef">if</span> (cnt <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">8</span>) {
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">if</span> (cur <span style="color:#f92672">==</span> gvnumber) {
+        gvAnswer <span style="color:#f92672">=</span> min(gvAnswer, cnt);
+        <span style="color:#66d9ef">return</span>;
+    }
+
+    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; <span style="color:#f92672">++</span>i) {
+        n <span style="color:#f92672">=</span> n <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> gvN;
+        dfs(cnt <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, cur <span style="color:#f92672">+</span> n);
+        dfs(cnt <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, cur <span style="color:#f92672">-</span> n);
+        dfs(cnt <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, cur <span style="color:#f92672">*</span> n);
+        dfs(cnt <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, cur <span style="color:#f92672">/</span> n);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(<span style="color:#66d9ef">int</span> N, <span style="color:#66d9ef">int</span> number)
+{
+    gvN <span style="color:#f92672">=</span> N, gvnumber <span style="color:#f92672">=</span> number;
+
+    dfs(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> gvAnswer;
+    <span style="color:#66d9ef">if</span> (answer <span style="color:#f92672">==</span> <span style="color:#ae81ff">9</span>) {
+        answer <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }
+    <span style="color:#66d9ef">return</span> answer;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>HTML 태그 - 2</title>
+            <link>https://meantint.github.io/posts/2020/08/html-%ED%83%9C%EA%B7%B8-2/</link>
+            <pubDate>Mon, 10 Aug 2020 13:39:20 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/html-%ED%83%9C%EA%B7%B8-2/</guid>
+            <description>HTML 태그들을 조금 더 알아보자.
+예제 1 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;img src=&amp;#34;HTML_image_1-1.png&amp;#34; width=&amp;#34;800&amp;#34; /&amp;gt; &amp;lt;img src=&amp;#34;HTML_image_1-1.png&amp;#34; width=&amp;#34;800&amp;#34; height=&amp;#34;200&amp;#34; /&amp;gt; &amp;lt;img src=&amp;#34;HTML_image_1-1.png&amp;#34; height=&amp;#34;200&amp;#34; /&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   &amp;lt;img&amp;gt; : 이미지를 삽입해주는 HTML 태그.
+ src : 이미지 파일의 url width : 이미지의 가로 길이. height : 이미지의 세로 길이. width와 height 둘 중에 하나만 있다면 비율을 유지한 채로 축소된다.</description>
+            <content type="html"><![CDATA[<p> HTML 태그들을 조금 더 알아보자.</p>
+<hr>
+<h3 id="예제-1"><strong>예제 1</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span> /&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span> /&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+	&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTML_image_1-1.png&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;800&#34;</span> /&gt;
+	&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTML_image_1-1.png&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;800&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> /&gt;
+	&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HTML_image_1-1.png&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ul>
+<li>
+<p><code>&lt;img&gt;</code> : 이미지를 삽입해주는 HTML 태그.</p>
+<ul>
+<li><code>src</code> : 이미지 파일의 url</li>
+<li><code>width</code> : 이미지의 가로 길이.</li>
+<li><code>height</code> : 이미지의 세로 길이.</li>
+<li><code>width</code>와 <code>height</code> 둘 중에 하나만 있다면 비율을 유지한 채로 축소된다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="결과"><strong>결과</strong></h3>
+<p><img src="/images/2020/08/HTML_image_1-1.png" alt="result"></p>
+<center><figcaption>원본 이미지</figcaption></center>
+<p><img src="/images/2020/08/HTML_image_2-1.png" alt="result"></p>
+<center><figcaption>두 개의 이미지는 원본 비율에 맞게 줄여졌고, 하나의 이미지는 사용자 설정 비율에 맞춰진 것을 볼 수 있다.</figcaption></center>
+<hr>
+<h3 id="예제-2"><strong>예제 2</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+	<span style="color:#75715e">&lt;!-- list --&gt;</span>
+	&lt;<span style="color:#f92672">ul</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;unordered list&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;HTML&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;CSS&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;JavaScript&lt;/<span style="color:#f92672">li</span>&gt;
+	&lt;/<span style="color:#f92672">ul</span>&gt;
+	&lt;<span style="color:#f92672">ol</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;ordered list&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;HTML&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;CSS&lt;/<span style="color:#f92672">li</span>&gt;
+		&lt;<span style="color:#f92672">li</span>&gt;JavaScript&lt;/<span style="color:#f92672">li</span>&gt;
+	&lt;/<span style="color:#f92672">ol</span>&gt;
+	&lt;<span style="color:#f92672">dl</span>&gt;
+		&lt;<span style="color:#f92672">dt</span>&gt;
+			&lt;<span style="color:#f92672">strong</span>&gt;HTML&lt;/<span style="color:#f92672">strong</span>&gt;
+		&lt;/<span style="color:#f92672">dt</span>&gt;
+		&lt;<span style="color:#f92672">dd</span>&gt;
+			HyperText Markup Language의 약자
+		&lt;/<span style="color:#f92672">dd</span>&gt;
+	&lt;/<span style="color:#f92672">dl</span>&gt;
+	&lt;<span style="color:#f92672">dl</span>&gt;
+		&lt;<span style="color:#f92672">dt</span>&gt;
+			&lt;<span style="color:#f92672">strong</span>&gt;CSS&lt;/<span style="color:#f92672">strong</span>&gt;
+		&lt;/<span style="color:#f92672">dt</span>&gt;
+		&lt;<span style="color:#f92672">dd</span>&gt;
+			재미없어
+		&lt;/<span style="color:#f92672">dd</span>&gt;
+	&lt;/<span style="color:#f92672">dl</span>&gt;
+	<span style="color:#75715e">&lt;!-- table --&gt;</span>
+	&lt;<span style="color:#f92672">table</span>&gt;
+		&lt;<span style="color:#f92672">caption</span>&gt;This is Caption&lt;/<span style="color:#f92672">caption</span>&gt;
+		&lt;<span style="color:#f92672">thead</span>&gt;
+			&lt;<span style="color:#f92672">tr</span>&gt;
+				&lt;<span style="color:#f92672">th</span>&gt;순서&lt;/<span style="color:#f92672">th</span>&gt;
+				&lt;<span style="color:#f92672">th</span>&gt;과목&lt;/<span style="color:#f92672">th</span>&gt;
+			&lt;/<span style="color:#f92672">tr</span>&gt;
+		&lt;/<span style="color:#f92672">thead</span>&gt;
+		&lt;<span style="color:#f92672">tfoot</span>&gt;
+			&lt;<span style="color:#f92672">tr</span>&gt;
+				&lt;<span style="color:#f92672">th</span>&gt;tfoot&lt;/<span style="color:#f92672">th</span>&gt;
+				&lt;<span style="color:#f92672">th</span>&gt;tfoot&lt;/<span style="color:#f92672">th</span>&gt;
+			&lt;/<span style="color:#f92672">tr</span>&gt;
+		&lt;/<span style="color:#f92672">tfoot</span>&gt;
+		&lt;<span style="color:#f92672">tbody</span>&gt;
+			&lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;1&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;HTML&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+			&lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;2&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;CSS&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+			&lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;3&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;JavaScript&lt;/<span style="color:#f92672">td</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+		&lt;/<span style="color:#f92672">tbody</span>&gt;
+	&lt;/<span style="color:#f92672">table</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ul>
+<li><code>&lt;ul&gt; &lt;/ul&gt;</code> : unordered list의 약자. 순서 없는 리스트</li>
+<li><code>&lt;ol&gt; &lt;/ol&gt;</code> : ordered list의 약자. 순서 있는 리스트</li>
+<li><code>&lt;dl&gt; &lt;/dl&gt;</code> : definition list의 약자. 정의 리스트</li>
+<li><code>&lt;table&gt; &lt;/table&gt;</code> : 표를 만들어주는 태그</li>
+</ul>
+<h3 id="결과-1"><strong>결과</strong></h3>
+<p><img src="/images/2020/08/HTML_image_2-2.png" alt="result"></p>
+<hr>
+<h3 id="예제-3---1"><strong>예제 3 - 1</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+	&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com/&#34;</span>&gt;구글로 이동&lt;/<span style="color:#f92672">a</span>&gt;
+	&lt;<span style="color:#f92672">hr</span>&gt;
+
+	&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;iframe.html&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+	&lt;<span style="color:#f92672">hr</span>&gt;
+	&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;iframe.html&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+	&lt;<span style="color:#f92672">hr</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h3 id="예제-3---2-iframehtml"><strong>예제 3 - 2 (iframe.html)</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;iframe&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+	화면 안에 또다른 화면
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ul>
+<li><code>&lt;a&gt; &lt;/a&gt;</code> : 하이퍼링크를 만들어주는 태그</li>
+<li><code>&lt;iframe&gt; &lt;/iframe&gt;</code> : 현재 페이지 내에 내장 윈도우를 만들어 다른 페이지를 출력해주는 태그</li>
+</ul>
+<h3 id="결과-2"><strong>결과</strong></h3>
+<p><img src="/images/2020/08/HTML_image_2-3.png" alt="result"></p>
+<center><figcaption> 화면 안에 또 다른 화면이 있다</figcaption></center>
+<hr>
+<h3 id="그-외-태그들"><strong>그 외 태그들</strong></h3>
+<ul>
+<li><code>&lt;audio&gt; &lt;/audio&gt;</code> : 오디오를 삽입해주는 태그</li>
+<li><code>&lt;video&gt; &lt;/video&gt;</code> : 비디오를 삽입해주는 태그</li>
+</ul>
+<hr>]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 9252 - LCS 2</title>
+            <link>https://meantint.github.io/posts/2020/08/boj-9252-lcs-2/</link>
+            <pubDate>Sun, 09 Aug 2020 16:42:18 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/boj-9252-lcs-2/</guid>
+            <description>[BOJ_9252 - LCS 2]
+풀이  str1[i] == str2[j]  dp[i][j] = dp[i - 1][j - 1] + 1   str1[i] != str2[j]  dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])      위의 조건식을 문자열이 저장되어 있는 dp[i][j].second도 그대로 따른다.
+  이중 for문 안의 else에 등호를 &amp;gt;=가 아닌 &amp;gt;로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/9252">BOJ_9252</a> - <a href="https://www.acmicpc.net/problem/9252">LCS 2</a>]</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ol>
+<li><code>str1[i] == str2[j]</code>
+<ul>
+<li><code>dp[i][j] = dp[i - 1][j - 1] + 1</code></li>
+</ul>
+</li>
+<li><code>str1[i] != str2[j]</code>
+<ul>
+<li><code>dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])</code></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<p>위의 조건식을 문자열이 저장되어 있는 <code>dp[i][j].second</code>도 그대로 따른다.</p>
+</li>
+<li>
+<p>이중 for문 안의 else에 등호를 <code>&gt;=</code>가 아닌 <code>&gt;</code>로 바꾸면 dp의 값이 달라져서 답이 달라질 수있다. 하지만 문제에 이렇게 명시되어 있기 때문에 신경쓰지 않아도 될 것 같다.</p>
+<blockquote>
+<p>LCS가 여러 가지인 경우에는 아무거나 출력하고, LCS의 길이가 0인 경우에는 둘째 줄을 출력하지 않는다.</p>
+</blockquote>
+</li>
+</ul>
+<center>
+<p><img src="/images/2020/08/BOJ_9252_1.png" alt="result"></p>
+<figcaption>(first, second) = (최대 길이, 최대 길이일 때의 문자열)</figcaption>
+</center>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define PIS pair&lt;int, string&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+string str1, str2;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        cin <span style="color:#f92672">&gt;&gt;</span> str1 <span style="color:#f92672">&gt;&gt;</span> str2;
+
+        <span style="color:#66d9ef">int</span> size1 <span style="color:#f92672">=</span> str1.size();
+        <span style="color:#66d9ef">int</span> size2 <span style="color:#f92672">=</span> str2.size();
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>PIS<span style="color:#f92672">&gt;&gt;</span> dp(size1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vector<span style="color:#f92672">&lt;</span>PIS<span style="color:#f92672">&gt;</span>(size2 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, make_pair(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;&#34;</span>)));
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> size1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> size2 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (str1[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> str2[j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) {
+                                dp[i][j].first <span style="color:#f92672">=</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                                dp[i][j].second <span style="color:#f92672">=</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].second <span style="color:#f92672">+</span> str2[j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+                        }
+                        <span style="color:#66d9ef">else</span> {
+                                dp[i][j].first <span style="color:#f92672">=</span> (dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].first <span style="color:#f92672">&gt;=</span> dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first) <span style="color:#f92672">?</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].first : dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first;
+                                dp[i][j].second <span style="color:#f92672">=</span> (dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].first <span style="color:#f92672">&gt;=</span> dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].first) <span style="color:#f92672">?</span> dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][j].second : dp[i][j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>].second;
+                        }
+                }
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> dp[size1][size2].first <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>
+             <span style="color:#f92672">&lt;&lt;</span> dp[size1][size2].second <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+        
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>HTML 태그 - 1</title>
+            <link>https://meantint.github.io/posts/2020/08/html-%ED%83%9C%EA%B7%B8-1/</link>
+            <pubDate>Sun, 09 Aug 2020 12:40:48 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/08/html-%ED%83%9C%EA%B7%B8-1/</guid>
+            <description>HTML(HyperText Markup Language)는 웹 문서를 작성하는 태그 언어이다. HTML 태그는 상황에 맞게 쓸 수 있는 태그 100개 이상으로 이루어져있다.
+/는 종료 태그에 붙는 기호이다. 태그 중에는 종료 태그가 없는 경우도 있다.
+예제 1 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; 간단한 html 예제 &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;	 &amp;lt;!DOCTYPE html&amp;gt; : HTML5 문서임을 브라우저에 알리는 지시어. &amp;lt;!-- --&amp;gt; : HTML에서의 주석. 여러줄에 걸쳐 사용할 수 있다.</description>
+            <content type="html"><![CDATA[<p> HTML(HyperText Markup Language)는 웹 문서를 작성하는 태그 언어이다.
+HTML 태그는 상황에 맞게 쓸 수 있는 태그 100개 이상으로 이루어져있다.</p>
+<p><code>/</code>는 종료 태그에 붙는 기호이다. 태그 중에는 종료 태그가 없는 경우도 있다.</p>
+<hr>
+<h3 id="예제-1"><strong>예제 1</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+	&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+	간단한 html 예제
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;	
+</code></pre></div><ul>
+<li><code>&lt;!DOCTYPE html&gt;</code> : HTML5 문서임을 브라우저에 알리는 지시어.</li>
+<li><code>&lt;!-- --&gt;</code> : HTML에서의 주석. 여러줄에 걸쳐 사용할 수 있다.</li>
+<li><code>&lt;head&gt; &lt;/head&gt;</code> : 문서의 설정, 제목, 메타 태그를 적는 태그</li>
+<li><code>&lt;body&gt; &lt;/body&gt;</code> : 문서의 본문을 나타내는 태그</li>
+</ul>
+<p> 태그는 <code>tag name</code>과 <code>attribute</code>로 구성되어 있다. <code>attribute</code>는 name과 value로 이루어져있다.
+위의 예제에서.. <code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>를 살펴보자.</p>
+<ul>
+<li><code>tag name</code> = <code>meta</code></li>
+<li><code>attribute name</code> = <code>charset</code></li>
+<li><code>attribute value</code> = <code>UTF-8</code></li>
+</ul>
+<hr>
+<h3 id="예제-2"><strong>예제 2</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;HTML5 tag&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+	&lt;<span style="color:#f92672">h1</span>&gt;h1 tag&lt;/<span style="color:#f92672">h1</span>&gt;
+	&lt;<span style="color:#f92672">h2</span>&gt;h2 tag&lt;/<span style="color:#f92672">h2</span>&gt;
+	&lt;<span style="color:#f92672">h3</span>&gt;h3 tag&lt;/<span style="color:#f92672">h3</span>&gt;
+	&lt;<span style="color:#f92672">h4</span>&gt;h4 tag&lt;/<span style="color:#f92672">h4</span>&gt;
+	&lt;<span style="color:#f92672">h5</span>&gt;h5 tag&lt;/<span style="color:#f92672">h5</span>&gt;
+	&lt;<span style="color:#f92672">h6</span>&gt;h6 tag&lt;/<span style="color:#f92672">h6</span>&gt;
+	&lt;<span style="color:#f92672">p</span>&gt;This is Paragraph&lt;/<span style="color:#f92672">p</span>&gt;
+	&lt;<span style="color:#f92672">p</span>&gt;Meantint&#39;s Blog&lt;/<span style="color:#f92672">p</span>&gt;
+
+	first Line&lt;<span style="color:#f92672">br</span>&gt;Second Line
+	&lt;<span style="color:#f92672">hr</span>&gt;Last Line
+
+	&lt;<span style="color:#f92672">pre</span>&gt;Pre 태그는 사용자 마음대로
+	위치를 
+나타낼 수
+		있다.
+	&lt;/<span style="color:#f92672">pre</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ul>
+<li><code>&lt;title&gt; &lt;/title&gt;</code> : 페이지의 제목. 브라우저의 타이틀로 출력된다. 반드시 <code>head</code> 태그 내에서 작성되어야 함.</li>
+<li><code>&lt;hn&gt; &lt;/hn&gt;</code> : h1 ~ h6까지 있으며 h1이 가장 크고 h6이 가장 작다.</li>
+<li><code>&lt;p&gt; &lt;/p&gt;</code> : 하나의 단락을 표현하는 태그. 문단이 끝나게 되면 자동으로 빈 줄이 생성된다.</li>
+<li><code>&lt;hr&gt;</code> : 수평선을 그어주는 태그. 밑의 결과를 보면 된다.</li>
+<li><code>&lt;br&gt;</code> : html은 Enter키를 입력해도 개행이 되지 않으므로 태그를 이용하여 직접 개행을 시켜줘야 한다.</li>
+<li><code>&lt;pre&gt; &lt;/pre</code> : 이 태그안에 있는 모든 텍스트들은 파일에 보이는 그대로 브라우저에 출력된다.</li>
+</ul>
+<h3 id="결과"><strong>결과</strong></h3>
+<p><img src="/images/2020/08/HTML_image_1-1.png" alt="result"></p>
+<hr>
+<h3 id="예제-3"><strong>예제 3</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;Example_3&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+	&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;background-color:dodgerblue&#34;</span>&gt;
+		This is Div.&lt;<span style="color:#f92672">br</span>&gt;
+		DD II VV&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:gold&#34;</span>&gt;This is span.
+			Color is gold.&lt;/<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		This is div.
+	&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><ul>
+<li><code>&lt;div&gt; &lt;/div&gt;</code> : <code>&lt;p&gt;</code> 태그와 유사하지만 <code>&lt;div&gt;</code> 태그는 문단이 아닌 블록으로 묶는 태그이다.</li>
+<li><code>&lt;span&gt; &lt;/span&gt;</code> : 특정 텍스트만 스타일을 주거나 제어할 수 있게 하는 태그.</li>
+</ul>
+<h3 id="결과-1"><strong>결과</strong></h3>
+<p><img src="/images/2020/08/HTML_image_1-2.png" alt="result"></p>
+<hr]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 14502 - 연구소</title>
+            <link>https://meantint.github.io/posts/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</link>
+            <pubDate>Thu, 23 Jul 2020 01:29:07 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C/</guid>
+            <description>[BOJ_14502 - 연구소]
+ Brute Force로 해결하였다. 문제에서 제시된 2차원 배열의 범위가 작아서 시간 복잡도가 꽤 여유롭다.
+풀이   벽을 3칸 치는 작업을 완전탐색을 이용하여 한다.
+  벽을 3칸 쳤다면 바이러스를 벽이 없는 사방으로 퍼뜨리는 virus()를 호출한다.
+  호출한 후 안전영역의 개수를 구한 후, 기존에 저장되어 있는 값과 비교하여 갱신해준다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int answer = -1; int safeArea; int n, m; void virus(int i, int j, vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; vec) { if (i &amp;lt; 0 || i &amp;gt;= n || j &amp;lt; 0 || j &amp;gt;= m) return; if (vec[i][j] !</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/14502">BOJ_14502</a> - <a href="https://www.acmicpc.net/problem/14502">연구소</a>]</p>
+<p> Brute Force로 해결하였다. 문제에서 제시된 2차원 배열의 범위가 작아서 시간 복잡도가 꽤 여유롭다.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>벽을 3칸 치는 작업을 완전탐색을 이용하여 한다.</p>
+</li>
+<li>
+<p>벽을 3칸 쳤다면 바이러스를 벽이 없는 사방으로 퍼뜨리는 <code>virus()</code>를 호출한다.</p>
+</li>
+<li>
+<p>호출한 후 안전영역의 개수를 구한 후, 기존에 저장되어 있는 값과 비교하여 갱신해준다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">int</span> safeArea;
+<span style="color:#66d9ef">int</span> n, m;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">virus</span>(<span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> vec)
+{
+        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> i <span style="color:#f92672">&gt;=</span> n <span style="color:#f92672">||</span> j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> j <span style="color:#f92672">&gt;=</span> m)
+                <span style="color:#66d9ef">return</span>;
+        <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+                <span style="color:#66d9ef">return</span>;
+        vec[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+        virus(i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, j, vec);
+        virus(i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, j, vec);
+        virus(i, j <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vec);
+        virus(i, j <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, vec);
+
+        <span style="color:#66d9ef">return</span>;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wall</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vec, <span style="color:#66d9ef">int</span> cnt)
+{
+        <span style="color:#66d9ef">if</span> (cnt <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) { <span style="color:#75715e">// 벽을 3개 쳤다면
+</span><span style="color:#75715e"></span>                safeArea <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i) {
+                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>j) {
+                                <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
+                                        vec[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                                        virus(i, j, vec);
+                                        vec[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+                                }
+                        }
+                }
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i) {
+                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>j) {
+                                <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+                                        <span style="color:#f92672">++</span>safeArea;
+                        }
+                }
+                answer <span style="color:#f92672">=</span> max(answer, safeArea);
+                <span style="color:#66d9ef">return</span>;
+        }
+
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                                vec[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                                wall(vec, cnt <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);
+                                vec[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                        }
+                }
+        }
+        <span style="color:#66d9ef">return</span>;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vec(n, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(m, <span style="color:#ae81ff">0</span>));
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>j) {
+                        cin <span style="color:#f92672">&gt;&gt;</span> vec[i][j];
+                }
+        }
+
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                                vec[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                                wall(vec, <span style="color:#ae81ff">2</span>);
+                                vec[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                        }
+                }
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 1654 - 랜선 자르기</title>
+            <link>https://meantint.github.io/posts/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</link>
+            <pubDate>Thu, 23 Jul 2020 00:56:42 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/boj-1654-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0/</guid>
+            <description>[BOJ_1654 - 랜선 자르기]
+ 이분탐색을 이용하여 풀었다. sum &amp;gt;= n인 경우 start값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.
+풀이   mid값은 (start + end) / 2인데, start는 1, end는 랜선의 길이 중 가장 큰 값이다.
+  잘라서 나온 랜선의 개수가 n보다 크거나 같다면
+  start = mid + 1을 해준다.
+  만약 mid가 현재까지의 최대값 max보다 크다면 max를 mid값으로 바꿔준다.
+  start의 값을 mid + 1로 바꿔주는데 만약 바꾸고 나서 랜선의 개수가 n보다 항상 작게 되면 정답을 도출할 수 없기 때문에 max값을 둬서 mid의 최대값을 저장해둔다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/1654">BOJ_1654</a> - <a href="https://www.acmicpc.net/problem/1654">랜선 자르기</a>]</p>
+<p> 이분탐색을 이용하여 풀었다. <code>sum &gt;= n</code>인 경우 <code>start</code>값을 어떻게 주어야 하는지 많은 생각을 해서 오래 걸렸다.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p><code>mid</code>값은 <code>(start + end) / 2</code>인데, <code>start</code>는 1, <code>end</code>는 랜선의 길이 중 가장 큰 값이다.</p>
+</li>
+<li>
+<p>잘라서 나온 랜선의 개수가 <code>n</code>보다 크거나 같다면</p>
+<ul>
+<li>
+<p><code>start = mid + 1</code>을 해준다.</p>
+</li>
+<li>
+<p>만약 <code>mid</code>가 현재까지의 최대값 <code>max</code>보다 크다면 <code>max</code>를 <code>mid</code>값으로 바꿔준다.</p>
+</li>
+<li>
+<p><code>start</code>의 값을 <code>mid + 1</code>로 바꿔주는데 만약 바꾸고 나서 랜선의 개수가 <code>n</code>보다 항상 작게 되면 정답을 도출할 수 없기 때문에 <code>max</code>값을 둬서 <code>mid</code>의 최대값을 저장해둔다.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>잘라서 나온 랜선의 개수가 <code>n</code>보다 작다면 <code>end = mid - 1</code>을 해준다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">int</span> k, n;
+        cin <span style="color:#f92672">&gt;&gt;</span> k <span style="color:#f92672">&gt;&gt;</span> n;
+
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> maxVal <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">&gt;</span> val(k, <span style="color:#ae81ff">0</span>);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> k; <span style="color:#f92672">++</span>i) {
+                cin <span style="color:#f92672">&gt;&gt;</span> val[i];
+                <span style="color:#66d9ef">if</span> (maxVal <span style="color:#f92672">&lt;</span> val[i])
+                        maxVal <span style="color:#f92672">=</span> val[i];
+        }
+
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> maxVal;
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> mid;
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> max <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">while</span> (start <span style="color:#f92672">&lt;=</span> end) {
+                mid <span style="color:#f92672">=</span> (start <span style="color:#f92672">+</span> end) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+                <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> k; <span style="color:#f92672">++</span>i) {
+                        sum <span style="color:#f92672">+=</span> (val[i] <span style="color:#f92672">/</span> mid);
+                }
+                <span style="color:#66d9ef">if</span> (sum <span style="color:#f92672">&gt;=</span> n) {
+                        start <span style="color:#f92672">=</span> mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                        <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">&gt;</span> max) {
+                                max <span style="color:#f92672">=</span> mid;
+                        }
+                }
+                <span style="color:#66d9ef">else</span>
+                        end <span style="color:#f92672">=</span> mid <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> max <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 1043 - 거짓말</title>
+            <link>https://meantint.github.io/posts/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</link>
+            <pubDate>Fri, 17 Jul 2020 16:05:00 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90/</guid>
+            <description>[BOJ_1043 - 거짓말]
+ 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 Union_Find를 이용하여 풀었더라. Union_Find를 공부하자.
+풀이     사람 -&amp;gt; 1 2 3 4     파티 ↓        1  1 1 0 0   2  0 0 1 0   3  0 1 1 1    파티, 사람간의 관계를 갖는 2차원 배열  만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/1043">BOJ_1043</a> - <a href="https://www.acmicpc.net/problem/1043">거짓말</a>]</p>
+<p> 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 <code>Union_Find</code>를 이용하여 풀었더라. <code>Union_Find</code>를 공부하자.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<center>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="right">사람 -&gt;</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">파티 ↓</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="right"></td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="right"></td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="right"></td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figcaption>파티, 사람간의 관계를 갖는 2차원 배열</figcaption>
+<ul>
+<li>
+<p>만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다.</p>
+<ul>
+<li>연결을 제거하는 위치에서 재귀적으로 반복한다.(진실을 알고 있는 사람과 이어져있는 다른 사람의 파티가 존재하는지)</li>
+</ul>
+</li>
+<li>
+<p>그 후 파티를 검색하면서 1이 존재하는 파티(거짓을 말해도 상관없는 파티)를 발견하면 <code>++answer</code>를 해준 후 <code>break</code>한다.</p>
+</li>
+<li>
+<p>n번 사람이 진실을 알고 있다고 할 때</p>
+<ol>
+<li>
+<p>n번이 속해있는 파티에서는 무조건 진실을 말해야 한다.</p>
+<ul>
+<li><code>vec[1][n]</code> ~ <code>vec[m][n]</code> 중 value가 1인 곳(n번 사람이 파티에 속한 곳)을 찾는다.</li>
+</ul>
+</li>
+<li>
+<p>찾은 파티에서 순차적으로 탐색(1번 사람부터 N번 사람까지)하면서 <code>value = 1</code>인 곳이 있으면</p>
+<ol>
+<li>
+<p><code>value = 0</code>으로 바꾼다.</p>
+</li>
+<li>
+<p><code>value = 0</code>으로 바꾼 위치에서 <code>1번</code>을 재귀적으로 실행한다.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">erase</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> vec, <span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+{
+        vec[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> vec.size(); <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">if</span> (vec[i][y] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        erase(vec, i, y);
+                }
+        }
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> vec[<span style="color:#ae81ff">0</span>].size(); <span style="color:#f92672">++</span>j) {
+                <span style="color:#66d9ef">if</span> (vec[x][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        erase(vec, x, j);
+                }
+        }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+        <span style="color:#66d9ef">int</span> n, m;
+        cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vec(m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> truth(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+
+        <span style="color:#66d9ef">int</span> num;
+        cin <span style="color:#f92672">&gt;&gt;</span> num;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> num; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> tmp;
+                cin <span style="color:#f92672">&gt;&gt;</span> tmp;
+
+                truth[tmp] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> T;
+                cin <span style="color:#f92672">&gt;&gt;</span> T;
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> T; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">int</span> tmp;
+                        cin <span style="color:#f92672">&gt;&gt;</span> tmp;
+                        vec[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][tmp] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                }
+        }
+
+        <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> truth.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">if</span> (truth[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>j) {
+                                <span style="color:#66d9ef">if</span> (vec[j][i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                                        erase(vec, j, i);
+                                }
+                        }
+                }
+        }
+        <span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> vec.size();
+        <span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> vec[<span style="color:#ae81ff">0</span>].size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> row; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> col; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                                <span style="color:#f92672">++</span>answer;
+                                <span style="color:#66d9ef">break</span>;
+                        }
+                }
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 1027 - 고층 건물</title>
+            <link>https://meantint.github.io/posts/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</link>
+            <pubDate>Thu, 16 Jul 2020 17:50:20 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/boj-1027-%EA%B3%A0%EC%B8%B5-%EA%B1%B4%EB%AC%BC/</guid>
+            <description>[BOJ_1027 - 고층 건물]
+ 왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.
+그리고 굳이 vec를 vector&amp;lt;PII&amp;gt; type으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. PII = pair&amp;lt;int, int&amp;gt;
+풀이    i 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     Height 1 5 3 2 6 3 2 6 4 2 5 7 3 1 5    건물의 위치(i)와 높이(Height)  vec[i].</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/1027">BOJ_1027</a> - <a href="https://www.acmicpc.net/problem/1027">고층 건물</a>]</p>
+<p> 왼쪽으로 탐색하는 부분에서 기울기 때문에 잠시 고민했다.<br>
+그리고 굳이 vec를 <code>vector&lt;PII&gt; type</code>으로 할 필요가 없다. vec[idx].first = idx이기 때문에.. <code>PII = pair&lt;int, int&gt;</code></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<center>
+<table>
+<thead>
+<tr>
+<th align="center">i</th>
+<th align="right">0</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+<th align="right">5</th>
+<th align="right">6</th>
+<th align="right">7</th>
+<th align="right">8</th>
+<th align="right">9</th>
+<th align="right">10</th>
+<th align="right">11</th>
+<th align="right">12</th>
+<th align="right">13</th>
+<th align="right">14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Height</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figcaption>건물의 위치(i)와 높이(Height)</figcaption>
+<ul>
+<li>
+<p><code>vec[i].first</code> : <code>i</code> 건물의 위치<br><code>vec[i].second</code> : <code>i</code> 건물의 높이</p>
+</li>
+<li>
+<p>검색하는 <code>i</code>를 기준으로 왼쪽, 오른쪽을 따로 탐색한 후의 <code>cnt</code>가 <code>answer</code>보다 크다면 <code>answer</code>의 값을 변경한다.</p>
+</li>
+<li>
+<p>탐색하는 방법은 기울기를 사용하였는데 탐색하는 위치인 <code>i</code>에서 가까운 곳부터 순차적으로 탐색하였다.</p>
+</li>
+<li>
+<p>만약 이전에 탐색했던 곳 중 가장 컸던 기울기보다 현재 탐색한 곳의 기울기가 더 크다면 그 건물은 <code>i</code>건물에서 보이는 건물이다.</p>
+</li>
+<li>
+<p>주의할 점은 <code>i</code>에서 왼쪽으로 탐색할 때 역시 <code>i</code>가 기준이므로 그래프 상으로 생긴 기울기는 음수일지 몰라도 양수로 봐야 한다는 것이다.</p>
+<ul>
+<li><code>vec[j].first</code> - <code>vec[i].first</code>가 왼쪽으로 탐색할 때는 무조건 음수가 나오므로<br><code>vec[i].first</code> - <code>vec[j].first</code>으로 바꿔주었다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define PII pair&lt;int, int&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">int</span> N;
+        cin <span style="color:#f92672">&gt;&gt;</span> N;
+
+        vector<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;</span> vec;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> N; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> height;
+                cin <span style="color:#f92672">&gt;&gt;</span> height;
+
+                vec.push_back(make_pair(i, height));
+        }
+
+        <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> vec.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                <span style="color:#66d9ef">double</span> prev <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2000000000</span>;
+                <span style="color:#75715e">// 왼쪽으로 가면서 만나는 건물들을 비교
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>; <span style="color:#f92672">--</span>j) {
+                        <span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>)(vec[j].second <span style="color:#f92672">-</span> vec[i].second) <span style="color:#f92672">/</span> (<span style="color:#66d9ef">double</span>)(vec[i].first <span style="color:#f92672">-</span> vec[j].first);
+                        <span style="color:#66d9ef">if</span> (val <span style="color:#f92672">&gt;</span> prev) {
+                                <span style="color:#f92672">++</span>cnt;
+                                prev <span style="color:#f92672">=</span> val;
+                        }
+                }
+                prev <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2000000000</span>;
+                <span style="color:#75715e">// 오른쪽으로 가면서 만나는 건물들을 비교
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">double</span> val <span style="color:#f92672">=</span> (<span style="color:#66d9ef">double</span>)(vec[j].second <span style="color:#f92672">-</span> vec[i].second) <span style="color:#f92672">/</span> (<span style="color:#66d9ef">double</span>)(vec[j].first <span style="color:#f92672">-</span> vec[i].first);
+                        <span style="color:#66d9ef">if</span> (val <span style="color:#f92672">&gt;</span> prev) {
+                                <span style="color:#f92672">++</span>cnt;
+                                prev <span style="color:#f92672">=</span> val;
+                        }
+                }
+                answer <span style="color:#f92672">=</span> max(answer, cnt);
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 1038 - 감소하는 수</title>
+            <link>https://meantint.github.io/posts/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</link>
+            <pubDate>Tue, 14 Jul 2020 21:37:04 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98/</guid>
+            <description>[BOJ_1038 - 감소하는 수]
+ 낚시하려고 만든건지 N값이 쓸데없이 크다.
+감소하는 수의 가장 큰 수인 9876543210이 N = 1022이기 때문에..
+풀이  i + 1번째 자릿수의 값이 j일 때 나오는 경우의 수를 저장해놓는 vec 변수를 선언하였다.     i, j 0 1 2 3 4 5 6 7 8 9     0 1 1 1 1 1 1 1 1 1 1   1 0 1 2 3 4 5 6 7 8 9   2 0 0 1 3 6 10 15 21 28 36   3 0 0 0 1 4 10 20 35 56 84   4 0 0 0 0 1 5 15 35 70 126   5 0 0 0 0 0 1 6 21 56 126   6 0 0 0 0 0 0 1 7 28 84   7 0 0 0 0 0 0 0 1 8 36   8 0 0 0 0 0 0 0 0 1 9   9 0 0 0 0 0 0 0 0 0 1    vec[i][j] : i + 1번째 자릿수가 j일 때 만들 수 있는 모든 경우의 수(i + 1이 제일 큰 자릿수)  vec[i][j] = vec[i - 1][0] + vec[i - 1][1] + &amp;hellip; + vec[i - 1][j - 1]</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/1038">BOJ_1038</a> - <a href="https://www.acmicpc.net/problem/1038">감소하는 수</a>]</p>
+<p> 낚시하려고 만든건지 N값이 쓸데없이 크다.<br>
+감소하는 수의 가장 큰 수인 9876543210이 <code>N = 1022</code>이기 때문에..</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>i + 1번째 자릿수의 값이 j일 때 나오는 경우의 수를 저장해놓는 vec 변수를 선언하였다.</li>
+</ul>
+<center>
+<table>
+<thead>
+<tr>
+<th align="center">i, j</th>
+<th align="right">0</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+<th align="right">5</th>
+<th align="right">6</th>
+<th align="right">7</th>
+<th align="right">8</th>
+<th align="right">9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">7</td>
+<td align="right">8</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">15</td>
+<td align="right">21</td>
+<td align="right">28</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">10</td>
+<td align="right">20</td>
+<td align="right">35</td>
+<td align="right">56</td>
+<td align="right">84</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">15</td>
+<td align="right">35</td>
+<td align="right">70</td>
+<td align="right">126</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">21</td>
+<td align="right">56</td>
+<td align="right">126</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">7</td>
+<td align="right">28</td>
+<td align="right">84</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">8</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figcaption>vec[i][j] : i + 1번째 자릿수가 j일 때 만들 수 있는 모든 경우의 수(i + 1이 제일 큰 자릿수)</figcaption>
+<ul>
+<li>
+<p>vec[i][j] = vec[i - 1][0] + vec[i - 1][1] + &hellip; + vec[i - 1][j - 1]</p>
+</li>
+<li>
+<p><code>vec[0][0] = 1</code>이기 때문에 입력받은 값 <code>answer</code>에 <code>+1</code> 해주어야한다.</p>
+</li>
+<li>
+<p><code>answer &lt;= 0</code>이 되는 곳이 그 자릿수의 값이다.</p>
+<ul>
+<li>
+<p>이 경우 <code>answer</code> 값을 <code>answer &lt;= 0</code>이 되기 직전으로 되돌린다.</p>
+</li>
+<li>
+<p>이 때 <code>answer</code>는 <code>vec[i - 1]</code>에 있는 수 중에서 <code>answer</code>번째 숫자가 다음 자릿수의 값이라는 것을 의미한다.</p>
+</li>
+<li>
+<p><code>vec[0]</code>값을 찾았을 때 종료한다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vec(<span style="color:#ae81ff">10</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">0</span>));
+        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> tmp(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>);
+        vec[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> tmp;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> j; <span style="color:#f92672">++</span>k) {
+                                vec[i][j] <span style="color:#f92672">+=</span> vec[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][k];
+                        }
+                }
+        }
+
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+        <span style="color:#66d9ef">int</span> answer;
+        cin <span style="color:#f92672">&gt;&gt;</span> answer;
+        <span style="color:#f92672">++</span>answer;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#f92672">++</span>j) {
+                        answer <span style="color:#f92672">-=</span> vec[i][j];
+                        <span style="color:#66d9ef">if</span> (answer <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) {
+                                answer <span style="color:#f92672">+=</span> vec[i][j];
+                                num <span style="color:#f92672">+=</span> (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span>)pow(<span style="color:#ae81ff">10</span>, i) <span style="color:#f92672">*</span> (<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span>)j;
+                                <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+                                        i <span style="color:#f92672">-=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 한칸 내림
+</span><span style="color:#75715e"></span>                                <span style="color:#66d9ef">else</span> {
+                                        cout <span style="color:#f92672">&lt;&lt;</span> num <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+                                        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+                                }
+                                <span style="color:#66d9ef">break</span>;
+                        }
+                }
+        }
+
+        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;-1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 1022 - 소용돌이 예쁘게 출력하기</title>
+            <link>https://meantint.github.io/posts/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</link>
+            <pubDate>Tue, 14 Jul 2020 19:50:29 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/boj-1022-%EC%86%8C%EC%9A%A9%EB%8F%8C%EC%9D%B4-%EC%98%88%EC%81%98%EA%B2%8C-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</guid>
+            <description>[BOJ_1022 - 소용돌이 예쁘게 출력하기]
+ 생각보다 간단하게 풀었다.
+풀이   위치의 row, col 값을 저장하는 vec 변수를 선언.
+  위치에 해당하는 값을 answer 변수의 각 위치에 넣음
+  소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.
+ 홀수 제곱수 : (n, n)에 위치, (2n + 1)^2 짝수 제곱수 : (-n, -n + 1)에 위치, (2n)^2    홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/1022">BOJ_1022</a> - <a href="https://www.acmicpc.net/problem/1022">소용돌이 예쁘게 출력하기</a>]</p>
+<p> 생각보다 간단하게 풀었다.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>위치의 <code>row</code>, <code>col</code> 값을 저장하는 vec 변수를 선언.</p>
+</li>
+<li>
+<p>위치에 해당하는 값을 answer 변수의 각 위치에 넣음</p>
+</li>
+<li>
+<p>소용돌이 모양에서의 홀수 제곱수의 위치와 짝수 제곱수의 위치와 값은 특정한 규칙이 있다.</p>
+<ul>
+<li>홀수 제곱수 : <code>(n, n)</code>에 위치, <code>(2n + 1)^2</code></li>
+<li>짝수 제곱수 : <code>(-n, -n + 1)</code>에 위치, <code>(2n)^2</code></li>
+</ul>
+</li>
+<li>
+<p>홀수/짝수 제곱수 위치를 제외한 나머지 위치의 값은 (0, 0)에서 얼마나 떨어져 있는지를 이용하여 계산하였다.</p>
+<ul>
+<li>
+<p>(0, 0)과의 거리를 <code>range</code> 변수에 저장한 후 <code>range</code>에 위치한 홀수/짝수 제곱수의 위치별로 따로 계산하였다.</p>
+<ul>
+<li>
+<p><code>range</code>의 <code>왼쪽 &amp; 아래</code>부분에 위치: <code>range</code>내의 홀수 제곱수 - 현재 위치와 홀수 제곱수의 좌표값 차이</p>
+</li>
+<li>
+<p><code>range</code>의 <code>오른쪽 &amp; 위</code>부분에 위치: <code>range</code>내의 짝수 제곱수 - 현재 위치와 짝수 제곱수의 좌표값 차이</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- <center>
+
+![ex_Image.png](/images/BOJ_2_Image.png){: .center}
+<figcaption>위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)</figcaption>
+</center> -->
+<center>
+<p><img src="/images/2020/07/BOJ_1022_1.png" alt="ex_Image.png"></p>
+<figcaption>위의 그림에서 각각의 색깔은 range를 나타낸다.(회색은 제곱수)</figcaption>
+</center>
+<ul>
+<li><code>cout:.setf(ios::right)</code>를 이용해 오른쪽 정렬로 만든 후에 <code>setw(maxLength)</code>를 이용해 maxLength의 크기만큼 공백을 생성하였다.</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define PII pair&lt;int, int&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">int</span> r1, c1, r2, c2;
+        cin <span style="color:#f92672">&gt;&gt;</span> r1 <span style="color:#f92672">&gt;&gt;</span> c1 <span style="color:#f92672">&gt;&gt;</span> r2 <span style="color:#f92672">&gt;&gt;</span> c2;
+
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> answer(r2 <span style="color:#f92672">-</span> r1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(c2 <span style="color:#f92672">-</span> c1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;&gt;</span> vec;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> r2 <span style="color:#f92672">-</span> r1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>i) {
+                vector<span style="color:#f92672">&lt;</span>PII<span style="color:#f92672">&gt;</span> v;
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> c2 <span style="color:#f92672">-</span> c1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>j) {
+                        v.push_back(make_pair(r1 <span style="color:#f92672">+</span> i, c1 <span style="color:#f92672">+</span> j));
+                }
+                vec.push_back(v);
+        }
+
+        <span style="color:#66d9ef">int</span> maxLength <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 가장 큰 숫자의 자릿수
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> vec.size();
+        <span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> vec[<span style="color:#ae81ff">0</span>].size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> row; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> col; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">int</span> range <span style="color:#f92672">=</span> max(abs(vec[i][j].first), abs(vec[i][j].second));
+                        <span style="color:#66d9ef">int</span> oddNum <span style="color:#f92672">=</span> pow(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> range <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// (n, n)
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">int</span> evenNum <span style="color:#f92672">=</span> pow(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> range, <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// (-n, -n + 1)
+</span><span style="color:#75715e"></span>                        <span style="color:#66d9ef">if</span> (vec[i][j].first <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> range <span style="color:#f92672">&amp;&amp;</span> vec[i][j].second <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> range <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) {
+                                answer[i][j] <span style="color:#f92672">=</span> evenNum;
+                                maxLength <span style="color:#f92672">=</span> max(maxLength, (<span style="color:#66d9ef">int</span>)to_string(answer[i][j]).size());
+                        }
+                        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (vec[i][j].first <span style="color:#f92672">==</span> range <span style="color:#f92672">&amp;&amp;</span> vec[i][j].second <span style="color:#f92672">==</span> range) {
+                                answer[i][j] <span style="color:#f92672">=</span> oddNum;
+                                maxLength <span style="color:#f92672">=</span> max(maxLength, (<span style="color:#66d9ef">int</span>)to_string(answer[i][j]).size());
+                        }
+                        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (vec[i][j].first <span style="color:#f92672">&lt;</span> range <span style="color:#f92672">&amp;&amp;</span> vec[i][j].second <span style="color:#f92672">&gt;</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> range <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)) {
+                                answer[i][j] <span style="color:#f92672">=</span> evenNum
+                                    <span style="color:#f92672">-</span> abs(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> range <span style="color:#f92672">-</span> vec[i][j].first) <span style="color:#f92672">-</span> abs(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> range <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> vec[i][j].second);
+                                maxLength <span style="color:#f92672">=</span> max(maxLength, (<span style="color:#66d9ef">int</span>)to_string(answer[i][j]).size());
+                        }
+                        <span style="color:#66d9ef">else</span> {
+                                answer[i][j] <span style="color:#f92672">=</span> oddNum
+                                    <span style="color:#f92672">-</span> abs(range <span style="color:#f92672">-</span> vec[i][j].first) <span style="color:#f92672">-</span> abs(range <span style="color:#f92672">-</span> vec[i][j].second);
+                                maxLength <span style="color:#f92672">=</span> max(maxLength, (<span style="color:#66d9ef">int</span>)to_string(answer[i][j]).size());
+                        }
+                }
+        }
+
+        cout.setf(ios<span style="color:#f92672">::</span>right);
+        <span style="color:#75715e">// 출력 테스트
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> vec.size(); <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> vec[<span style="color:#ae81ff">0</span>].size(); <span style="color:#f92672">++</span>j) {
+                        cout <span style="color:#f92672">&lt;&lt;</span> setw(maxLength) <span style="color:#f92672">&lt;&lt;</span> answer[i][j] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39; &#39;</span>;
+                }
+                cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+        }
+}
+</code></pre></div><hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>BOJ 1041 - 주사위</title>
+            <link>https://meantint.github.io/posts/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</link>
+            <pubDate>Sun, 12 Jul 2020 02:12:25 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/boj-1041-%EC%A3%BC%EC%82%AC%EC%9C%84/</guid>
+            <description>[BOJ_1041 - 주사위]
+ 처음에 주사위의 값들이 이동할 수 있다고 생각하고 6개의 값을 sort한 후에 풀었다..(당연히 그렇게 푸는거 아님)
+풀이   5개의 면 중 3개의 면이 드러나는 주사위는 4개, 2개의 면이 드러나는 주사위는 8n - 12개,
+1개의 면이 드러나는 주사위는 5n^2 - 16n + 12개이다.
+  면이 3개인 주사위의 최소값 : 마주보는 면 중에서 더 작은 값들 3개의 합이 최소값이다.
+  면이 2개인 주사위의 최소값 : 하나하나 다 해봄.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://www.acmicpc.net/problem/1041">BOJ_1041</a> - <a href="https://www.acmicpc.net/problem/1041">주사위</a>]</p>
+<p> 처음에 주사위의 값들이 이동할 수 있다고 생각하고 6개의 값을 sort한 후에 풀었다..(당연히 그렇게 푸는거 아님)</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>5개의 면 중 3개의 면이 드러나는 주사위는 <code>4개</code>, 2개의 면이 드러나는 주사위는 <code>8n - 12개</code>,<br>1개의 면이 드러나는 주사위는 <code>5n^2 - 16n + 12개</code>이다.</p>
+</li>
+<li>
+<p>면이 3개인 주사위의 최소값 : 마주보는 면 중에서 더 작은 값들 3개의 합이 최소값이다.</p>
+</li>
+<li>
+<p>면이 2개인 주사위의 최소값 : 하나하나 다 해봄..</p>
+<ul>
+<li>각각의 마주보는 면 중에서 더 작은 값 3개를 추출한 후에 그 3개를 이용하여 면 1, 2, 3개를 모두 계산하면 훨씬 쉽다.</li>
+</ul>
+</li>
+<li>
+<p>면이 1개인 주사위의 최소값 : 6개의 면 중에서 가장 작은 값</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> n;
+        cin <span style="color:#f92672">&gt;&gt;</span> n;
+
+        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">&gt;</span> dice;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> num;
+                cin <span style="color:#f92672">&gt;&gt;</span> num;
+
+                dice.push_back(num);
+        }
+
+        <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                cout <span style="color:#f92672">&lt;&lt;</span> dice[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> dice[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> dice[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">+</span> dice[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">+</span> dice[<span style="color:#ae81ff">4</span>] <span style="color:#f92672">+</span> dice[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">-</span>
+                            max({dice[<span style="color:#ae81ff">0</span>], dice[<span style="color:#ae81ff">1</span>], dice[<span style="color:#ae81ff">2</span>], dice[<span style="color:#ae81ff">3</span>], dice[<span style="color:#ae81ff">4</span>], dice[<span style="color:#ae81ff">5</span>]})
+                     <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+                <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+        }
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> side_3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> dice_3 <span style="color:#f92672">=</span> min(dice[<span style="color:#ae81ff">0</span>], dice[<span style="color:#ae81ff">5</span>]) <span style="color:#f92672">+</span> min(dice[<span style="color:#ae81ff">1</span>], dice[<span style="color:#ae81ff">4</span>]) <span style="color:#f92672">+</span> min(dice[<span style="color:#ae81ff">2</span>], dice[<span style="color:#ae81ff">3</span>]);
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> side_2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span> <span style="color:#f92672">*</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">12</span>;
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> dice_2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">==</span> j)
+                                <span style="color:#66d9ef">continue</span>;
+                        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">+</span> j <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>)
+                                <span style="color:#66d9ef">continue</span>;
+                        dice_2 <span style="color:#f92672">=</span> min(dice_2, dice[i] <span style="color:#f92672">+</span> dice[j]);
+                }
+        }
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> side_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> n <span style="color:#f92672">*</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">*</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">12</span>;
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> dice_1 <span style="color:#f92672">=</span> min({dice[<span style="color:#ae81ff">0</span>], dice[<span style="color:#ae81ff">1</span>], dice[<span style="color:#ae81ff">2</span>], dice[<span style="color:#ae81ff">3</span>], dice[<span style="color:#ae81ff">4</span>], dice[<span style="color:#ae81ff">5</span>]});
+
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> answer <span style="color:#f92672">=</span> side_3 <span style="color:#f92672">*</span> dice_3 <span style="color:#f92672">+</span> side_2 <span style="color:#f92672">*</span> dice_2 <span style="color:#f92672">+</span> side_1 <span style="color:#f92672">*</span> dice_1;
+        cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+]]></content>
+        </item>
+        
+        <item>
+            <title>프로그래머스 - 크레인 인형뽑기 게임</title>
+            <link>https://meantint.github.io/posts/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</link>
+            <pubDate>Thu, 09 Jul 2020 22:10:55 +0900</pubDate>
+            
+            <guid>https://meantint.github.io/posts/2020/07/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%81%AC%EB%A0%88%EC%9D%B8-%EC%9D%B8%ED%98%95%EB%BD%91%EA%B8%B0-%EA%B2%8C%EC%9E%84/</guid>
+            <description>[프로그래머스 - 크레인 인형뽑기 게임]
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   인형들을 담아두는 basket(vector&amp;lt;int&amp;gt; 변수)을 선언하였다.
+  집은 인형과 바구니의 맨 위에 있는 인형이 같을 때 바구니 젤 위에 있는 인형을 제거해주었다.
+  집은 인형과 바구니의 맨 위에 있는 인형이 다를 때 집은 인형을 바구니의 맨 위에 올리고 종료한다.
+  Code #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; // 바구니 vector&amp;lt;int&amp;gt; basket(0); int answer = 0; void change(vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&amp;amp; board, int idx) { int rowSize = board.</description>
+            <content type="html"><![CDATA[<p>[<a href="https://programmers.co.kr/learn/courses/30/lessons/64061">프로그래머스</a> - <a href="https://programmers.co.kr/learn/courses/30/lessons/64061">크레인 인형뽑기 게임</a>]</p>
+<p>My Programmers Code : <a href="https://github.com/Meantint/Programmers">https://github.com/Meantint/Programmers</a></p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<ul>
+<li>
+<p>인형들을 담아두는 basket(vector&lt;int&gt; 변수)을 선언하였다.</p>
+</li>
+<li>
+<p>집은 인형과 바구니의 맨 위에 있는 인형이 같을 때 바구니 젤 위에 있는 인형을 제거해주었다.</p>
+</li>
+<li>
+<p>집은 인형과 바구니의 맨 위에 있는 인형이 다를 때 집은 인형을 바구니의 맨 위에 올리고 종료한다.</p>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#75715e">// 바구니
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> basket(<span style="color:#ae81ff">0</span>);
+<span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">change</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> board, <span style="color:#66d9ef">int</span> idx)
+{
+        <span style="color:#66d9ef">int</span> rowSize <span style="color:#f92672">=</span> board.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> rowSize; <span style="color:#f92672">++</span>i) {
+                <span style="color:#75715e">// 배열의 원소 값이 0일 때
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (board[i][idx <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+                        <span style="color:#66d9ef">continue</span>;
+                <span style="color:#75715e">// 바구니의 마지막 인형과 방금 넣은 인형이 같을 때
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>basket.empty() <span style="color:#f92672">&amp;&amp;</span> board[i][idx <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> basket.back()) {
+                        basket.pop_back();
+                        board[i][idx <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                        answer <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>;
+                        <span style="color:#66d9ef">break</span>;
+                }
+                <span style="color:#66d9ef">else</span> {
+                        basket.push_back(board[i][idx <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]);
+                        board[i][idx <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+                        <span style="color:#66d9ef">break</span>;
+                }
+        }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> board, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> moves)
+{
+        <span style="color:#66d9ef">int</span> Size <span style="color:#f92672">=</span> moves.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> Size; <span style="color:#f92672">++</span>i) {
+                change(board, moves[i]);
+        }
+
+        <span style="color:#66d9ef">return</span> answer;
+}
+</code></pre></div><hr>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

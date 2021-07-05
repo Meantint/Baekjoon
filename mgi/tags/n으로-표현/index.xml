@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>N으로 표현 on Meantint&#39;s Blog</title>
+    <link>https://meantint.github.io/tags/n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</link>
+    <description>Recent content in N으로 표현 on Meantint&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 11 Aug 2020 17:17:50 +0900</lastBuildDate>
+    
+	<atom:link href="https://meantint.github.io/tags/n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>프로그래머스 - N으로 표현</title>
+      <link>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</link>
+      <pubDate>Tue, 11 Aug 2020 17:17:50 +0900</pubDate>
+      
+      <guid>https://meantint.github.io/2020/08/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-n%EC%9C%BC%EB%A1%9C-%ED%91%9C%ED%98%84/</guid>
+      <description>[프로그래머스 - N으로 표현]
+ https://woongsin94.tistory.com/232를 참고하여 풀었습니다.
+ 처음에 dp로 풀면서 dp[1] = 2, dp[11] = 3, dp[111] = 4 &amp;hellip; 이런 식으로 지정 해놓고 풀었는데 한번의 dfs에서 재귀로 호출하는 dfs가 12개..가 넘는 대참사가 일어나서 결국 인터넷을 뒤적뒤적거렸다.
+ 참조한 코드를 보면서 특수 케이스(1, 11, 111&amp;hellip;)을 어떻게 for문 안에 저런 식으로 표현하지라고 감탄했다.
+My Programmers Code : https://github.com/Meantint/Programmers
+풀이   dp가 아닌 dfs로 해결하였다.
+  N부터 NNNNNNNN까지 순차적으로 늘어나면서 for문을 돈다.</description>
+    </item>
+    
+  </channel>
+</rss>

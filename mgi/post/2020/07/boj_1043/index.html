@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>BOJ 1043 - 거짓말</title>
+
+	<link rel="stylesheet" type="text/css" href="/css/bulma.css">
+</head>
+
+<body>
+	<p>[<a href="https://www.acmicpc.net/problem/1043">BOJ_1043</a> - <a href="https://www.acmicpc.net/problem/1043">거짓말</a>]</p>
+<p> 2차원 배열을 만들어서 진실을 아는 사람과 파티로 연결된 사람들을 모두 제거하는 방식으로 문제를 풀었는데, 다른 사람들의 대부분은 <code>Union_Find</code>를 이용하여 풀었더라. <code>Union_Find</code>를 공부하자.</p>
+<hr>
+<h1 id="풀이">풀이</h1>
+<center>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="right">사람 -&gt;</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">파티 ↓</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="right"></td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="right"></td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="right"></td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</center>
+<figcaption>파티, 사람간의 관계를 갖는 2차원 배열</figcaption>
+<ul>
+<li>
+<p>만약 진실을 알고 있는 사람이 있다면, 그 사람이 들어간 파티 번호를 찾은 후, 2차원 배열에서 가로 세로로 이어진 모든 연결(value가 1인 값들의 연결)을 제거한다.</p>
+<ul>
+<li>연결을 제거하는 위치에서 재귀적으로 반복한다.(진실을 알고 있는 사람과 이어져있는 다른 사람의 파티가 존재하는지)</li>
+</ul>
+</li>
+<li>
+<p>그 후 파티를 검색하면서 1이 존재하는 파티(거짓을 말해도 상관없는 파티)를 발견하면 <code>++answer</code>를 해준 후 <code>break</code>한다.</p>
+</li>
+<li>
+<p>n번 사람이 진실을 알고 있다고 할 때</p>
+<ol>
+<li>
+<p>n번이 속해있는 파티에서는 무조건 진실을 말해야 한다.</p>
+<ul>
+<li><code>vec[1][n]</code> ~ <code>vec[m][n]</code> 중 value가 1인 곳(n번 사람이 파티에 속한 곳)을 찾는다.</li>
+</ul>
+</li>
+<li>
+<p>찾은 파티에서 순차적으로 탐색(1번 사람부터 N번 사람까지)하면서 <code>value = 1</code>인 곳이 있으면</p>
+<ol>
+<li>
+<p><code>value = 0</code>으로 바꾼다.</p>
+</li>
+<li>
+<p><code>value = 0</code>으로 바꾼 위치에서 <code>1번</code>을 재귀적으로 실행한다.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">erase</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&amp;</span> vec, <span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+{
+        vec[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> vec.size(); <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">if</span> (vec[i][y] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        erase(vec, i, y);
+                }
+        }
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> vec[<span style="color:#ae81ff">0</span>].size(); <span style="color:#f92672">++</span>j) {
+                <span style="color:#66d9ef">if</span> (vec[x][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        erase(vec, x, j);
+                }
+        }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+        <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+        <span style="color:#66d9ef">int</span> n, m;
+        cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> m;
+
+        vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vec(m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>));
+        vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> truth(n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+
+        <span style="color:#66d9ef">int</span> num;
+        cin <span style="color:#f92672">&gt;&gt;</span> num;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> num; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> tmp;
+                cin <span style="color:#f92672">&gt;&gt;</span> tmp;
+
+                truth[tmp] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">int</span> T;
+                cin <span style="color:#f92672">&gt;&gt;</span> T;
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> T; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">int</span> tmp;
+                        cin <span style="color:#f92672">&gt;&gt;</span> tmp;
+                        vec[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][tmp] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+                }
+        }
+
+        <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> truth.size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> size; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">if</span> (truth[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span> m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">++</span>j) {
+                                <span style="color:#66d9ef">if</span> (vec[j][i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                                        erase(vec, j, i);
+                                }
+                        }
+                }
+        }
+        <span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> vec.size();
+        <span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> vec[<span style="color:#ae81ff">0</span>].size();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> row; <span style="color:#f92672">++</span>i) {
+                <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> col; <span style="color:#f92672">++</span>j) {
+                        <span style="color:#66d9ef">if</span> (vec[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+                                <span style="color:#f92672">++</span>answer;
+                                <span style="color:#66d9ef">break</span>;
+                        }
+                }
+        }
+        cout <span style="color:#f92672">&lt;&lt;</span> answer <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#39;\n&#39;</span>;
+
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+
+</body>
+
+</html>
