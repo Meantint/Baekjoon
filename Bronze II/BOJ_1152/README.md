@@ -10,53 +10,40 @@
 
 - `getline`을 이용해 문자열 전체를 입력받는다.
 
-- `공백 -> 문자`일 때 `++answer` & `isBlank = false`를 해준다.
+- `s[i]`가 공백인 경우 `continue`
 
-- `공백 -> 공백` & `문자 -> 문자`일 때 `continue` 해준다.
-
-- `문자 -> 공백`일 때 `isBlank = true`를 해준다.
+- `s[i]`가 공백이 아닌 경우 while문을 이용하여 단어가 끝나는 부분으로 인덱스를 변경해주고 `++answer`를 실행한다.
 
 ## Code
 
 ```cpp
 #include <iostream>
-#include <string>
 
 using namespace std;
 
+string s;
 int answer = 0;
-string str;
-bool isBlank = true;
 
 int main()
 {
-    getline(cin, str);
+    answer = 0;
 
-    for (auto &c : str) {
-        // 이전 문자가 공백이었고
-        if (isBlank) {
-            // 이번 문자도 공백이라면
-            if (c == ' ') {
-                continue;
-            }
-            // 공백이 아니라면
-            else {
-                ++answer;
-                isBlank = false;
-            }
+    getline(cin, s);
+
+    int s_size = s.size();
+    for (int i = 0; i < s_size; ++i) {
+        if (s[i] == ' ') {
+            continue;
         }
-        // 이전 문자가 공백이 아니었고
-        else {
-            // 이번 문자가 공백이라면
-            if (c == ' ') {
-                isBlank = true;
-            }
-            // 이번 문자가 공백이 아니라면
-            else {
-                continue;
-            }
+
+        int temp = i;
+        while (temp < s_size && s[temp] != ' ') {
+            ++temp;
         }
+        i = temp - 1;  // 단어의 끝부분으로 인덱스 변경
+        ++answer;
     }
+
     cout << answer << '\n';
 
     return 0;
