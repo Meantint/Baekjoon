@@ -84,7 +84,6 @@ int main()
             cin >> target_index >> new_value;
 
             update(1, 0, n - 1, target_index - 1, new_value);
-            cost[target_index - 1] = new_value;
         }
         // Query
         else {
