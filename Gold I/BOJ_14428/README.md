@@ -10,6 +10,12 @@
 
 - `init`, `update`, `query` 함수 모두 최솟값이 2개 이상인 경우에는 그 중 가장 작은 인덱스를 반환해야 하기 때문에 따로 처리를 해주었다.
 
+- `seg` 배열의 타입은 `vector<pair<int, int>>`이다.
+
+  - `first : cost[index]`
+
+  - `second : index`
+
 - `init` 함수 작성
 
   - 단말 노드인 경우 `seg[node] = make_pair(cost[left], left)`를 실행한다.
