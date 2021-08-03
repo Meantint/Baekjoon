@@ -1,64 +1,81 @@
 #include <iostream>
+#include <vector>
+
+#define INF 2112345678
 
 using namespace std;
 
-int n, lis_idx = -1;
-int arr[1000000];
-int lis[1000000];
-int idx[1000000];
+int n;
+vector<int> arr, dp;
+vector<int> info;
+
+void LIS_Find(int start, int end, int index)
+{
+    int ret = -1;
+    int mid;
+
+    while (start <= end) {
+        mid = ((start + end) >> 1);
+
+        if (info[mid] < arr[index]) {
+            start = mid + 1;
+        }
+        else if (info[mid] == arr[index]) {
+            ret = mid;
+
+            break;
+        }
+        else {
+            ret = mid;
+
+            end = mid - 1;
+        }
+    }
+
+    if (ret == -1) {
+        dp[index] = info.size();
+        info.push_back(arr[index]);
+    }
+    else {
+        dp[index] = ret;
+        info[ret] = arr[index];
+    }
+}
 
 int main()
 {
     cin >> n;
 
+    arr.resize(n);
+    dp.resize(n, INF);
+
     for (int i = 0; i < n; ++i) {
         cin >> arr[i];
     }
 
-    // LIS
-    lis[++lis_idx] = arr[0];
-    idx[0] = lis_idx;
+    info.push_back(arr[0]);
+    dp[0] = 0;
     for (int i = 1; i < n; ++i) {
-        // 현재 최대값 보다 더 크다면
-        if (lis[lis_idx] < arr[i]) {
-            lis[++lis_idx] = arr[i];
-            idx[i] = lis_idx;
-        }
-        // 현재 최대값 보다 더 작다면
-        else {
-            // 더 작은 것을 찾을 때까지 탐색
-            int cp_idx = lis_idx;
-            int sav_idx = -1;
-            while (cp_idx >= 0) {
-                if (lis[cp_idx] >= arr[i]) {
-                    sav_idx = cp_idx;
-                    --cp_idx;
-                }
-                else {
-                    break;
-                }
-            }
-            lis[sav_idx] = arr[i];
-            idx[i] = sav_idx;
-        }
-    }
-    // 정답 찾기 (역순)
-    int find_num = lis_idx;
-    int* answer = new int[lis_idx + 1];
-    for (int i = n - 1; i >= 0; --i) {
-        if (idx[i] == find_num) {
-            answer[find_num] = arr[i];
-            --find_num;
+        int info_size = info.size();
 
-            if (find_num == -1) {
+        LIS_Find(0, info_size - 1, i);
+    }
+
+    int find = info.size() - 1;
+    vector<int> answer(find + 1);
+    for (int i = n - 1; i >= 0; --i) {
+        if (find == dp[i]) {
+            answer[find] = arr[i];
+            --find;
+
+            if (find == -1) {
                 break;
             }
         }
     }
 
-    // answer
-    cout << lis_idx + 1 << '\n';
-    for (int i = 0; i <= lis_idx; ++i) {
+    cout << answer.size() << '\n';
+    for (int i = 0; i < answer.size(); ++i) {
         cout << answer[i] << ' ';
     }
     cout << '\n';
