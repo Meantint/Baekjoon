@@ -1,6 +1,6 @@
 # BOJ_14003 - 가장 긴 증가하는 부분 수열 5
 
-&nbsp;`LIS` 문제이지만 기존의 `LIS`는 최대 길이만 알 수 있고 그 때의 구성 원소를 제대로 알지 못하기 때문에 인덱스를 따로 저장해주는 배열을 만들었다.
+&nbsp;예전에 풀었던 문제가 재채점 되고 나서 시간 초과 처리가 되었다. 그래서 다시 풀었다.
 
 - Baekjoon - [가장 긴 증가하는 부분 수열 5](https://www.acmicpc.net/problem/14003)
 
@@ -8,78 +8,91 @@
 
 ## 풀이
 
-- 인덱스를 저장하기 위한 배열 `idx`를 선언하였다.
+- 이 문제의 경우 `n`의 최대 크기가 `1,000,000`이므로 기존의 방식(LIS 배열에서 순차적으로 탐색해 위치를 찾아내는 방법)으로 했을 경우 `O(n^2)`이라는 시간 복잡도가 나오기 때문에 시간 초과가 난다. 여기서 시간 복잡도가 `O(nlogn)` 이하로 나와야 문제를 통과할 수 있다는 것을 알 수 있다.
 
-- `i`번째 원소의 값 `arr[i]`가 `lis`에 들어갈 적절한 위치를 찾아 그 위치 인덱스를 `idx[i]`에 저장해준다.
-
-- 최대 길이를 알고 있기 때문에(`lis_idx + 1`) 전체 원소를 역순으로 탐색하면서 인덱스 값이 `lis_idx`인 수 부터 `0`인 수 까지 차례대로 찾아나간다.
-
-- 예를 들어 첫 번째로 `lis_idx` 값과 같은 인덱스를 찾았다면 `answer[lis_idx] = arr[i]`를 실행해준 후 다음으로 인덱스 값이 `--lis_idx`인 수를 탐색한다. 이런 방식으로 `0`까지 탐색한다.
+- `LIS`를 담은 배열 `info`는 인덱스가 꼬일 수는 있으나 항상 오름차순을 유지할 수 있다. 항상 오름차순이라는 것은 탐색에 있어서 이분 탐색을 적용할 수 있다는 말이다. 기존의 `O(n^2)`을 `O(nlogn)`으로 바꿀 수 있다.
 
 ## Code
 
 ```cpp
 #include <iostream>
+#include <vector>
+
+#define INF 2112345678
 
 using namespace std;
 
-int n, lis_idx = -1;
-int arr[1000000];
-int lis[1000000];
-int idx[1000000];
+int n;
+vector<int> arr, dp;
+vector<int> info;
+
+void LIS_Find(int start, int end, int index)
+{
+    int ret = -1;
+    int mid;
+
+    while (start <= end) {
+        mid = ((start + end) >> 1);
+
+        if (info[mid] < arr[index]) {
+            start = mid + 1;
+        }
+        else if (info[mid] == arr[index]) {
+            ret = mid;
+
+            break;
+        }
+        else {
+            ret = mid;
+
+            end = mid - 1;
+        }
+    }
+
+    if (ret == -1) {
+        dp[index] = info.size();
+        info.push_back(arr[index]);
+    }
+    else {
+        dp[index] = ret;
+        info[ret] = arr[index];
+    }
+}
 
 int main()
 {
     cin >> n;
 
+    arr.resize(n);
+    dp.resize(n, INF);
+
     for (int i = 0; i < n; ++i) {
         cin >> arr[i];
     }
 
-    // LIS
-    lis[++lis_idx] = arr[0];
-    idx[0] = lis_idx;
+    info.push_back(arr[0]);
+    dp[0] = 0;
     for (int i = 1; i < n; ++i) {
-        // 현재 최대값 보다 더 크다면
-        if (lis[lis_idx] < arr[i]) {
-            lis[++lis_idx] = arr[i];
-            idx[i] = lis_idx;
-        }
-        // 현재 최대값 보다 더 작다면
-        else {
-            // 더 작은 것을 찾을 때까지 탐색
-            int cp_idx = lis_idx;
-            int sav_idx = -1;
-            while (cp_idx >= 0) {
-                if (lis[cp_idx] >= arr[i]) {
-                    sav_idx = cp_idx;
-                    --cp_idx;
-                }
-                else {
-                    break;
-                }
-            }
-            lis[sav_idx] = arr[i];
-            idx[i] = sav_idx;
-        }
-    }
-    // 정답 찾기 (역순)
-    int find_num = lis_idx;
-    int* answer = new int[lis_idx + 1];
-    for (int i = n - 1; i >= 0; --i) {
-        if (idx[i] == find_num) {
-            answer[find_num] = arr[i];
-            --find_num;
+        int info_size = info.size();
 
-            if (find_num == -1) {
+        LIS_Find(0, info_size - 1, i);
+    }
+
+    int find = info.size() - 1;
+    vector<int> answer(find + 1);
+    for (int i = n - 1; i >= 0; --i) {
+        if (find == dp[i]) {
+            answer[find] = arr[i];
+            --find;
+
+            if (find == -1) {
                 break;
             }
         }
     }
 
-    // answer
-    cout << lis_idx + 1 << '\n';
-    for (int i = 0; i <= lis_idx; ++i) {
+    cout << answer.size() << '\n';
+    for (int i = 0; i < answer.size(); ++i) {
         cout << answer[i] << ' ';
     }
     cout << '\n';
