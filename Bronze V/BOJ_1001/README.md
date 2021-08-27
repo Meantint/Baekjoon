@@ -2,9 +2,9 @@
 
 ## 문제/코드 링크
 
-- Baekjoon - [A-B](https://www.acmicpc.net/problem/1001)
+- [BOJ_1001 - A-B](https://www.acmicpc.net/problem/1001)
 
-- My Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

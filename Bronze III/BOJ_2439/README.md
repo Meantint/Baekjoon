@@ -1,14 +1,16 @@
 # BOJ_2439 - 별 찍기 - 2
 
-&nbsp;기본적인 별 찍기 문제이다..?
+&nbsp;공백부터 출력하는 것을 신경쓰면 된다.
 
-- Baekjoon - [별 찍기 - 2](https://www.acmicpc.net/problem/2439)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2439 - 별 찍기 - 2](https://www.acmicpc.net/problem/2439)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
-- 이중 for문으로 쉽게 해결할 수 있다..?
+- 입력값 `n`에서 현재 행의 값을 빼준 만큼 공백을 먼저 넣어주면 된다.
 
 ## Code
 

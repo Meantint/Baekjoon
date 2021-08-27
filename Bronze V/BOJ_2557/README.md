@@ -1,10 +1,12 @@
 # BOJ_2557 - Hello World
 
-&nbsp;백준 다시 시작
+&nbsp;다같이 알고리즘 시작
 
-- Baekjoon - [Hello World](https://www.acmicpc.net/problem/2557)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2557 - Hello World](https://www.acmicpc.net/problem/2557)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

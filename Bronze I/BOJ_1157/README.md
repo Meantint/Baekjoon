@@ -1,10 +1,12 @@
 # BOJ_1157 - 단어 공부
 
-&nbsp;각각의 알파벳 문자 카운트를 저장하는 배열을 만들면 쉽다.
+&nbsp;각각의 알파벳 문자를 카운트를 하는 배열을 만들면 쉽다.
 
-- Baekjoon - [단어 공부](https://www.acmicpc.net/problem/1157)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1157 - 단어 공부](https://www.acmicpc.net/problem/1157)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

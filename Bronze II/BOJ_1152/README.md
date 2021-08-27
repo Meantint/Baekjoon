@@ -1,10 +1,12 @@
 # BOJ_1152 - 단어의 개수
 
-&nbsp;일반 `cin`으로는 공백을 받지 못하기 때문에 꽤 고민했다.
+&nbsp;일반 `cin`으로는 공백을 받지 못하기 때문에 `getline`을 사용해줘야 한다.
 
-- Baekjoon - [단어의 개수](https://www.acmicpc.net/problem/1152)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1152 - 단어의 개수](https://www.acmicpc.net/problem/1152)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;숫자가 작기 때문에 `int` 범위 내에서 해결된다. 그러므로 모두 더해서 10을 나눈 나머지를 출력하면 된다.
 
-- Baekjoon - [검증수](https://www.acmicpc.net/problem/2475)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2475 - 검증수](https://www.acmicpc.net/problem/2475)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

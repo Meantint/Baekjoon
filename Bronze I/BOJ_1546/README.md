@@ -2,9 +2,11 @@
 
 &nbsp;수학 문제
 
-- Baekjoon - [평균](https://www.acmicpc.net/problem/1546)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1546 - 평균](https://www.acmicpc.net/problem/1546)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

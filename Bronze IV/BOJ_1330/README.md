@@ -1,10 +1,12 @@
 # BOJ_1330 - 두 수 비교하기
 
-&nbsp;개인적으로 왜 브론즈5 레벨이 아닌지 잘 모르겠는 문제.
+&nbsp;체감상 브론즈4 보다는 난이도가 낮아야 할 것 같다.
 
-- Baekjoon - [두 수 비교하기](https://www.acmicpc.net/problem/1330)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1330 - 두 수 비교하기](https://www.acmicpc.net/problem/1330)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;기본적인 별 찍기 문제이다.
 
-- Baekjoon - [별 찍기 - 1](https://www.acmicpc.net/problem/2438)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2438 - 별 찍기 - 1](https://www.acmicpc.net/problem/2438)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
