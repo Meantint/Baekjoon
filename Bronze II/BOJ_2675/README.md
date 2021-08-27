@@ -2,13 +2,15 @@
 
 &nbsp;
 
-- Baekjoon - [문자열 반복](https://www.acmicpc.net/problem/2675)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2675 - 문자열 반복](https://www.acmicpc.net/problem/2675)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
-- 시키는대로 하자.
+- 문제에 나와있는 그대로 구현하면 된다.
 
 ## Code
 
