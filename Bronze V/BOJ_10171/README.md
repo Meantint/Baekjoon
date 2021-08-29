@@ -2,9 +2,9 @@
 
 &nbsp;
 
-- Baekjoon - [고양이](https://www.acmicpc.net/problem/10171)
+- [BOJ_10171 - 고양이](https://www.acmicpc.net/problem/10171)
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

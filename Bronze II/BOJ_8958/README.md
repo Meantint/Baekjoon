@@ -2,9 +2,9 @@
 
 &nbsp;
 
-- Baekjoon - [OX퀴즈](https://www.acmicpc.net/problem/8958)
+- [BOJ_8958 - OX퀴즈](https://www.acmicpc.net/problem/8958)
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

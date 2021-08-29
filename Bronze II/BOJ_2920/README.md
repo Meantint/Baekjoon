@@ -2,9 +2,9 @@
 
 &nbsp;
 
-- Baekjoon - [음계](https://www.acmicpc.net/problem/2920)
+- [BOJ_2920 - 음계](https://www.acmicpc.net/problem/2920)
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
