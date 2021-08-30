@@ -2,9 +2,9 @@
 
 &nbsp;배열에 저장 후 for문으로 최대, 최소값을 찾으면 된다.
 
-- Baekjoon - [최소, 최대](https://www.acmicpc.net/problem/10818)
+- [BOJ_10818 - 최소, 최대](https://www.acmicpc.net/problem/10818)
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

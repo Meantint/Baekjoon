@@ -2,9 +2,9 @@
 
 &nbsp;
 
-- Baekjoon - [사칙연산](https://www.acmicpc.net/problem/10869)
+- [BOJ_10869 - 사칙연산](https://www.acmicpc.net/problem/10869)
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
