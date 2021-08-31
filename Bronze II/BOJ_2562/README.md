@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [최댓값](https://www.acmicpc.net/problem/2562)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2562 - 최댓값](https://www.acmicpc.net/problem/2562)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

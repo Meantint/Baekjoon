@@ -2,9 +2,11 @@
 
 &nbsp;`input.txt` 파일과 `output.txt` 파일로 풀었더니 전혀 이상이 없어서 제출했는데 틀렸다.. `input.txt`로 받는 경우는 알아서 끝내주기 떄문인듯하다. `cin.eof()`는 `cin`으로 입력 받은게 없다면 `true`를 출력하는 함수다.
 
-- Baekjoon - [A+B - 4](https://www.acmicpc.net/problem/10951)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_10951 - A+B - 4](https://www.acmicpc.net/problem/10951)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [아스키 코드](https://www.acmicpc.net/problem/11654)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11654 - 아스키 코드](https://www.acmicpc.net/problem/11654)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [A+B - 3](https://www.acmicpc.net/problem/10950)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_10950 - A+B - 3](https://www.acmicpc.net/problem/10950)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

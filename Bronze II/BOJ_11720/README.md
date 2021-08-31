@@ -2,9 +2,11 @@
 
 &nbsp;`n`은 딱히 필요 없는 듯
 
-- Baekjoon - [숫자의 합](https://www.acmicpc.net/problem/11720)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11720 - 숫자의 합](https://www.acmicpc.net/problem/11720)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
