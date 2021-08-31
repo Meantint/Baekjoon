@@ -2,9 +2,11 @@
 
 &nbsp;이진 탐색으로 해도 된다.
 
-- Baekjoon - [수 찾기](https://www.acmicpc.net/problem/1920)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1920 - 수 찾기](https://www.acmicpc.net/problem/1920)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

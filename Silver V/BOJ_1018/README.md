@@ -2,9 +2,11 @@
 
 &nbsp;완전탐색을 해도 최대 `8^2 * 43 * 43`의 연산을 하므로 충분히 시간이 남는다.
 
-- Baekjoon - [체스판 다시 칠하기](https://www.acmicpc.net/problem/1018)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1018 - 체스판 다시 칠하기](https://www.acmicpc.net/problem/1018)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

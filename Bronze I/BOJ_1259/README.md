@@ -2,9 +2,11 @@
 
 &nbsp;초기화 함수를 만들어봤는데 코드가 간결해서 쓸만한 것 같다.
 
-- Baekjoon - [팰린드롬수](https://www.acmicpc.net/problem/1259)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1259 - 팰린드롬수](https://www.acmicpc.net/problem/1259)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;동서남북 4군데 중 가장 가까운 위치를 찾는다.
 
-- Baekjoon - [직사각형에서 탈출](https://www.acmicpc.net/problem/1085)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1085 - 직사각형에서 탈출](https://www.acmicpc.net/problem/1085)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
