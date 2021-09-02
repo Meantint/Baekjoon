@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [최대공약수와 최소공배수](https://www.acmicpc.net/problem/2609)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2609 - 최대공약수와 최소공배수](https://www.acmicpc.net/problem/2609)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

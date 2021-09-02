@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [수 정렬하기 2](https://www.acmicpc.net/problem/2751)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2751 - 수 정렬하기 2](https://www.acmicpc.net/problem/2751)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
