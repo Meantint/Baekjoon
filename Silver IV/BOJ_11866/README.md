@@ -2,9 +2,11 @@
 
 &nbsp;단순한 구현 문제이지만 막상 접근하니 많이 헷갈렸다.
 
-- Baekjoon - [요세푸스 문제 0](https://www.acmicpc.net/problem/11866)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11866 - 요세푸스 문제 0](https://www.acmicpc.net/problem/11866)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

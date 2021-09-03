@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [괄호](https://www.acmicpc.net/problem/9012)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_9012 - 괄호](https://www.acmicpc.net/problem/9012)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;`n`이 `h`로 나눈 나머지가 `0`일 때와 `0`이 아닐 때 2가지로 나누어 풀어야 한다.
 
-- Baekjoon - [ACM 호텔](https://www.acmicpc.net/problem/10250)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_10250 - ACM 호텔](https://www.acmicpc.net/problem/10250)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

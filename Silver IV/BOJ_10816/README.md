@@ -2,9 +2,11 @@
 
 &nbsp;`algorithm`의 `lower_bound`와 `upper_bound`를 이용해서 풀었다.
 
-- Baekjoon - [숫자 카드 2](https://www.acmicpc.net/problem/10816)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_10816 - 숫자 카드 2](https://www.acmicpc.net/problem/10816)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

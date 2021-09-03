@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [좌표 정렬하기](https://www.acmicpc.net/problem/11650)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11650 - 좌표 정렬하기](https://www.acmicpc.net/problem/11650)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

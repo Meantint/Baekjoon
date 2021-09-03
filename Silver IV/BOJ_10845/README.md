@@ -2,9 +2,11 @@
 
 &nbsp;`queue`을 이용하여 풀었다.
 
-- Baekjoon - [큐](https://www.acmicpc.net/problem/10845)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_10845 - 큐](https://www.acmicpc.net/problem/10845)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [이항 계수 1](https://www.acmicpc.net/problem/11050)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11050 - 이항 계수 1](https://www.acmicpc.net/problem/11050)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
