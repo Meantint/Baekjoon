@@ -2,9 +2,11 @@
 
 &nbsp;`DP`를 이용해 풀었다.
 
-- Baekjoon - [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_9095 - 1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

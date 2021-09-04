@@ -2,9 +2,11 @@
 
 &nbsp;분할정복을 이용하였었는데 처음 구현한 것은 분할정복의 탈을 쓴 완전탐색 형태였다..
 
-- Baekjoon - [Z](https://www.acmicpc.net/problem/1074)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1074 - Z](https://www.acmicpc.net/problem/1074)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

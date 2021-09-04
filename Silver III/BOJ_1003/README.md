@@ -2,9 +2,11 @@
 
 &nbsp;`DP`로 풀었다.
 
-- Baekjoon - [피보나치 함수](https://www.acmicpc.net/problem/1003)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1003 - 피보나치 함수](https://www.acmicpc.net/problem/1003)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

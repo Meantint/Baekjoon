@@ -2,9 +2,11 @@
 
 &nbsp;`BFS`를 이용하여 풀었다.
 
-- Baekjoon - [유기농 배추](https://www.acmicpc.net/problem/1012)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1012 - 유기농 배추](https://www.acmicpc.net/problem/1012)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
