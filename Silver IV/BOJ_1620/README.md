@@ -2,9 +2,11 @@
 
 &nbsp;`map`을 두 개 만들지 않아도 될 것 같다.. 풀고 보니!
 
-- Baekjoon - [나는야 포켓몬 마스터 이다솜](https://www.acmicpc.net/problem/1620)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1620 - 나는야 포켓몬 마스터 이다솜](https://www.acmicpc.net/problem/1620)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

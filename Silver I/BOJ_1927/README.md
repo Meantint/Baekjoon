@@ -2,9 +2,11 @@
 
 &nbsp;`priority_queue`로 풀면 된다.
 
-- Baekjoon - [최소 힙](https://www.acmicpc.net/problem/1927)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1927 - 최소 힙](https://www.acmicpc.net/problem/1927)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

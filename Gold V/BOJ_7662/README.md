@@ -2,9 +2,11 @@
 
 &nbsp;처음에 우선순위 큐 두 개를 이용해서 풀었는데 계속 똑같은 곳에서 틀려서 안됐다. 문제가 없는거 같은데 오래보고 있으니 너무 답답해서 `set`을 이용해서 풀었다. 근데 `set`을 이용했을 때도 똑같은 퍼센트에서 틀렸다고 나왔다. 내가 의심이 가는 부분은 테스트케이스가 끝나고 제대로 안지워서 그런게 아닌가 싶다(`set`을 이용할 때 `clear()`를 추가해서 맞췄기 때문에). 답답
 
-- Baekjoon - [이중 우선순위 큐](https://www.acmicpc.net/problem/7662)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_7662 - 이중 우선순위 큐](https://www.acmicpc.net/problem/7662)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

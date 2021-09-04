@@ -2,9 +2,11 @@
 
 &nbsp;재귀를 이용한 분할 정복을 사용하였다.
 
-- Baekjoon - [색종이 만들기](https://www.acmicpc.net/problem/2630)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2630 - 색종이 만들기](https://www.acmicpc.net/problem/2630)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

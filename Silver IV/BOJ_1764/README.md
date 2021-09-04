@@ -2,9 +2,11 @@
 
 &nbsp;`map`을 하나만 만들고 보도 못한 사람들의 입력을 받아 듣지도 못한 사람에도 포함되는지 확인하면 된다.
 
-- Baekjoon - [듣보잡](https://www.acmicpc.net/problem/1764)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1764 - 듣보잡](https://www.acmicpc.net/problem/1764)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

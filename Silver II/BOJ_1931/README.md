@@ -2,9 +2,11 @@
 
 &nbsp;`Greedy`를 이용하여 풀었다. 회의 시작 시간이 회의 끝나는 시간 보다 느린 케이스는 왜 넣어 놨는지 모르겠다 -_-
 
-- Baekjoon - [회의실 배정](https://www.acmicpc.net/problem/1931)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1931 - 회의실 배정](https://www.acmicpc.net/problem/1931)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

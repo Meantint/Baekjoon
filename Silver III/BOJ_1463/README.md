@@ -2,9 +2,11 @@
 
 &nbsp;`BFS`로 풀었다.
 
-- Baekjoon - [1로 만들기](https://www.acmicpc.net/problem/1463)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1463 - 1로 만들기](https://www.acmicpc.net/problem/1463)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
