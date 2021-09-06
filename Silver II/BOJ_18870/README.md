@@ -2,9 +2,11 @@
 
 &nbsp;`map`을 이용하여 풀었는데 궁금해서 이것저것 찾아보니 `erase`와 `unique`를 쓰는 것이 더 빠르다고 한다. 이유는 찾아봐도 없음.. 아무래도 `map`에서 삽입 연산을 할 때 레드-블랙 트리를 사용하기 때문에 빈번한 삽입이 있을 경우 사용을 안하는게 좋다는 생각을 한다.
 
-- Baekjoon - [좌표 압축](https://www.acmicpc.net/problem/18870)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_18870 - 좌표 압축](https://www.acmicpc.net/problem/18870)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
