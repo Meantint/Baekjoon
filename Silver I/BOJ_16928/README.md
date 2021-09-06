@@ -2,9 +2,11 @@
 
 &nbsp;큐를 이용하여 풀었다. 오랜만에 알고리즘 다시 한다. 그새 다 까먹어서 손에 잘 안익는다 ㅋㅋ
 
-- Baekjoon - [뱀과 사다리 게임](https://www.acmicpc.net/problem/16928)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_16928 - 뱀과 사다리 게임](https://www.acmicpc.net/problem/16928)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
