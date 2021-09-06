@@ -2,9 +2,11 @@
 
 &nbsp;
 
-- Baekjoon - [집합](https://www.acmicpc.net/problem/11723)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11723 - 집합](https://www.acmicpc.net/problem/11723)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

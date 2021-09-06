@@ -2,9 +2,11 @@
 
 &nbsp;오름차순 정렬해서 풀어주면 된다.
 
-- Baekjoon - [ATM](https://www.acmicpc.net/problem/11399)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11399 - ATM](https://www.acmicpc.net/problem/11399)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;`Priority_Queue`를 이용하여 풀었다.
 
-- Baekjoon - [최대 힙](https://www.acmicpc.net/problem/11279)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11279 - 최대 힙](https://www.acmicpc.net/problem/11279)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

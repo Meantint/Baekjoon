@@ -2,9 +2,11 @@
 
 &nbsp;`Prefix Sum`을 이용해서 풀었다.
 
-- Baekjoon - [구간 합 구하기 4](https://www.acmicpc.net/problem/11659)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11659 - 구간 합 구하기 4](https://www.acmicpc.net/problem/11659)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

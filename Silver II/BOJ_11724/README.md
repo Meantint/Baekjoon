@@ -2,9 +2,11 @@
 
 &nbsp;`BFS`를 이용하여 풀었다.
 
-- Baekjoon - [연결 요소의 개수](https://www.acmicpc.net/problem/11724)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11724 - 연결 요소의 개수](https://www.acmicpc.net/problem/11724)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
