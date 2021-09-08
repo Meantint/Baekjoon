@@ -2,9 +2,11 @@
 
 &nbsp;분할정복을 이용해 풀었다.
 
-- Baekjoon - [곱셈](https://www.acmicpc.net/problem/1629)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1629 - 곱셈](https://www.acmicpc.net/problem/1629)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
