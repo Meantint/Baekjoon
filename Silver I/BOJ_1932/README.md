@@ -2,9 +2,11 @@
 
 &nbsp;`DP`를 이용해 풀었다.
 
-- Baekjoon - [정수 삼각형](https://www.acmicpc.net/problem/1932)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1932 - 정수 삼각형](https://www.acmicpc.net/problem/1932)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

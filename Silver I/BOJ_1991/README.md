@@ -2,9 +2,11 @@
 
 &nbsp;인접 그래프를 이용해 풀었다.
 
-- Baekjoon - [트리 순회](https://www.acmicpc.net/problem/1991)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_1991 - 트리 순회](https://www.acmicpc.net/problem/1991)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

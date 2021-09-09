@@ -1,10 +1,12 @@
 # BOJ_1967 - 트리의 지름
 
+## 문제/코드 링크
+
 &nbsp;`Dijkstra` 알고리즘을 통해 풀었다. 애초에 가장 먼 거리를 만드는 점 두 개를 어떻게 찾는지 모르면 못 푼다..(필자의 경험으로는)
 
-- Baekjoon - [트리의 지름](https://www.acmicpc.net/problem/1967)
+- [BOJ_1967 - 트리의 지름](https://www.acmicpc.net/problem/1967)
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
