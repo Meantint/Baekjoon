@@ -2,9 +2,11 @@
 
 &nbsp;분할 정복
 
-- Baekjoon - [트리의 순회](https://www.acmicpc.net/problem/2263)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2263 - 트리의 순회](https://www.acmicpc.net/problem/2263)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

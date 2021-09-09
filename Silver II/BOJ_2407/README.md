@@ -2,9 +2,11 @@
 
 &nbsp;가장 큰 수인 `100C50`의 값이 약 `100^29` 정도 되기 때문에 `Big Int`를 구현해서 풀었다.
 
-- Baekjoon - [조합](https://www.acmicpc.net/problem/2407)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_2407 - 조합](https://www.acmicpc.net/problem/2407)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
