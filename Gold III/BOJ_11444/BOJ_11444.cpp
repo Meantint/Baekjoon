@@ -2,54 +2,50 @@
 #include <vector>
 
 #define ll long long
+#define MOD 1000000007
 
 using namespace std;
 
-vector<vector<ll>> v = {
-    {1, 1},
-    {1, 0},
-};
 ll n;
+vector<vector<ll>> matrix = {{0, 1}, {1, 1}};
 
-vector<vector<ll>> cal(vector<vector<ll>> v1, vector<vector<ll>> v2)
+vector<vector<ll>> Cal(vector<vector<ll>> m1, vector<vector<ll>> m2)
 {
-    vector<vector<ll>> res(2, vector<ll>(2));
-
-    res[0][0] = ((v1[0][0] * v2[0][0]) % 1000000007 + (v1[0][1] * v2[1][0]) % 1000000007) % 1000000007;
-    res[0][1] = ((v1[0][0] * v2[0][1]) % 1000000007 + (v1[0][1] * v2[1][1]) % 1000000007) % 1000000007;
-    res[1][0] = ((v1[1][0] * v2[0][0]) % 1000000007 + (v1[1][1] * v2[1][0]) % 1000000007) % 1000000007;
-    res[1][1] = ((v1[1][0] * v2[0][1]) % 1000000007 + (v1[1][1] * v2[1][1]) % 1000000007) % 1000000007;
-
-    return res;
-}
-
-vector<vector<ll>> dc(ll num)
-{
-    if (num == 1) {
-        return v;
+    vector<vector<ll>> ret(2, vector<ll>(2, 0));
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            for (int k = 0; k < 2; ++k) {
+                ret[i][j] += m1[i][k] * m2[k][j];
+            }
+            ret[i][j] %= MOD;
+        }
     }
 
-    if ((num & 1) == 0) {
-        vector<vector<ll>> res = dc(num / 2);
-        return cal(res, res);
+    return ret;
+}
+
+vector<vector<ll>> DC(ll k)
+{
+    if (k == 1) {
+        return matrix;
+    }
+
+    if (k % 2 == 0) {
+        vector<vector<ll>> temp = DC(k / 2);
+        return Cal(temp, temp);
     }
     else {
-        return cal(dc(num - 1), v);
+        return Cal(DC(k - 1), matrix);
     }
-}
-
-void solve()
-{
-    vector<vector<ll>> answer = dc(n);
-
-    cout << answer[0][1] << '\n';
 }
 
 int main()
 {
     cin >> n;
 
-    solve();
+    vector<vector<ll>> answer = DC(++n);
+
+    cout << answer[0][0] << '\n';
 
     return 0;
 }
