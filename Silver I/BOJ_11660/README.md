@@ -2,9 +2,11 @@
 
 &nbsp;구간합을 이용하여 풀었다.
 
-- Baekjoon - [구간 합 구하기 5](https://www.acmicpc.net/problem/11660)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11660 - 구간 합 구하기 5](https://www.acmicpc.net/problem/11660)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

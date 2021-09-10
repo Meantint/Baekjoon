@@ -2,9 +2,11 @@
 
 &nbsp;`DP`를 이용해 풀었다. 예제로 말하자면 ` ACAYKP`와 ` CAPCAK`처럼 앞에 공백을 넣은 것 처럼 `dp`의 사이즈를 `s1.size() + 1`, `s2.size() + 1` 해주었는데 실제 `s1`, `s2`는 앞에 공백이 없었으므로 `for`문 안에서 비교할 때 `s1[i] == s2[j]`가 아닌 `s1[i - 1] == s2[j - 1]`을 해줘야 했다. ㅠ
 
-- Baekjoon - [LCS](https://www.acmicpc.net/problem/9251)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_9251 - LCS](https://www.acmicpc.net/problem/9251)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

@@ -2,9 +2,11 @@
 
 &nbsp;`VSCode`에서 작업을 하는데 `vector<int> point(15)`와 `int point[15]`의 시간차이가 두 배나 났다. `int point[15]`가 더 빠르다고 나왔는데 막상 백준 제출을 해보니 `vector<int> point(15)`가 더 빨랐다.. 시간이 너무 오래걸려서 내도 시간초과 나겠다 하고 원인을 찾고 있었는데 막상 제출해보니 맞다고 해서 어리둥절했다..
 
-- Baekjoon - [N-Queen](https://www.acmicpc.net/problem/9663)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_9663 - N-Queen](https://www.acmicpc.net/problem/9663)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

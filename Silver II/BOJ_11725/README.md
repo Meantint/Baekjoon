@@ -2,9 +2,11 @@
 
 &nbsp;인접 간선을 이용하여 풀었다.
 
-- Baekjoon - [트리의 부모 찾기](https://www.acmicpc.net/problem/11725)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_11725 - 트리의 부모 찾기](https://www.acmicpc.net/problem/11725)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
