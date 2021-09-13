@@ -2,9 +2,11 @@
 
 &nbsp;`DP`를 이용해서 풀었다.
 
-- Baekjoon - [평범한 배낭](https://www.acmicpc.net/problem/12865)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_12865 - 평범한 배낭](https://www.acmicpc.net/problem/12865)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

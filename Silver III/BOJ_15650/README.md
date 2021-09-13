@@ -2,9 +2,11 @@
 
 &nbsp;`next_permutation`을 이용해 풀었다.
 
-- Baekjoon - [N과 M (2)](https://www.acmicpc.net/problem/15650)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_15650 - N과 M (2)](https://www.acmicpc.net/problem/15650)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 

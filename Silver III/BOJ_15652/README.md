@@ -2,9 +2,11 @@
 
 &nbsp;`DFS`를 이용해 풀었다.
 
-- Baekjoon - [N과 M (4)](https://www.acmicpc.net/problem/15652)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_15652 - N과 M (4)](https://www.acmicpc.net/problem/15652)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
