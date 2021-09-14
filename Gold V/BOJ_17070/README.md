@@ -2,9 +2,11 @@
 
 &nbsp;`DP`를 이용하여 풀었다. 예전에 풀었던걸 보니 `BFS`로 풀었었더라.. 꽤 헷갈리는 문제이다. 카카오 블라인드 채용 문제인 [블록 이동하기](https://programmers.co.kr/learn/courses/30/lessons/60063)와 오브젝트를 지정하는 방식이 흡사한 것 같다.
 
-- Baekjoon - [파이프 옮기기 1](https://www.acmicpc.net/problem/17070)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_17070 - 파이프 옮기기 1](https://www.acmicpc.net/problem/17070)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
