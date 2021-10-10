@@ -1,12 +1,22 @@
-m, n = map(int, input().split())
+import sys
 
-# Python의 list는 개수를 늘릴 때도 곱하기 연산이 사용가능하다.
-isPrime = [True] * (n + 1)
 
-for i in range(2, n + 1, 1):
-    for j in range(i * i, n + 1, i):
-        isPrime[j] = False
+def init():
+    isPrime = [True for _ in range(1000001)]
+    isPrime[0] = isPrime[1] = False
 
-for i in range(m, n + 1):
-    if isPrime[i] is True:
+    for i in range(1000001):
+        if isPrime[i]:
+            for j in range(i * i, 1000001, i):
+                isPrime[j] = False
+
+    return isPrime
+
+
+is_prime = init()
+n, m = list(map(int, sys.stdin.readline().split()))
+# print(n, m)
+
+for i in range(n, m + 1):
+    if is_prime[i]:
         print(i)
