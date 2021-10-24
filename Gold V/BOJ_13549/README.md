@@ -2,9 +2,11 @@
 
 &nbsp;`priority_queue`를 이용해서 풀었다.
 
-- Baekjoon - [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
+## 문제/코드 링크
 
-- My Baekjoon Code : [https://github.com/Meantint/Baekjoon](https://github.com/Meantint/Baekjoon)
+- [BOJ_13549 - 숨바꼭질 3](https://www.acmicpc.net/problem/13549)
+
+- [My Baekjoon Repo](https://github.com/Meantint/Baekjoon)
 
 ## 풀이
 
